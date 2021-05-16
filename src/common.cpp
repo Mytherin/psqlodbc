@@ -373,3 +373,25 @@ print_result(HSTMT hstmt)
 	print_result_series(hstmt, colids, numcols, -1);
 	free(colids);
 }
+
+void run_sql(HSTMT hstmt, const char *sql) {
+	SQLRETURN rc;
+
+	/* Create a table to test with */
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) sql, SQL_NTS);
+	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
+}
+
+void initdb(HSTMT hstmt) {
+	run_sql(hstmt, "CREATE TABLE testtab1 (id integer PRIMARY KEY, t varchar(20));");
+	run_sql(hstmt, "INSERT INTO testtab1 VALUES (1, 'foo');");
+	run_sql(hstmt, "INSERT INTO testtab1 VALUES (2, 'bar');");
+	run_sql(hstmt, "INSERT INTO testtab1 VALUES (3, 'foobar');");
+
+	run_sql(hstmt, "CREATE TABLE booltab (id integer, t varchar(5), b boolean);");
+	run_sql(hstmt, "INSERT INTO booltab VALUES (1, 'yeah', true);");
+	run_sql(hstmt, "INSERT INTO booltab VALUES (2, 'yes', true);");
+	run_sql(hstmt, "INSERT INTO booltab VALUES (3, 'true', true);");
+	run_sql(hstmt, "INSERT INTO booltab VALUES (4, 'false', false)");
+	run_sql(hstmt, "INSERT INTO booltab VALUES (5, 'not', false);");
+}

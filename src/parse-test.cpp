@@ -20,6 +20,7 @@ TEST_CASE("parse-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/*** Simple case ***/
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) "SELECT id, t FROM testtab1", SQL_NTS);

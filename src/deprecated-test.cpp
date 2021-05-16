@@ -107,6 +107,7 @@ TEST_CASE("deprecated-test", "[odbc]") {
 		print_diag("SQLAllocStmt failed", SQL_HANDLE_DBC, conn2);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/*
 	 * SQLSetConnectOption -> SQLSetConnectAttr
@@ -323,6 +324,7 @@ TEST_CASE("deprecated-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/*
 	 * SQLTransact -> SQLEndTran

@@ -41,6 +41,8 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 		REQUIRE(1==0);
 	}
 
+	initdb(hstmt);
+
 	SQLExecDirect(hstmt, (SQLCHAR *) "drop table if exists testtab2", SQL_NTS);
 	/* Check for SQLGetTypeInfo */
 	printf("Check for SQLTypeInfo\n");

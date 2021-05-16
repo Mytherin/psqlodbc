@@ -52,3 +52,5 @@ extern void print_result_meta(HSTMT hstmt);
 extern void print_result(HSTMT hstmt);
 extern const char *datatype_str(SQLSMALLINT datatype);
 extern const char *nullable_str(SQLSMALLINT nullable);
+extern void run_sql(HSTMT hstmt, const char *sql);
+extern void initdb(HSTMT hstmt);

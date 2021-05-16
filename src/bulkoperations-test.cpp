@@ -67,9 +67,11 @@ TEST_CASE("bulkoperations-test", "[odbc]") {
 	 * Initialize a table with some test data.
 	 */
 	printf("Creating test table bulkoperations_test\n");
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TEMPORARY TABLE bulkoperations_test(i int4, orig serial)", SQL_NTS);
+	run_sql(hstmt, "create sequence seq");
+
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TEMPORARY TABLE bulkoperations_test(i int4, orig integer default(nextval('seq')))", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "INSERT INTO bulkoperations_test SELECT g, g FROM generate_series(1, 10) g", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "INSERT INTO bulkoperations_test SELECT g, g FROM generate_series(1, 10) g(g)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);

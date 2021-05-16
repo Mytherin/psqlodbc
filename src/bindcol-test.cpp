@@ -37,7 +37,7 @@ TEST_CASE("bindcol-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLBindCol failed", hstmt);
 
 	rc = SQLExecDirect(hstmt, (SQLCHAR *)
-					   "SELECT id, 'foo' || id FROM generate_series(1, 10) id", SQL_NTS);
+					   "SELECT id, 'foo' || id FROM generate_series(1, 10) id(id)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	printf("Result set:\n");

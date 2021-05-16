@@ -23,6 +23,7 @@ TEST_CASE("params-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/* Prepare a test table */
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TEMPORARY TABLE tmptable (i int4, t text)", SQL_NTS);

@@ -583,15 +583,15 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	 * Someone should fix the driver to understand other formats,
 	 * postgres_verbose in particular...
 	 */
-	exec_cmd("SET intervalstyle=postgres");
-	SQLExecDirect(hstmt, (SQLCHAR *) "SET timezone=-08", SQL_NTS);
+	// exec_cmd("SET intervalstyle=postgres");
+	// SQLExecDirect(hstmt, (SQLCHAR *) "SET timezone=-08", SQL_NTS);
 
 	/*
 	 * Use octal escape bytea format in the tests. We will test the conversion
 	 * from the hex format separately later.
 	 */
-	exec_cmd("SET bytea_output=escape");
-	exec_cmd("SET lc_monetary='C'");
+	// exec_cmd("SET bytea_output=escape");
+	// exec_cmd("SET lc_monetary='C'");
 
 	/* Test all combinations of PostgreSQL data types and SQL datatypes */
 	for (pgtype_i = 0; pgtypes[pgtype_i * 2] != NULL; pgtype_i++)
@@ -619,7 +619,7 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	 * Use octal escape bytea format in the tests. We will test the conversion
 	 * from the hex format separately later.
 	 */
-	exec_cmd("SET bytea_output=hex");
+	// exec_cmd("SET bytea_output=hex");
 	test_conversion("bytea", "\\x464F4F", SQL_C_CHAR, "SQL_C_CHAR", 100, 0);
 	test_conversion("bytea", "\\x464F4F", SQL_C_WCHAR, "SQL_C_WCHAR", 100, 0);
 

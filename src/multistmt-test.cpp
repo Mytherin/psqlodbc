@@ -36,6 +36,7 @@ TEST_CASE("multistmt-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/*** Simple multi-statement with two queries ***/
 

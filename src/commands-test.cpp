@@ -16,6 +16,7 @@ TEST_CASE("commands-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/* Test VACUUM */
 	printf("Testing VACUUM with SQLExecDirect...\n");

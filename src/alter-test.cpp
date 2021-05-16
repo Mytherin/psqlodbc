@@ -17,7 +17,7 @@ TEST_CASE("alter-test", "[odbc]") {
 	}
 
 	/* Create a table to test with */
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TEMPORARY TABLE testtbl(t varchar(40))", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TABLE testtbl(t varchar(40))", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	/**** A simple query against the table, fetch column info ****/
@@ -32,7 +32,7 @@ TEST_CASE("alter-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Alter the table */
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "ALTER TABLE testtbl ALTER COLUMN t TYPE varchar(80)", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "ALTER TABLE testtbl ALTER t SET DATA TYPE varchar", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	/* Run the query again, check if the metadata was updated */

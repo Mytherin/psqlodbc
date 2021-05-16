@@ -22,6 +22,7 @@ TEST_CASE("prepare-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	/**** A simple query with one text param ****/
 
