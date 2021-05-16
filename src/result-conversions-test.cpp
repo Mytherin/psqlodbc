@@ -29,41 +29,41 @@ static const char *pgtypes[] =
 	"true",			"boolean",
 	"\\x464F4F",	"bytea",
 	"x",			"char",
-	"namedata",		"name",
+	// "namedata",		"name",
 	"1234567890",	"int8",
 	"12345",		"int2",
-	"1 2 3 4 5",	"int2vector",
+	// "1 2 3 4 5",	"int2vector",
 	"1234567",		"int4",
-	"int4pl",		"regproc",
+	// "int4pl",		"regproc",
 	"textdata",		"text",
 /*	"3234567901",	"oid", */ /* OID can be confused with large objects */
-	"(1,2)",		"tid",
-	"1234",			"xid",
-	"4321",			"cid",
-	"1 2 3",		"oidvector",
-	"<foo>bar</foo>", "xml",
-	"{<foo>bar</foo>}", "_xml",
-	"10.0.0.1", "cidr",
+	// "(1,2)",		"tid",
+	// "1234",			"xid",
+	// "4321",			"cid",
+	// "1 2 3",		"oidvector",
+	// "<foo>bar</foo>", "xml",
+	// "{<foo>bar</foo>}", "_xml",
+	// "10.0.0.1", "cidr",
 	"1.234", "float4",
 	"1.23456789012", "float8",
 	// "2011-01-14 16:49:18+03", "abstime", // abstime was removed in PG12
-	"foo", "unknown",
-	"1.23", "money",
-	"08-00-2b-01-02-03", "macaddr",
-	"10.0.0.1", "inet",
-	"{foo, bar}", "_text",
-	"{foo, bar}", "_bpchar",
-	"{foo, bar}", "_varchar",
-	"foobar", "bpchar",
+	// "foo", "unknown",
+	// "1.23", "money",
+	// "08-00-2b-01-02-03", "macaddr",
+	// "10.0.0.1", "inet",
+	// "{foo, bar}", "_text",
+	// "{foo, bar}", "_bpchar",
+	// "{foo, bar}", "_varchar",
+	// "foobar", "bpchar",
 	"foobar", "varchar",
 	"2011-02-13", "date",
 	"13:23:34", "time",
 	"2011-02-15 15:49:18", "timestamp",
-	"2011-02-16 17:49:18+03", "timestamptz",
+	// "2011-02-16 17:49:18+03", "timestamptz",
 	"10 years -11 months -12 days +13:14", "interval",
-	"1", "bit",
+	// "1", "bit",
 	"1234.567890", "numeric",
-	"foocur", "refcursor",
+	// "foocur", "refcursor",
 	NULL
 };
 
@@ -497,6 +497,9 @@ test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char
 			 pgvalue, pgtype, pgtype, sqltypestr);
 
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) sql, SQL_NTS);
+	if (!SQL_SUCCEEDED(rc)) {
+		printf("Failing query: %s\n", sql);
+	}
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	rc = SQLFetch(hstmt);

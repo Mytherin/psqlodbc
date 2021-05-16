@@ -33,7 +33,7 @@ TEST_CASE("cursor-name-test", "[odbc]") {
 	/* first create a test table we can update */
 	rc = SQLExecDirect(hstmt,
 					   (SQLCHAR *) "create temporary table cursortesttbl as "
-					   "SELECT id, 'foo' || id as t FROM generate_series(1,10) id",
+					   "SELECT id, 'foo' || id as t FROM generate_series(1,10) id(id)",
 					   SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 

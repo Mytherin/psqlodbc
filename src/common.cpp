@@ -394,4 +394,20 @@ void initdb(HSTMT hstmt) {
 	run_sql(hstmt, "INSERT INTO booltab VALUES (3, 'true', true);");
 	run_sql(hstmt, "INSERT INTO booltab VALUES (4, 'false', false)");
 	run_sql(hstmt, "INSERT INTO booltab VALUES (5, 'not', false);");
+
+	run_sql(hstmt, "CREATE TABLE byteatab (id integer, t blob);");
+	run_sql(hstmt, "INSERT INTO byteatab VALUES (1, '\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x10'::blob);");
+	run_sql(hstmt, "INSERT INTO byteatab VALUES (2, 'bar');");
+	run_sql(hstmt, "INSERT INTO byteatab VALUES (3, 'foobar');");
+	run_sql(hstmt, "INSERT INTO byteatab VALUES (4, 'foo');");
+	run_sql(hstmt, "INSERT INTO byteatab VALUES (5, 'barf');");
+
+	run_sql(hstmt, "CREATE TABLE intervaltable(id integer, iv interval, d varchar(100));");
+	run_sql(hstmt, "INSERT INTO intervaltable VALUES (1, '1 day', 'one day');");
+	run_sql(hstmt, "INSERT INTO intervaltable VALUES (2, '10 seconds', 'ten secs');");
+	run_sql(hstmt, "INSERT INTO intervaltable VALUES (3, '100 years', 'hundred years');");
+
+	run_sql(hstmt, "CREATE VIEW testview AS SELECT * FROM testtab1;");
+
+	run_sql(hstmt, "CREATE TABLE lo_test_tab (id int4, large_data blob);");
 }

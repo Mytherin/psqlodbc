@@ -93,12 +93,12 @@ TEST_CASE("premature-test", "[odbc]") {
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
-	rc = SQLExecDirect(hstmt, (SQLCHAR *)
-		"CREATE OR REPLACE FUNCTION insertfunc (t text) RETURNS text AS "
-		"$$ INSERT INTO premature_test VALUES ($1) RETURNING 'func insert'::text $$ "
-		"LANGUAGE sql",
-					   SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
+	// rc = SQLExecDirect(hstmt, (SQLCHAR *)
+	// 	"CREATE OR REPLACE FUNCTION insertfunc (t text) RETURNS text AS "
+	// 	"$$ INSERT INTO premature_test VALUES ($1) RETURNING 'func insert'::text $$ "
+	// 	"LANGUAGE sql",
+	// 				   SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
@@ -115,25 +115,25 @@ TEST_CASE("premature-test", "[odbc]") {
 	runtest("INSERT INTO premature_test VALUES (?) RETURNING 'plain insert'::text", NULL, NULL, 0);
 
 	/*** Now, do the same with the function ***/
-	printf("\nPreparing an insert using a function\n");
-	runtest("SELECT insertfunc(?)", "function insert", NULL, 0);
-	runtest("SELECT insertfunc(?)", NULL, NULL, 0);
+	// printf("\nPreparing an insert using a function\n");
+	// runtest("SELECT insertfunc(?)", "function insert", NULL, 0);
+	// runtest("SELECT insertfunc(?)", NULL, NULL, 0);
 
-	/*** Same with the function, used in a multi-statement ***/
+	// /*** Same with the function, used in a multi-statement ***/
 
-	printf("\nPreparing a multi-statement\n");
-	runtest("SELECT 'foo', 2, 3; SELECT insertfunc(?), 2; SELECT 'bar'",
-			"function insert in multi-statement", NULL, 0);
-	runtest("SELECT 'foo', 2, 3; SELECT insertfunc(?), 2; SELECT 'bar'",
-			NULL, NULL, 0);
+	// printf("\nPreparing a multi-statement\n");
+	// runtest("SELECT 'foo', 2, 3; SELECT insertfunc(?), 2; SELECT 'bar'",
+	// 		"function insert in multi-statement", NULL, 0);
+	// runtest("SELECT 'foo', 2, 3; SELECT insertfunc(?), 2; SELECT 'bar'",
+	// 		NULL, NULL, 0);
 
-	/*** Again with the function, but this time execute it too. With a
-	 * twist: we rebind a different parameter after the SQLNumResultCols
-	 * call.
-	 */
-	printf("\nPrepare with function, but execute with different param\n");
-	runtest("SELECT insertfunc(?)", "function insert wrong",
-			"function insert right", 1);
+	// /*** Again with the function, but this time execute it too. With a
+	//  * twist: we rebind a different parameter after the SQLNumResultCols
+	//  * call.
+	//  */
+	// printf("\nPrepare with function, but execute with different param\n");
+	// runtest("SELECT insertfunc(?)", "function insert wrong",
+	// 		"function insert right", 1);
 
 	/*** Now check that the table contains only the last insertion  ***/
 

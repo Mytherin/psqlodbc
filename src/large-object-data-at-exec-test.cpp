@@ -140,6 +140,7 @@ TEST_CASE("large-object-data-at-exec-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+	initdb(hstmt);
 
 	do_test(hstmt, 101, sizeof(param1), param1);
 

@@ -26,9 +26,9 @@ TEST_CASE("getresult-test", "[odbc]") {
 	 * Someone should fix the driver to understand other formats,
 	 * postgres_verbose in particular...
 	 */
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "SET intervalstyle=postgres", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
-	print_result(hstmt);
+	// rc = SQLExecDirect(hstmt, (SQLCHAR *) "SET intervalstyle=postgres", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
+	// print_result(hstmt);
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);

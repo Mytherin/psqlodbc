@@ -95,29 +95,29 @@ TEST_CASE("params-batch-exec-test", "[odbc]") {
 	rc = SQLExecDirect(hstmt, (SQLCHAR*)"create temporary table test_batch(id int4 primary key, dt varchar(4))", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "create table failed", hstmt);
 	/* Create function */
-	rc = SQLExecDirect(hstmt,
-		(SQLCHAR*)"CREATE OR REPLACE FUNCTION batch_update_notice() RETURNS TRIGGER"
-		" AS $$"
-		" BEGIN"
-		"  RAISE NOTICE 'id=% updated', NEW.id;"
-		"  RETURN NULL;"
-		" END;"
-		" $$ LANGUAGE plpgsql"
-		, SQL_NTS);
-	CHECK_STMT_RESULT(rc, "create function failed", hstmt);
-	/* Create trigger */
-	rc = SQLExecDirect(hstmt,
-		(SQLCHAR*)"CREATE TRIGGER batch_update_notice"
-		" BEFORE update on test_batch"
-		" FOR EACH ROW EXECUTE PROCEDURE batch_update_notice()"
-		, SQL_NTS);
-	CHECK_STMT_RESULT(rc, "create trigger failed", hstmt);
+	// rc = SQLExecDirect(hstmt,
+	// 	(SQLCHAR*)"CREATE OR REPLACE FUNCTION batch_update_notice() RETURNS TRIGGER"
+	// 	" AS $$"
+	// 	" BEGIN"
+	// 	"  RAISE NOTICE 'id=% updated', NEW.id;"
+	// 	"  RETURN NULL;"
+	// 	" END;"
+	// 	" $$ LANGUAGE plpgsql"
+	// 	, SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "create function failed", hstmt);
+	// /* Create trigger */
+	// rc = SQLExecDirect(hstmt,
+	// 	(SQLCHAR*)"CREATE TRIGGER batch_update_notice"
+	// 	" BEFORE update on test_batch"
+	// 	" FOR EACH ROW EXECUTE PROCEDURE batch_update_notice()"
+	// 	, SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "create trigger failed", hstmt);
 
 	/* 1 by 1 executiton */
 	printf("one by one execution\n");
 	BatchExecute(conn, 1);
 	/* Truncate table */
-	rc = SQLExecDirect(hstmt, (SQLCHAR*)"truncate table test_batch", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR*)"delete from test_batch", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "truncate table failed", hstmt);
 	/* batch executiton batch_size=2*/
 	printf("batch execution\n");

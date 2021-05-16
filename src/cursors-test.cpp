@@ -16,7 +16,7 @@ testLargeResult(HSTMT hstmt, int betweenstmts)
 	 * Fetch a large result set without cursor (in Declare/fetch mode, it will
 	 * be fetched in chunks)
 	 */
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "SELECT 'foo' || g FROM generate_series(1, 3210) g", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "SELECT 'foo' || g FROM generate_series(1, 3210) g(g)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	/* Fetch the first 10 rows */

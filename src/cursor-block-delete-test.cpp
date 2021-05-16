@@ -75,7 +75,8 @@ TEST_CASE("cursor-block-delete-test", "[odbc]") {
 		REQUIRE(1==0);
 	}
 
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "create temporary table tmptable(id serial primary key)", SQL_NTS);
+	run_sql(hstmt, "CREATE SEQUENCE seq");
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "create temporary table tmptable(id integer primary key default(nextval('seq')))", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect create table failed", hstmt);
 
 	/* insert into a table */
@@ -88,67 +89,68 @@ TEST_CASE("cursor-block-delete-test", "[odbc]") {
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
-	/*
-	 * Block cursor
-	 */
-	rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROWS_FETCHED_PTR, (SQLPOINTER) &rowsFetched, 0);
-	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr ROWS_FETCHED_PTR failed", hstmt);
-	rc = SQLBindCol(hstmt, 1, SQL_C_SLONG, &id, 0, cbLen);
-	CHECK_STMT_RESULT(rc, "SQLBindCol failed", hstmt);
-	rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, (SQLPOINTER) rowArraySize, SQL_IS_UINTEGER);
-	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr ROW_ARRAY_SIZE failed", hstmt);
-	rc = SQLSetStmtAttr(hstmt, SQL_ATTR_CONCURRENCY, (SQLPOINTER) SQL_CONCUR_ROWVER, 0);
-	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr CONCURRENCY failed", hstmt);
-	rc = SQLSetConnectAttr(conn, SQL_AUTOCOMMIT, (SQLPOINTER) SQL_AUTOCOMMIT_OFF, 0);
+	// we don't support savepoints
+	// /*
+	//  * Block cursor
+	//  */
+	// rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROWS_FETCHED_PTR, (SQLPOINTER) &rowsFetched, 0);
+	// CHECK_STMT_RESULT(rc, "SQLSetStmtAttr ROWS_FETCHED_PTR failed", hstmt);
+	// rc = SQLBindCol(hstmt, 1, SQL_C_SLONG, &id, 0, cbLen);
+	// CHECK_STMT_RESULT(rc, "SQLBindCol failed", hstmt);
+	// rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, (SQLPOINTER) rowArraySize, SQL_IS_UINTEGER);
+	// CHECK_STMT_RESULT(rc, "SQLSetStmtAttr ROW_ARRAY_SIZE failed", hstmt);
+	// rc = SQLSetStmtAttr(hstmt, SQL_ATTR_CONCURRENCY, (SQLPOINTER) SQL_CONCUR_ROWVER, 0);
+	// CHECK_STMT_RESULT(rc, "SQLSetStmtAttr CONCURRENCY failed", hstmt);
+	// rc = SQLSetConnectAttr(conn, SQL_AUTOCOMMIT, (SQLPOINTER) SQL_AUTOCOMMIT_OFF, 0);
 
-	rc = SQLSetStmtAttr(hstmt, SQL_ATTR_CURSOR_TYPE, (SQLPOINTER) SQL_CURSOR_KEYSET_DRIVEN, 0);
-	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr CURSOR_TYPE failed", hstmt);
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "select * from tmptable", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "select failed", hstmt);
-	rc = SQLExecDirect(hstmte, (SQLCHAR *) "savepoint yuuki", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "savepoint failed", hstmte);
+	// rc = SQLSetStmtAttr(hstmt, SQL_ATTR_CURSOR_TYPE, (SQLPOINTER) SQL_CURSOR_KEYSET_DRIVEN, 0);
+	// CHECK_STMT_RESULT(rc, "SQLSetStmtAttr CURSOR_TYPE failed", hstmt);
+	// rc = SQLExecDirect(hstmt, (SQLCHAR *) "select * from tmptable", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "select failed", hstmt);
+	// rc = SQLExecDirect(hstmte, (SQLCHAR *) "savepoint yuuki", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "savepoint failed", hstmte);
 	/*
 	 * Scroll next -> EOF -> prior -> BOF -> next -> EOF ->
 	 * ......
 	 */
-	delete_loop(hstmt);	/* the 1st loop */
+	// delete_loop(hstmt);	/* the 1st loop */
 
-	rc = SQLExecDirect(hstmte, (SQLCHAR *) "rollback to yuuki;release yuuki", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "rollback failed", hstmte);
-	for (i = 0, j = count, i = 0; i < 2; i++)
-	{
-		for (k = 0; k < rowArraySize; k++)
-		{
-			cbLen[k] = 0;
-			id[k] = j++;
-		}
-		/* rc = SQLBulkOperations(hstmt, SQL_ADD);
-		CHECK_STMT_RESULT(rc, "SQLBulkOperations SQL_ADD failed", hstmt); */
-		rc = SQLSetPos(hstmt, 0, SQL_ADD, SQL_LCK_NO_CHANGE);
-		CHECK_STMT_RESULT(rc, "SQLSetPos SQL_ADD failed", hstmt);
-		if (0 == i)
-		{
-			rc = SQLExecDirect(hstmte, (SQLCHAR *) "savepoint yuuki", SQL_NTS);
-			CHECK_STMT_RESULT(rc, "savpoint failed", hstmte);
-		}
-	}
+	// rc = SQLExecDirect(hstmte, (SQLCHAR *) "rollback to yuuki;release yuuki", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "rollback failed", hstmte);
+	// for (i = 0, j = count, i = 0; i < 2; i++)
+	// {
+	// 	for (k = 0; k < rowArraySize; k++)
+	// 	{
+	// 		cbLen[k] = 0;
+	// 		id[k] = j++;
+	// 	}
+	// 	/* rc = SQLBulkOperations(hstmt, SQL_ADD);
+	// 	CHECK_STMT_RESULT(rc, "SQLBulkOperations SQL_ADD failed", hstmt); */
+	// 	rc = SQLSetPos(hstmt, 0, SQL_ADD, SQL_LCK_NO_CHANGE);
+	// 	CHECK_STMT_RESULT(rc, "SQLSetPos SQL_ADD failed", hstmt);
+	// 	if (0 == i)
+	// 	{
+	// 		rc = SQLExecDirect(hstmte, (SQLCHAR *) "savepoint yuuki", SQL_NTS);
+	// 		CHECK_STMT_RESULT(rc, "savpoint failed", hstmte);
+	// 	}
+	// }
 
-	delete_loop(hstmt);	/* the 2nd loop */
+	// delete_loop(hstmt);	/* the 2nd loop */
 
-	rc = SQLExecDirect(hstmte, (SQLCHAR *) "rollback to yuuki;release yuuki", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "rollback failed", hstmte);
+	// rc = SQLExecDirect(hstmte, (SQLCHAR *) "rollback to yuuki;release yuuki", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "rollback failed", hstmte);
 
-	delete_loop(hstmt);	/* the 3rd loop */
+	// delete_loop(hstmt);	/* the 3rd loop */
 
-	rc = SQLExecDirect(hstmte, (SQLCHAR *) "rollback to miho;release miho", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "rollback failed", hstmte);
+	// rc = SQLExecDirect(hstmte, (SQLCHAR *) "rollback to miho;release miho", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "rollback failed", hstmte);
 
-	delete_loop(hstmt);	/* the 4th loop */
+	// delete_loop(hstmt);	/* the 4th loop */
 
-	rc = SQLEndTran(SQL_HANDLE_DBC, conn, SQL_ROLLBACK);
-	CHECK_STMT_RESULT(rc, "SQLEndTran failed", hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLEndTran(SQL_HANDLE_DBC, conn, SQL_ROLLBACK);
+	// CHECK_STMT_RESULT(rc, "SQLEndTran failed", hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Clean up */
 	test_disconnect();

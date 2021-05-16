@@ -178,7 +178,7 @@ test_convert(const char *sql,
 	 */
 	if (failed)
 	{
-		rc = SQLExecDirect(hstmt, (SQLCHAR *) "ROLLBACK /* clean up after failed test */", SQL_NTS);
+		rc = SQLExecDirect(hstmt, (SQLCHAR *) "ROLLBACK", SQL_NTS);
 		CHECK_STMT_RESULT(rc, "SQLExecDirect(ROLLBACK) failed", hstmt);
 	}
 

@@ -41,13 +41,13 @@ runtest(HSTMT hstmt, int scs)
 	char		sql[50];
 	int			rc;
 
-	snprintf(sql, sizeof(sql), "SET standard_conforming_strings=%s",
-			 scs ? "on" : "off");
-	printf("\n%s\n", sql);
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) sql, SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// snprintf(sql, sizeof(sql), "SET standard_conforming_strings=%s",
+	// 		 scs ? "on" : "off");
+	// printf("\n%s\n", sql);
+	// rc = SQLExecDirect(hstmt, (SQLCHAR *) sql, SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/*
 	 * Check that the driver escapes quotes correctly when sending

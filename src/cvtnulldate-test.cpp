@@ -20,7 +20,7 @@ TEST_CASE("cvtnulldate-test", "[odbc]") {
 
 	/**** A simple query with one text param ****/
 
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TEMPORARY TABLE nulldate (d date)", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TABLE nulldate (d date)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	/*

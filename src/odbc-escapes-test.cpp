@@ -152,19 +152,20 @@ static void	escape_test(HSTMT hstmt)
 	executeQuery(hstmt);
 
 	/**** call procedure with out and i-o parameters ****/
-	prepareQuery(hstmt, "{call a_b_c_d_e(?, ?, ?, ?, ?)}");
-	memset(outbuf1, 0, sizeof(outbuf1));
-	bindOutParamString(hstmt, 1, outbuf1, sizeof(outbuf1) - 1, 0);
-	bindParamString(hstmt, 2, "2017-02-23 11:34:46");
-	strcpy(outbuf3, "4");
-	bindOutParamString(hstmt, 3, outbuf3, sizeof(outbuf3) - 1, 1);
-	bindParamString(hstmt, 4, "3.4");
-	memset(outbuf5, 0, sizeof(outbuf5));
-	bindOutParamString(hstmt, 5, outbuf5, sizeof(outbuf5) - 1, 0);
-	executeQuery(hstmt);
-	printf("OUT params: %s : %s : %s\n", outbuf1, outbuf3, outbuf5);
+	// prepareQuery(hstmt, "{call a_b_c_d_e(?, ?, ?, ?, ?)}");
+	// memset(outbuf1, 0, sizeof(outbuf1));
+	// bindOutParamString(hstmt, 1, outbuf1, sizeof(outbuf1) - 1, 0);
+	// bindParamString(hstmt, 2, "2017-02-23 11:34:46");
+	// strcpy(outbuf3, "4");
+	// bindOutParamString(hstmt, 3, outbuf3, sizeof(outbuf3) - 1, 1);
+	// bindParamString(hstmt, 4, "3.4");
+	// memset(outbuf5, 0, sizeof(outbuf5));
+	// bindOutParamString(hstmt, 5, outbuf5, sizeof(outbuf5) - 1, 0);
+	// executeQuery(hstmt);
+	// printf("OUT params: %s : %s : %s\n", outbuf1, outbuf3, outbuf5);
 }
 
+// https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/escape-sequences-in-odbc?view=sql-server-ver15
 TEST_CASE("odbc-escapes-test", "[odbc]") {
 	SQLRETURN	rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
@@ -178,20 +179,20 @@ TEST_CASE("odbc-escapes-test", "[odbc]") {
 		REQUIRE(1==0);
 	}
 
-	rc = SQLExecDirect(hstmt, (SQLCHAR*)"create or replace function a_b_c_d_e"
-			"(out a float8, in b timestamp, inout c integer, "
-			"in d numeric, out e timestamp) returns record as "
-			"$function$ \n"
-			"DECLARE \n"
-			"BEGIN \n"
-			"a := 2 * d; \n"
-			"e := b + '1 day'::interval; \n"
-			"c := c + 3; \n"
-			"END; \n"
-			"$function$ \n"
-			"LANGUAGE plpgsql\n"
-			, SQL_NTS);
-	CHECK_STMT_RESULT(rc, "create function a_b_c_d_e failed", hstmt);
+	// rc = SQLExecDirect(hstmt, (SQLCHAR*)"create or replace function a_b_c_d_e"
+	// 		"(out a float8, in b timestamp, inout c integer, "
+	// 		"in d numeric, out e timestamp) returns record as "
+	// 		"$function$ \n"
+	// 		"DECLARE \n"
+	// 		"BEGIN \n"
+	// 		"a := 2 * d; \n"
+	// 		"e := b + '1 day'::interval; \n"
+	// 		"c := c + 3; \n"
+	// 		"END; \n"
+	// 		"$function$ \n"
+	// 		"LANGUAGE plpgsql\n"
+	// 		, SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "create function a_b_c_d_e failed", hstmt);
 
 	execDirectMode = 0;
 	printf("\n-- TEST using SQLExecute after SQLPrepare\n");

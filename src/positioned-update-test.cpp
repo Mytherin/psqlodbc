@@ -50,7 +50,7 @@ TEST_CASE("positioned-update-test", "[odbc]") {
 	printf("Creating test table pos_update_test\n");
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) "CREATE TEMPORARY TABLE pos_update_test(i int4, orig int4 primary key)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "INSERT INTO pos_update_test SELECT g, g FROM generate_series(1, 10) g", SQL_NTS);
+	rc = SQLExecDirect(hstmt, (SQLCHAR *) "INSERT INTO pos_update_test SELECT g, g FROM generate_series(1, 10) g(g)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
