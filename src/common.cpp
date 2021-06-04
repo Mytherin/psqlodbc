@@ -423,6 +423,8 @@ void test_printf_reset() {
     test_printf_output  ="";
 }
 
+#include <cstdarg>
+
 
  void test_printf(const char* fmt, ...)
 {
@@ -437,7 +439,6 @@ va_end(args);
 
 #include <string>
 #include <fstream>
-#include <cstdarg>
 
 
 void test_check_result(std::string name) {
