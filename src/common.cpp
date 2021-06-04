@@ -437,8 +437,7 @@ va_end(args);
 
 #include <string>
 #include <fstream>
-#include <streambuf>
-
+#include <cstdarg>
 
 
 void test_check_result(std::string name) {
