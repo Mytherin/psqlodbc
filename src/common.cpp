@@ -14,7 +14,7 @@ print_diag(const char *msg, SQLSMALLINT htype, SQLHANDLE handle)
 	SQLSMALLINT	recno = 0;
 
 	if (msg)
-		printf("%s\n", msg);
+		test_printf("%s\n", msg);
 
 	do
 	{
@@ -22,13 +22,13 @@ print_diag(const char *msg, SQLSMALLINT htype, SQLHANDLE handle)
 		ret = SQLGetDiagRec(htype, handle, recno, (SQLCHAR *) sqlstate, &nativeerror,
 							(SQLCHAR *) message, sizeof(message), &textlen);
 		if (ret == SQL_INVALID_HANDLE)
-			printf("Invalid handle\n");
+            test_printf("Invalid handle\n");
 		else if (SQL_SUCCEEDED(ret))
-			printf("%s=%s\n", sqlstate, message);
+            test_printf("%s=%s\n", sqlstate, message);
 	} while (ret == SQL_SUCCESS);
 
 	if (ret == SQL_NO_DATA && recno == 1)
-		printf("No error information\n");
+        test_printf("No error information\n");
 }
 
 const char * const default_dsn = "duckdbmemory";
@@ -43,7 +43,7 @@ const char *get_test_dsn(void)
 
 		return env;
 	}
-	printf("Environment variable \"%s\" not defined... using default DSN \"%s\".", test_dsn_env, default_dsn);
+    test_printf("Environment variable \"%s\" not defined... using default DSN \"%s\".", test_dsn_env, default_dsn);
 	return default_dsn;
 }
 
@@ -91,7 +91,7 @@ test_connect_ext(const char *extraparams)
 
 	SQLSetEnvAttr(env, SQL_ATTR_ODBC_VERSION, (void *) SQL_OV_ODBC3, 0);
 
-	printf("trying to connect to DSN \"%s\"...\n", dsn);
+    printf("trying to connect to DSN \"%s\"...\n", dsn);
 
 	SQLAllocHandle(SQL_HANDLE_DBC, env, &conn);
 	ret = SQLDriverConnect(conn, NULL, dsn, SQL_NTS,
@@ -99,7 +99,7 @@ test_connect_ext(const char *extraparams)
 						   SQL_DRIVER_COMPLETE);
 
 	if (SQL_SUCCEEDED(ret)) {
-		printf("connected\n");
+        test_printf("connected\n");
 	} else {
 		print_diag("SQLDriverConnect failed.", SQL_HANDLE_DBC, conn);
 		fflush(stdout);
@@ -118,7 +118,7 @@ test_disconnect(void)
 {
 	SQLRETURN rc;
 
-	printf("disconnecting\n");
+    test_printf("disconnecting\n");
 	rc = SQLDisconnect(conn);
 	if (!SQL_SUCCEEDED(rc))
 	{
@@ -230,7 +230,7 @@ print_result_meta_series(HSTMT hstmt,
 {
 	int i;
 
-	printf("Result set metadata:\n");
+    test_printf("Result set metadata:\n");
 
 	for (i = 0; i < numcols; i++)
 	{
@@ -254,7 +254,7 @@ print_result_meta_series(HSTMT hstmt,
 			print_diag("SQLDescribeCol failed", SQL_HANDLE_STMT, hstmt);
 			return;
 		}
-		printf("%s: %s(%u) digits: %d, %s\n",
+        test_printf("%s: %s(%u) digits: %d, %s\n",
 			   colname, datatype_str(datatype), (unsigned int) colsize,
 			   decdigits, nullable_str(nullable));
 	}
@@ -308,7 +308,7 @@ print_result_series(HSTMT hstmt, SQLSMALLINT *colids, SQLSMALLINT numcols, SQLIN
 	SQLRETURN rc;
 	SQLINTEGER	rowc = 0;
 
-	printf("Result set:\n");
+    test_printf("Result set:\n");
 	while (rowcount <0 || rowc < rowcount)
 	{
 		rc = SQLFetch(hstmt);
@@ -337,9 +337,9 @@ print_result_series(HSTMT hstmt, SQLSMALLINT *colids, SQLSMALLINT numcols, SQLIN
 				}
 				if (ind == SQL_NULL_DATA)
 					strcpy(buf, "NULL");
-				printf("%s%s", (i > 0) ? "\t" : "", buf);
+                test_printf("%s%s", (i > 0) ? "\t" : "", buf);
 			}
-			printf("\n");
+            test_printf("\n");
 		}
 		else
 		{
@@ -411,3 +411,42 @@ void initdb(HSTMT hstmt) {
 
 	run_sql(hstmt, "CREATE TABLE lo_test_tab (id int4, large_data blob);");
 }
+
+
+static std::string test_printf_output;
+
+std::string test_printf_get() {
+    return test_printf_output;
+}
+
+void test_printf_reset() {
+    test_printf_output  ="";
+}
+
+
+ void test_printf(const char* fmt, ...)
+{
+char buff[1024];
+va_list args;
+va_start(args, fmt);
+vsprintf(buff, fmt, args);
+va_end(args);
+    test_printf_output += std::string(buff);
+}
+
+
+#include <string>
+#include <fstream>
+#include <streambuf>
+
+
+
+void test_check_result(std::string name) {
+auto expect_filename = "expected/" + name + ".out";
+std::ifstream in(expect_filename);
+    std::string str((std::istreambuf_iterator<char>(in)),
+                    std::istreambuf_iterator<char>());
+
+REQUIRE(test_printf_output == str);
+}
+

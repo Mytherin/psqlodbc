@@ -18,11 +18,11 @@ test_SQLConnect()
 
 	SQLAllocHandle(SQL_HANDLE_DBC, env, &conn);
 
-	printf("Connecting with SQLConnect...");
+	test_printf("Connecting with SQLConnect...");
 
 	ret = SQLConnect(conn, dsn, SQL_NTS, NULL, 0, NULL, 0);
 	if (SQL_SUCCEEDED(ret)) {
-		printf("connected\n");
+		test_printf("connected\n");
 	} else {
 		print_diag("SQLConnect failed.", SQL_HANDLE_DBC, conn);
 		return;
@@ -50,7 +50,7 @@ test_setting_attribute_before_connect()
 
 	SQLAllocHandle(SQL_HANDLE_DBC, env, &conn);
 
-	printf("Testing that autocommit persists SQLDriverConnect...\n");
+	test_printf("Testing that autocommit persists SQLDriverConnect...\n");
 
 	/* Disable autocommit */
 	SQLSetConnectAttr(conn,
@@ -63,7 +63,7 @@ test_setting_attribute_before_connect()
 						   str, sizeof(str), &strl,
 						   SQL_DRIVER_COMPLETE);
 	if (SQL_SUCCEEDED(ret)) {
-		printf("connected\n");
+		test_printf("connected\n");
 	} else {
 		print_diag("SQLDriverConnect failed.", SQL_HANDLE_DBC, conn);
 		return;
@@ -79,11 +79,11 @@ test_setting_attribute_before_connect()
 	CHECK_CONN_RESULT(ret, "SQLGetConnectAttr failed", conn);
 
 	if (value == SQL_AUTOCOMMIT_ON)
-		printf("autocommit is on (should've been off!)\n");
+		test_printf("autocommit is on (should've been off!)\n");
 	else if (value == SQL_AUTOCOMMIT_OFF)
-		printf("autocommit is still off (correct).\n");
+		test_printf("autocommit is still off (correct).\n");
 	else
-		printf("unexpected autocommit value: %lu\n", (unsigned long) value);
+		test_printf("unexpected autocommit value: %lu\n", (unsigned long) value);
 
 	/*
 	 * Test that we're really not autocommitting.
@@ -117,6 +117,7 @@ test_setting_attribute_before_connect()
 }
 
 TEST_CASE("connect-test", "[odbc]") {
+    test_printf_reset();
 	/* the common test_connect() function uses SQLDriverConnect */
 	test_connect();
 	test_disconnect();
@@ -124,7 +125,17 @@ TEST_CASE("connect-test", "[odbc]") {
 	test_SQLConnect();
 	test_disconnect();
 
-	test_setting_attribute_before_connect();
+	test_check_result("connect");
 
 	return;
 }
+
+TEST_CASE("connect-test-autocommit", "[odbc]") {
+    test_printf_reset();
+
+    test_setting_attribute_before_connect();
+    test_check_result("connect-autocommit");
+
+	return;
+}
+

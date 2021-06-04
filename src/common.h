@@ -18,8 +18,17 @@
 #define snprintf _snprintf
 #endif
 
+
+extern void test_printf(const char* fmt, ...);
+extern std::string test_printf_get();
+extern void test_printf_reset();
+
+extern void test_check_result(std::string name);
+
+
 extern SQLHENV env;
 extern SQLHDBC conn;
+
 
 #define CHECK_STMT_RESULT(rc, msg, hstmt)	\
 	if (!SQL_SUCCEEDED(rc)) \
