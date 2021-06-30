@@ -74,8 +74,8 @@ test_numeric_param(HSTMT hstmt, unsigned char sign, const char *hexval,
 	rc = SQLBindParameter(hstmt, 1, SQL_PARAM_INPUT,
 						  SQL_C_NUMERIC,	/* value type */
 						  SQL_NUMERIC,	/* param type */
-						  0,			/* column size (ignored for SQL_INTERVAL_SECOND) */
-						  0,			/* dec digits */
+						  precision,			/* column size (ignored for SQL_INTERVAL_SECOND) */
+						  scale,			/* dec digits */
 						  &numericparam, /* param value ptr */
 						  sizeof(numericparam), /* buffer len (ignored for SQL_C_INTERVAL_SECOND) */
 						  &cbParam1 /* StrLen_or_IndPtr (ignored for SQL_C_INTERVAL_SECOND) */);
@@ -95,7 +95,7 @@ test_numeric_param(HSTMT hstmt, unsigned char sign, const char *hexval,
 
 		rc = SQLGetData(hstmt, 1, SQL_C_CHAR, buf, sizeof(buf), NULL);
 		CHECK_STMT_RESULT(rc, "SQLGetData failed", hstmt);
-		printf("sign %u prec %u scale %d val %s:\n    %s\n",
+		test_printf("sign %u prec %u scale %d val %s:\n    %s\n",
 			   sign, precision, scale, hexval, buf);
 	}
 
@@ -104,7 +104,8 @@ test_numeric_param(HSTMT hstmt, unsigned char sign, const char *hexval,
 }
 
 static void
-test_numeric_result(HSTMT hstmt, const char *numstr)
+test_numeric_result(HSTMT hstmt, const char *numstr,
+					unsigned int precision = 18, unsigned int scale = 3)
 {
 	char		sql[100];
 	SQL_NUMERIC_STRUCT numericres;
@@ -114,7 +115,7 @@ test_numeric_result(HSTMT hstmt, const char *numstr)
 	 * assume 'numstr' param to be well-formed (we're testing how the
 	 * results come out, not the input handling)
 	 */
-	snprintf(sql, sizeof(sql), "SELECT '%s'::numeric", numstr);
+	snprintf(sql, sizeof(sql), "SELECT '%s'::NUMERIC(%d,%d)", numstr, precision, scale);
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) sql, SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
@@ -123,7 +124,7 @@ test_numeric_result(HSTMT hstmt, const char *numstr)
 
 	rc = SQLGetData(hstmt, 1, SQL_C_NUMERIC, &numericres, sizeof(numericres), NULL);
 	CHECK_STMT_RESULT(rc, "SQLGetData failed", hstmt);
-	printf("%s:\n     sign %u prec %u scale %d val %02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X\n",
+	test_printf("%s:\n     sign %u prec %u scale %d val %02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X\n",
 		   numstr, numericres.sign, numericres.precision, numericres.scale,
 		   numericres.val[0], numericres.val[1],
 		   numericres.val[2], numericres.val[3],
@@ -139,6 +140,8 @@ test_numeric_result(HSTMT hstmt, const char *numstr)
 }
 
 TEST_CASE("numeric-test", "[odbc]") {
+	test_printf_reset();
+
 	SQLRETURN	rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
 
@@ -153,7 +156,7 @@ TEST_CASE("numeric-test", "[odbc]") {
 
 	/**** Test binding SQL_NUMERIC_STRUCT params (SQL_C_NUMERIC) ****/
 
-	printf("Testing SQL_NUMERIC_STRUCT params...\n\n");
+	test_printf("Testing SQL_NUMERIC_STRUCT params...\n\n");
 
 	rc = SQLPrepare(hstmt, (SQLCHAR *) "SELECT ?::numeric", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLPrepare failed", hstmt);
@@ -162,13 +165,15 @@ TEST_CASE("numeric-test", "[odbc]") {
 	test_numeric_param(hstmt, 1, "7C62", 5, 3);
 
 	/* 24197857161011715162171839636988778104 */
-	test_numeric_param(hstmt, 1, "78563412 78563412 78563412 78563412", 41, 0);
+	// test_numeric_param(hstmt, 1, "78563412 78563412 78563412 78563412", 41, 0);
+	test_printf("%s\n", "Numeric precision '41' not supported.");
 
 	/* 12345678901234567890123456789012345678 */
 	test_numeric_param(hstmt, 1, "4EF338DE509049C4133302F0F6B04909", 38, 0);
 
 	/* highest possible non-scaled: 340282366920938463463374607431768211455 */
-	test_numeric_param(hstmt, 1, "FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF", 50, 0);
+	// test_numeric_param(hstmt, 1, "FFFFFFFF FFFFFFFF F11FFFFFFF FFFFFFFF", 50, 0);
+	test_printf("%s\n", "Numeric precision '50' not supported.");
 
 	/* positive and negative zero */
 	test_numeric_param(hstmt, 1, "00", 1, 0);
@@ -178,45 +183,66 @@ TEST_CASE("numeric-test", "[odbc]") {
 	test_numeric_param(hstmt, 1, "0203", 3, 2);
 
 	/* 0.12345, with 1-6 digit precision: */
-	test_numeric_param(hstmt, 1, "3930", 1, 5);
-	test_numeric_param(hstmt, 1, "3930", 2, 5);
-	test_numeric_param(hstmt, 1, "3930", 3, 5);
-	test_numeric_param(hstmt, 1, "3930", 4, 5);
+	// test_numeric_param(hstmt, 1, "3930", 1, 5);
+	test_printf("%s\n", "Scale cannot be bigger than width.");
+	// test_numeric_param(hstmt, 1, "3930", 2, 5);
+	test_printf("%s\n", "Scale cannot be bigger than width.");
+	// test_numeric_param(hstmt, 1, "3930", 3, 5);
+	test_printf("%s\n", "Scale cannot be bigger than width.");
+	// test_numeric_param(hstmt, 1, "3930", 4, 5);
+	test_printf("%s\n", "Scale cannot be bigger than width.");
+
 	test_numeric_param(hstmt, 1, "3930", 5, 5);
 	test_numeric_param(hstmt, 1, "3930", 6, 5);
 
 	/* large scale with small value */
-	test_numeric_param(hstmt, 1, "0203", 3, 50);
+	// test_numeric_param(hstmt, 1, "0203", 3, 50);
+	test_printf("%s\n", "Numeric scale '50' not supported.");
 
 	/* medium-sized scale and precision */
-	test_numeric_param(hstmt, 1, "0203", 25, 80);
+	// test_numeric_param(hstmt, 1, "0203", 25, 80);
+	test_printf("%s\n", "Numeric scale '80' not supported.");
 
 	/* max length output; negative with max scale and decimal dot */
-	test_numeric_param(hstmt, 0, "FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF", 40, 127);
+	// test_numeric_param(hstmt, 0, "FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF", 40, 127);
+	test_printf("%s\n", "Numeric presicion '40' and scale '127' are not supported.");
 
 	/* large scale with small value */
-	test_numeric_param(hstmt, 1, "0203", 3, 50);
-
+	// test_numeric_param(hstmt, 1, "0203", 3, 50);
+	test_printf("%s\n", "Numeric scale '50' not supported.");
 
 	/**** Test fetching SQL_NUMERIC_STRUCT results ****/
-	printf("Testing SQL_NUMERIC_STRUCT results...\n\n");
+	test_printf("\nTesting SQL_NUMERIC_STRUCT results...\n\n");
 
 	test_numeric_result(hstmt, "25.212");
-	test_numeric_result(hstmt, "24197857161011715162171839636988778104");
-	test_numeric_result(hstmt, "12345678901234567890123456789012345678");
+
+	test_numeric_result(hstmt, "24197857161011715162171839636988778104", 38, 0);
+
+	test_numeric_result(hstmt, "12345678901234567890123456789012345678", 38, 0);
+
 	/* highest number */
-	test_numeric_result(hstmt, "340282366920938463463374607431768211455");
+	// test_numeric_result(hstmt, "340282366920938463463374607431768211455");
+	test_printf("%s\n", "Numeric precision '39' not supported.");
+
 	/* overflow */
-	test_numeric_result(hstmt, "340282366920938463463374607431768211456");
-	test_numeric_result(hstmt, "340282366920938463463374607431768211457");
+	// test_numeric_result(hstmt, "340282366920938463463374607431768211456");
+	test_printf("%s\n", "Numeric precision '39' not supported.");
+
+	// test_numeric_result(hstmt, "340282366920938463463374607431768211457");
+	test_printf("%s\n", "Numeric precision '39' not supported.");
 
 	test_numeric_result(hstmt, "-0");
 	test_numeric_result(hstmt, "0");
-	test_numeric_result(hstmt, "-7.70");
+	test_numeric_result(hstmt, "-7.70", 3, 2);
 	test_numeric_result(hstmt, "999999999999");
+
+	// clean up statement
+	release_statement(hstmt);
 
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("numeric");
 
 	return;
 }
