@@ -6,6 +6,8 @@
 #include "common.h"
 
 TEST_CASE("select-test", "[odbc]") {
+	test_printf_reset();
+
 	int rc;
 	HSTMT hstmt = SQL_NULL_HSTMT;
 	char sql[100000];
@@ -22,7 +24,6 @@ TEST_CASE("select-test", "[odbc]") {
 	}
 
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) "SELECT 1 UNION ALL SELECT 2", SQL_NTS);
-
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 	print_result(hstmt);
 
@@ -43,20 +44,13 @@ TEST_CASE("select-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 	print_result(hstmt);
 
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
-
-	rc = SQLFreeHandle(SQL_HANDLE_STMT, hstmt);
-	if (!SQL_SUCCEEDED(rc))
-	{
-		print_diag("SQLFreeHandle failed", SQL_HANDLE_STMT, hstmt);
-		fflush(stdout);
-		REQUIRE(1==0);
-	}
-	hstmt = NULL;
+	// clean up statement
+	release_statement(hstmt);
 
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("select");
 
 	return;
 }
