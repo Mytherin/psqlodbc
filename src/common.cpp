@@ -428,11 +428,11 @@ void test_printf_reset() {
 
  void test_printf(const char* fmt, ...)
 {
-char buff[1024];
-va_list args;
-va_start(args, fmt);
-vsprintf(buff, fmt, args);
-va_end(args);
+	char buff[1024];
+	va_list args;
+	va_start(args, fmt);
+	vsprintf(buff, fmt, args);
+	va_end(args);
     test_printf_output += std::string(buff);
 }
 
@@ -442,11 +442,24 @@ va_end(args);
 
 
 void test_check_result(std::string name) {
-auto expect_filename = "expected/" + name + ".out";
-std::ifstream in(expect_filename);
-    std::string str((std::istreambuf_iterator<char>(in)),
-                    std::istreambuf_iterator<char>());
+	auto expect_filename = "expected/" + name + ".out";
+	std::ifstream in(expect_filename);
+	std::string str((std::istreambuf_iterator<char>(in)),
+                        std::istreambuf_iterator<char>());
 
-REQUIRE(test_printf_output == str);
+	REQUIRE(test_printf_output == str);
 }
 
+void release_statement(HSTMT &hstmt) {
+	// auto rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+
+	auto rc = SQLFreeHandle(SQL_HANDLE_STMT, hstmt);
+	if (!SQL_SUCCEEDED(rc))
+	{
+		print_diag("SQLFreeHandle failed", SQL_HANDLE_STMT, hstmt);
+		fflush(stdout);
+		REQUIRE(1==0);
+	}
+	hstmt = NULL;
+}
