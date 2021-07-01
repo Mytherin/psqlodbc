@@ -4,8 +4,6 @@ Testing SQL_NUMERIC_STRUCT params...
 sign 1 prec 5 scale 3 val 7C62:
     25.212
 Numeric precision '41' not supported.
-sign 1 prec 38 scale 0 val 4EF338DE509049C4133302F0F6B04909:
-    12345678901234567890123456789012345678
 Numeric precision '50' not supported.
 sign 1 prec 1 scale 0 val 00:
     0
@@ -21,6 +19,8 @@ sign 1 prec 5 scale 5 val 3930:
     0.12345
 sign 1 prec 6 scale 5 val 3930:
     0.12345
+sign 1 prec 38 scale 0 val 4EF338DE509049C4133302F0F6B04909:
+    12345678901234567890123456789012345678
 Numeric scale '50' not supported.
 Numeric scale '80' not supported.
 Numeric presicion '40' and scale '127' are not supported.
@@ -38,11 +38,11 @@ Numeric precision '39' not supported.
 Numeric precision '39' not supported.
 Numeric precision '39' not supported.
 -0:
-     sign 1 prec 1 scale 0 val 00000000000000000000000000000000
+     sign 1 prec 1 scale 3 val 00000000000000000000000000000000
 0:
-     sign 1 prec 1 scale 0 val 00000000000000000000000000000000
+     sign 1 prec 1 scale 3 val 00000000000000000000000000000000
 -7.70:
      sign 0 prec 3 scale 2 val 02030000000000000000000000000000
 999999999999:
-     sign 1 prec 12 scale 0 val FF0FA5D4E80000000000000000000000
+     sign 1 prec 12 scale 3 val FF0FA5D4E80000000000000000000000
 disconnecting

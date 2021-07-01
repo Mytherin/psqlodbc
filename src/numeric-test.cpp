@@ -168,16 +168,21 @@ TEST_CASE("numeric-test", "[odbc]") {
 	// test_numeric_param(hstmt, 1, "78563412 78563412 78563412 78563412", 41, 0);
 	test_printf("%s\n", "Numeric precision '41' not supported.");
 
-	/* 12345678901234567890123456789012345678 */
-	test_numeric_param(hstmt, 1, "4EF338DE509049C4133302F0F6B04909", 38, 0);
-
 	/* highest possible non-scaled: 340282366920938463463374607431768211455 */
 	// test_numeric_param(hstmt, 1, "FFFFFFFF FFFFFFFF F11FFFFFFF FFFFFFFF", 50, 0);
 	test_printf("%s\n", "Numeric precision '50' not supported.");
 
+	// prepare again with a new precision
+	rc = SQLPrepare(hstmt, (SQLCHAR *) "SELECT ?::numeric(1,0)", SQL_NTS);
+	CHECK_STMT_RESULT(rc, "SQLPrepare failed", hstmt);
+
 	/* positive and negative zero */
 	test_numeric_param(hstmt, 1, "00", 1, 0);
 	test_numeric_param(hstmt, 0, "00", 1, 0);
+
+	// prepare again with a new precision
+	rc = SQLPrepare(hstmt, (SQLCHAR *) "SELECT ?::numeric(3,2)", SQL_NTS);
+	CHECK_STMT_RESULT(rc, "SQLPrepare failed", hstmt);
 
 	/* -7.70 */
 	test_numeric_param(hstmt, 1, "0203", 3, 2);
@@ -192,8 +197,19 @@ TEST_CASE("numeric-test", "[odbc]") {
 	// test_numeric_param(hstmt, 1, "3930", 4, 5);
 	test_printf("%s\n", "Scale cannot be bigger than width.");
 
+	// prepare again with a new precision
+	rc = SQLPrepare(hstmt, (SQLCHAR *) "SELECT ?::numeric(6,5)", SQL_NTS);
+	CHECK_STMT_RESULT(rc, "SQLPrepare failed", hstmt);
+
 	test_numeric_param(hstmt, 1, "3930", 5, 5);
 	test_numeric_param(hstmt, 1, "3930", 6, 5);
+
+	// prepare again with a new precision
+	rc = SQLPrepare(hstmt, (SQLCHAR *) "SELECT ?::numeric(38,0)", SQL_NTS);
+	CHECK_STMT_RESULT(rc, "SQLPrepare failed", hstmt);
+
+	/* 12345678901234567890123456789012345678 */
+	test_numeric_param(hstmt, 1, "4EF338DE509049C4133302F0F6B04909", 38, 0);
 
 	/* large scale with small value */
 	// test_numeric_param(hstmt, 1, "0203", 3, 50);
