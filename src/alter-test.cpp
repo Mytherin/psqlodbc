@@ -4,6 +4,8 @@
 #include "common.h"
 
 TEST_CASE("alter-test", "[odbc]") {
+	test_printf_reset();
+
 	SQLRETURN rc;
 	HSTMT hstmt = SQL_NULL_HSTMT;
 
@@ -43,6 +45,11 @@ TEST_CASE("alter-test", "[odbc]") {
 	/* Get column metadata */
 	print_result_meta(hstmt);
 
+	/* releasing statement */
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("alter");
 }
