@@ -1,12 +1,12 @@
 connected
 Result set metadata:
-b: VARCHAR(5) digits: 0, nullable
+b: CHAR(0) digits: 0, nullable_unknown
 Result set:
-2	yes	1
+2	yes	True
 Result set metadata:
-b: VARCHAR(5) digits: 0, nullable
+b: CHAR(0) digits: 0, nullable_unknown
 Result set:
-1	yeah	1
-2	yes	1
-3	true	1
+1	yeah	True
+2	yes	True
+3	true	True
 disconnecting

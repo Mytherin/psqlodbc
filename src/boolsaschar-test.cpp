@@ -4,6 +4,8 @@
 #include "common.h"
 
 TEST_CASE("boolsaschar-test", "[odbc]") {
+	test_printf_reset();
+
 	SQLRETURN rc;
 	HSTMT hstmt = SQL_NULL_HSTMT;
 	const char *param1;
@@ -11,7 +13,7 @@ TEST_CASE("boolsaschar-test", "[odbc]") {
 	SQLSMALLINT colid;
 
 	/* BoolsAsChar is the default, but just in case.. */
-	test_connect_ext("BoolsAsChar=1");
+	test_connect_ext("Database=contrib_regression;BoolsAsChar=1");
 
 	rc = SQLAllocHandle(SQL_HANDLE_STMT, conn, &hstmt);
 	if (!SQL_SUCCEEDED(rc))
@@ -35,7 +37,7 @@ TEST_CASE("boolsaschar-test", "[odbc]") {
 						  5,			/* column size */
 						  0,			/* dec digits */
 						  (SQLPOINTER) param1,		/* param value ptr */
-						  0,			/* buffer len */
+						  strlen(param1),			/* buffer len */
 						  &cbParam1		/* StrLen_or_IndPtr */);
 	CHECK_STMT_RESULT(rc, "SQLBindParameter failed", hstmt);
 
@@ -62,7 +64,7 @@ TEST_CASE("boolsaschar-test", "[odbc]") {
 						  5,			/* column size */
 						  0,			/* dec digits */
 						  (SQLPOINTER) param1,		/* param value ptr */
-						  0,			/* buffer len */
+						  strlen(param1),			/* buffer len */
 						  &cbParam1		/* StrLen_or_IndPtr */);
 	CHECK_STMT_RESULT(rc, "SQLBindParameter failed", hstmt);
 
@@ -78,8 +80,13 @@ TEST_CASE("boolsaschar-test", "[odbc]") {
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("boolsaschar");
 
 	return;
 }
