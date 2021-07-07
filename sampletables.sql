@@ -8,13 +8,13 @@ INSERT INTO testtab1 VALUES (1, 'foo');
 INSERT INTO testtab1 VALUES (2, 'bar');
 INSERT INTO testtab1 VALUES (3, 'foobar');
 
-CREATE TABLE testtab_fk (id integer REFERENCES testtab1, t varchar(20));
-INSERT INTO testtab_fk VALUES (1, 'hoge');
-INSERT INTO testtab_fk VALUES (2, 'pogno');
-INSERT INTO testtab_fk VALUES (3, 'poco');
+--CREATE TABLE testtab_fk (id integer REFERENCES testtab1, t varchar(20));
+--INSERT INTO testtab_fk VALUES (1, 'hoge');
+--INSERT INTO testtab_fk VALUES (2, 'pogno');
+--INSERT INTO testtab_fk VALUES (3, 'poco');
 
 CREATE TABLE byteatab (id integer, t bytea);
-INSERT INTO byteatab VALUES (1, E'\\001\\002\\003\\004\\005\\006\\007\\010'::bytea);
+INSERT INTO byteatab VALUES (1, '\x01\x02\x03\x04\x05\x06\x07\x10'::bytea);
 INSERT INTO byteatab VALUES (2, 'bar');
 INSERT INTO byteatab VALUES (3, 'foobar');
 INSERT INTO byteatab VALUES (4, 'foo');
@@ -36,26 +36,26 @@ INSERT INTO booltab VALUES (5, 'not', false);
 CREATE VIEW testview AS SELECT * FROM testtab1;
 
 -- Materialized view
-CREATE MATERIALIZED VIEW testmatview AS SELECT * FROM testtab1;
+--CREATE MATERIALIZED VIEW testmatview AS SELECT * FROM testtab1;
 
 -- Foreign table
-CREATE FOREIGN DATA WRAPPER testfdw;
-CREATE SERVER testserver FOREIGN DATA WRAPPER testfdw;
-CREATE FOREIGN TABLE testforeign (c1 int) SERVER testserver;
+--CREATE FOREIGN DATA WRAPPER testfdw;
+--CREATE SERVER testserver FOREIGN DATA WRAPPER testfdw;
+--	CREATE FOREIGN TABLE testforeign (c1 int) SERVER testserver;
 
 -- Procedure for catalog function checks
-CREATE FUNCTION simple_add(in int, in int, out int) AS $$ SELECT $1 + $2; $$ LANGUAGE SQL;
+--CREATE FUNCTION simple_add(in int, in int, out int) AS $$ SELECT $1 + $2; $$ LANGUAGE SQL;
 -- 	Function Returning composite type
-CREATE FUNCTION getfoo(int) RETURNS booltab AS $$ SELECT * FROM booltab WHERE id = $1; $$ LANGUAGE SQL;
+--CREATE FUNCTION getfoo(int) RETURNS booltab AS $$ SELECT * FROM booltab WHERE id = $1; $$ LANGUAGE SQL;
 --	Function Returning set of composite type
-CREATE FUNCTION getboo(int) RETURNS SETOF booltab AS $$ SELECT * FROM booltab WHERE id = $1; $$ LANGUAGE SQL;
+--CREATE FUNCTION getboo(int) RETURNS SETOF booltab AS $$ SELECT * FROM booltab WHERE id = $1; $$ LANGUAGE SQL;
 --	Function Returning table
-CREATE FUNCTION tbl_arg(in p_f1 int) returns table(p_f2 text, p_f3 boolean) AS $$ SELECT t, b from booltab where id = p_f1; $$ LANGUAGE SQL;
+--CREATE FUNCTION tbl_arg(in p_f1 int) returns table(p_f2 text, p_f3 boolean) AS $$ SELECT t, b from booltab where id = p_f1; $$ LANGUAGE SQL;
 --	The previous one is equivalent to using one or more OUT parameters
 --	plus marking the function as returning SETOF record (or SETOF a single
 --	output parameter's type, as appropriate).
-CREATE FUNCTION set_of(in p_f1 int, out p_f2 text, out p_f3 boolean) returns setof record AS $$ SELECT t, b from booltab where id = p_f1; $$ LANGUAGE SQL;
+--CREATE FUNCTION set_of(in p_f1 int, out p_f2 text, out p_f3 boolean) returns setof record AS $$ SELECT t, b from booltab where id = p_f1; $$ LANGUAGE SQL;
 
 -- Large object support
-CREATE DOMAIN lo AS oid;
-CREATE TABLE lo_test_tab (id int4, large_data lo);
+--CREATE DOMAIN lo AS oid;
+CREATE TABLE lo_test_tab (id int4, large_data blob);

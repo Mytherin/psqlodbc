@@ -7,6 +7,10 @@
  * This uses the same psqlodbc_test_dsn datasource to connect that the
  * actual regression tests use.
  */
+
+#define CATCH_CONFIG_RUNNER
+#include "catch.hpp"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,10 +21,11 @@
 
 #include "src/common.h"
 
+#include <fstream>
+
 static HSTMT hstmt = SQL_NULL_HSTMT;
 
-static void
-connect_to_db(char *dsn)
+static void connect_to_db(char *dsn)
 {
 	SQLRETURN	ret;
 	char		errmsg[500];
@@ -35,8 +40,8 @@ connect_to_db(char *dsn)
 	{
 		printf("connection to %s failed\n", dsn);
 
-		ret = SQLGetDiagRec(SQL_HANDLE_DBC, conn, 1, sqlstate, NULL,
-							errmsg, sizeof(errmsg), &textlen);
+		ret = SQLGetDiagRec(SQL_HANDLE_DBC, conn, 1, (SQLCHAR *) sqlstate, NULL,
+							(SQLCHAR *) errmsg, sizeof(errmsg), &textlen);
 		if (ret == SQL_INVALID_HANDLE)
 			printf("Invalid handle\n");
 		else if (SQL_SUCCEEDED(ret))
@@ -54,8 +59,7 @@ connect_to_db(char *dsn)
 	}
 }
 
-static void
-run_statement(char *statement)
+static void run_statement(char *statement)
 {
 	SQLRETURN	ret;
 	char		errmsg[500];
@@ -84,8 +88,8 @@ run_statement(char *statement)
 	if (!SQL_SUCCEEDED(ret))
 	{
 		printf("Statement failed: %s\n", statement);
-		ret = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, sqlstate, NULL,
-							errmsg, sizeof(errmsg), &textlen);
+		ret = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR *) sqlstate, NULL,
+							(SQLCHAR *) errmsg, sizeof(errmsg), &textlen);
 		if (ret == SQL_INVALID_HANDLE)
 			printf("Invalid handle\n");
 		else if (SQL_SUCCEEDED(ret))
@@ -95,25 +99,36 @@ run_statement(char *statement)
 	(void) SQLFreeStmt(hstmt, SQL_CLOSE);
 }
 
-int main(int argc, char **argv)
+void ReadFile(std::istream &is) {
+    std::string line;
+    while (std::getline(is, line)) {
+		run_statement((char *)line.c_str());
+	}
+}
+
+int main(int argc, char *argv[])
 {
-	char		line[500], dsn[100];
+	char dsn[100];
 
 	SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &env);
 	SQLSetEnvAttr(env, SQL_ATTR_ODBC_VERSION, (void *) SQL_OV_ODBC3, 0);
 
-	snprintf(dsn, sizeof(dsn), "DSN=%s;Database=postgres", get_test_dsn());
-	connect_to_db(dsn);
-	printf("Dropping and creating database contrib_regression...\n");
-	run_statement("DROP DATABASE IF EXISTS contrib_regression");
-	run_statement("CREATE DATABASE contrib_regression");
+	//snprintf(dsn, sizeof(dsn), "DSN=%s;Database=postgres", get_test_dsn());
+	//connect_to_db(dsn);
+	//printf("Dropping and creating database contrib_regression...\n");
+	//run_statement("DROP DATABASE IF EXISTS contrib_regression");
+	//run_statement("CREATE DATABASE contrib_regression");
 
 	snprintf(dsn, sizeof(dsn), "DSN=%s;Database=contrib_regression", get_test_dsn());
 	connect_to_db(dsn);
 
 	printf("Running initialization script...\n");
-	while (fgets(line, sizeof(line), stdin) != NULL)
-		run_statement(line);
+    if (argc == 1)
+        ReadFile(std::cin);
+    else {
+        std::ifstream in_file(argv[1]);
+        ReadFile(in_file);
+    }
 
 	printf("Done!\n");
 
