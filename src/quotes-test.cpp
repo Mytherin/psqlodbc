@@ -12,7 +12,7 @@ execWithParam(HSTMT hstmt, const char *sql, const char *param)
 	SQLLEN		cbParam1;
 	int			rc;
 
-	printf("Executing: %s with param: %s\n", sql, param);
+	test_printf("Executing: %s with param: %s\n", sql, param);
 
 	/* bind param  */
 	cbParam1 = SQL_NTS;
@@ -22,7 +22,7 @@ execWithParam(HSTMT hstmt, const char *sql, const char *param)
 						  20,			/* column size */
 						  0,			/* dec digits */
 						  (SQLCHAR*)param,		/* param value ptr */
-						  0,			/* buffer len */
+						  strlen(param),			/* buffer len */
 						  &cbParam1		/* StrLen_or_IndPtr */);
 	CHECK_STMT_RESULT(rc, "SQLBindParameter failed", hstmt);
 
@@ -77,14 +77,16 @@ runtest(HSTMT hstmt, int scs)
 	 * With standards_conforming_strings off, also test backslash escaping
 	 * without the E'' syntax.
 	 */
-	if (!scs)
-		execWithParam(hstmt, "SELECT 'escaped quote\\' here', ?::text", "param");
+	// if (!scs)
+		execWithParam(hstmt, "SELECT 'escaped quote'' here', ?::text", "param");
 	/* Some tests with '$'s in identifiers. */
 	execWithParam(hstmt, "SELECT ?::text, '1' a$1", "$ in an identifier");
 	execWithParam(hstmt, "SELECT '1'::text a$$S1,?::text,$$2 $'s in an identifier$$::text", "param");
 }
 
 TEST_CASE("quotes-test", "[odbc]") {
+	test_printf_reset();
+
 	int rc;
 	HSTMT hstmt = SQL_NULL_HSTMT;
 
@@ -97,11 +99,16 @@ TEST_CASE("quotes-test", "[odbc]") {
 		REQUIRE(1==0);
 	}
 
-	runtest(hstmt, 1);
+	// runtest(hstmt, 1);
 	runtest(hstmt, 0);
+
+	// clean up statement
+	release_statement(hstmt);
 
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("quotes");
 
 	return;
 }
