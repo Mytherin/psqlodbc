@@ -1,9 +1,6 @@
 connected
-Executed: SET intervalstyle=postgres
-Executed: SET bytea_output=escape
-Executed: SET lc_monetary='C'
-'true' (boolean) as SQL_C_CHAR: 1
-'true' (boolean) as SQL_C_WCHAR: 1
+'true' (boolean) as SQL_C_CHAR: True
+'true' (boolean) as SQL_C_WCHAR: True
 'true' (boolean) as SQL_C_SSHORT: 1
 'true' (boolean) as SQL_C_USHORT: 1
 'true' (boolean) as SQL_C_SLONG: 1
@@ -15,169 +12,243 @@ Executed: SET lc_monetary='C'
 'true' (boolean) as SQL_C_UTINYINT: 1
 'true' (boolean) as SQL_C_SBIGINT: 1
 'true' (boolean) as SQL_C_UBIGINT: 1
-'true' (boolean) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'true' (boolean) as SQL_C_BINARY: hex: 54727565
 'true' (boolean) as SQL_C_BOOKMARK: 1
-'true' (boolean) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'true' (boolean) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'true' (boolean) as SQL_C_NUMERIC: precision: 1 scale: 0 sign: 0 val: 01000000000000000000000000000000
+'true' (boolean) as SQL_C_VARBOOKMARK: hex: 54727565
+'true' (boolean) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> DATE)
+'true' (boolean) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> TIME)
+'true' (boolean) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> TIMESTAMP)
+'true' (boolean) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received BOOLEAN, but expected DECIMAL
 'true' (boolean) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'true' (boolean) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'true' (boolean) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
 'true' (boolean) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'true' (boolean) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'true' (boolean) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_CHAR: 464F4F
-'\x464F4F' (bytea) as SQL_C_WCHAR: 464F4F
-'\x464F4F' (bytea) as SQL_C_SSHORT: 0
-'\x464F4F' (bytea) as SQL_C_USHORT: 0
-'\x464F4F' (bytea) as SQL_C_SLONG: 0
-'\x464F4F' (bytea) as SQL_C_ULONG: 0
-'\x464F4F' (bytea) as SQL_C_FLOAT: 0.000000
-'\x464F4F' (bytea) as SQL_C_DOUBLE: 0.000000
-'\x464F4F' (bytea) as SQL_C_BIT: 0
-'\x464F4F' (bytea) as SQL_C_STINYINT: 0
-'\x464F4F' (bytea) as SQL_C_UTINYINT: 0
-'\x464F4F' (bytea) as SQL_C_SBIGINT: 0
-'\x464F4F' (bytea) as SQL_C_UBIGINT: 0
-'\x464F4F' (bytea) as SQL_C_BINARY: hex: 464F4F
-'\x464F4F' (bytea) as SQL_C_BOOKMARK: 0
-'\x464F4F' (bytea) as SQL_C_VARBOOKMARK: hex: 464F4F
-'\x464F4F' (bytea) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'\x464F4F' (bytea) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'true' (boolean) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_CHAR: F4F4F
+'\x464F4F' (bytea) as SQL_C_WCHAR: F4F4F
+'\x464F4F' (bytea) as SQL_C_SSHORT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_USHORT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_SLONG: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_ULONG: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_FLOAT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_DOUBLE: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_BIT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_STINYINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_UTINYINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_SBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_UBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_BINARY: hex: 4634463446
+'\x464F4F' (bytea) as SQL_C_BOOKMARK: SQLGetData failed
+=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+'\x464F4F' (bytea) as SQL_C_VARBOOKMARK: hex: 4634463446
+'\x464F4F' (bytea) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> DATE)
+'\x464F4F' (bytea) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> TIME)
+'\x464F4F' (bytea) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> TIMESTAMP)
+'\x464F4F' (bytea) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received BLOB, but expected DECIMAL
 '\x464F4F' (bytea) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'\x464F4F' (bytea) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'\x464F4F' (bytea) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
 '\x464F4F' (bytea) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'\x464F4F' (bytea) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'\x464F4F' (bytea) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
 'x' (char) as SQL_C_CHAR: x
 'x' (char) as SQL_C_WCHAR: x
-'x' (char) as SQL_C_SSHORT: 0
-'x' (char) as SQL_C_USHORT: 0
-'x' (char) as SQL_C_SLONG: 0
-'x' (char) as SQL_C_ULONG: 0
-'x' (char) as SQL_C_FLOAT: 0.000000
-'x' (char) as SQL_C_DOUBLE: 0.000000
-'x' (char) as SQL_C_BIT: 0
-'x' (char) as SQL_C_STINYINT: 0
-'x' (char) as SQL_C_UTINYINT: 0
-'x' (char) as SQL_C_SBIGINT: 0
-'x' (char) as SQL_C_UBIGINT: 0
+'x' (char) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INT16
+'x' (char) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to UINT16
+'x' (char) as SQL_C_SLONG: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INT32
+'x' (char) as SQL_C_ULONG: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to UINT32
+'x' (char) as SQL_C_FLOAT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to FLOAT
+'x' (char) as SQL_C_DOUBLE: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to DOUBLE
+'x' (char) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to UINT8
+'x' (char) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INT8
+'x' (char) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to UINT8
+'x' (char) as SQL_C_SBIGINT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INT64
+'x' (char) as SQL_C_UBIGINT: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to UINT64
 'x' (char) as SQL_C_BINARY: hex: 78
-'x' (char) as SQL_C_BOOKMARK: 0
+'x' (char) as SQL_C_BOOKMARK: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to UINT64
 'x' (char) as SQL_C_VARBOOKMARK: hex: 78
-'x' (char) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'x' (char) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
+'x' (char) as SQL_C_TYPE_DATE: SQLGetData failed
+=Conversion Error: date/time field value out of range: "x", expected format is (YYYY-MM-DD)
+'x' (char) as SQL_C_TYPE_TIME: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "x", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'x' (char) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "x", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'x' (char) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received VARCHAR, but expected DECIMAL
 'x' (char) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'x' (char) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'x' (char) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 'x' (char) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'x' (char) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'x' (char) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_CHAR: namedata
-'namedata' (name) as SQL_C_WCHAR: namedata
-'namedata' (name) as SQL_C_SSHORT: 0
-'namedata' (name) as SQL_C_USHORT: 0
-'namedata' (name) as SQL_C_SLONG: 0
-'namedata' (name) as SQL_C_ULONG: 0
-'namedata' (name) as SQL_C_FLOAT: 0.000000
-'namedata' (name) as SQL_C_DOUBLE: 0.000000
-'namedata' (name) as SQL_C_BIT: 0
-'namedata' (name) as SQL_C_STINYINT: 0
-'namedata' (name) as SQL_C_UTINYINT: 0
-'namedata' (name) as SQL_C_SBIGINT: 0
-'namedata' (name) as SQL_C_UBIGINT: 0
-'namedata' (name) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'namedata' (name) as SQL_C_BOOKMARK: 0
-'namedata' (name) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'namedata' (name) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'namedata' (name) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'namedata' (name) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'namedata' (name) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'namedata' (name) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'namedata' (name) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'x' (char) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'x' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 '1234567890' (int8) as SQL_C_CHAR: 1234567890
 '1234567890' (int8) as SQL_C_WCHAR: 1234567890
-'1234567890' (int8) as SQL_C_SSHORT: 722
-'1234567890' (int8) as SQL_C_USHORT: 722
+'1234567890' (int8) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type INT16
+'1234567890' (int8) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type UINT16
 '1234567890' (int8) as SQL_C_SLONG: 1234567890
 '1234567890' (int8) as SQL_C_ULONG: 1234567890
 '1234567890' (int8) as SQL_C_FLOAT: 1234567936.000000
 '1234567890' (int8) as SQL_C_DOUBLE: 1234567890.000000
-'1234567890' (int8) as SQL_C_BIT: 210
-'1234567890' (int8) as SQL_C_STINYINT: -46
-'1234567890' (int8) as SQL_C_UTINYINT: 210
+'1234567890' (int8) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type UINT8
+'1234567890' (int8) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type INT8
+'1234567890' (int8) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type UINT8
 '1234567890' (int8) as SQL_C_SBIGINT: 1234567890
 '1234567890' (int8) as SQL_C_UBIGINT: 1234567890
-'1234567890' (int8) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'1234567890' (int8) as SQL_C_BINARY: hex: 31323334353637383930
 '1234567890' (int8) as SQL_C_BOOKMARK: 1234567890
-'1234567890' (int8) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234567890' (int8) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1234567890' (int8) as SQL_C_NUMERIC: precision: 10 scale: 0 sign: 0 val: d2029649000000000000000000000000
+'1234567890' (int8) as SQL_C_VARBOOKMARK: hex: 31323334353637383930
+'1234567890' (int8) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> DATE)
+'1234567890' (int8) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> TIME)
+'1234567890' (int8) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> TIMESTAMP)
+'1234567890' (int8) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received BIGINT, but expected DECIMAL
 '1234567890' (int8) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234567890' (int8) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'1234567890' (int8) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
 '1234567890' (int8) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234567890' (int8) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234567890' (int8) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'1234567890' (int8) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
 '12345' (int2) as SQL_C_CHAR: 12345
 '12345' (int2) as SQL_C_WCHAR: 12345
 '12345' (int2) as SQL_C_SSHORT: 12345
@@ -186,424 +257,189 @@ Executed: SET lc_monetary='C'
 '12345' (int2) as SQL_C_ULONG: 12345
 '12345' (int2) as SQL_C_FLOAT: 12345.000000
 '12345' (int2) as SQL_C_DOUBLE: 12345.000000
-'12345' (int2) as SQL_C_BIT: 57
-'12345' (int2) as SQL_C_STINYINT: 57
-'12345' (int2) as SQL_C_UTINYINT: 57
+'12345' (int2) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type INT16 with value 12345.000000 can't be cast because the value is out of range for the destination type UINT8
+'12345' (int2) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type INT16 with value 12345.000000 can't be cast because the value is out of range for the destination type INT8
+'12345' (int2) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type INT16 with value 12345.000000 can't be cast because the value is out of range for the destination type UINT8
 '12345' (int2) as SQL_C_SBIGINT: 12345
 '12345' (int2) as SQL_C_UBIGINT: 12345
-'12345' (int2) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'12345' (int2) as SQL_C_BINARY: hex: 3132333435
 '12345' (int2) as SQL_C_BOOKMARK: 12345
-'12345' (int2) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'12345' (int2) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'12345' (int2) as SQL_C_NUMERIC: precision: 5 scale: 0 sign: 0 val: 39300000000000000000000000000000
+'12345' (int2) as SQL_C_VARBOOKMARK: hex: 3132333435
+'12345' (int2) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> DATE)
+'12345' (int2) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> TIME)
+'12345' (int2) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> TIMESTAMP)
+'12345' (int2) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received SMALLINT, but expected DECIMAL
 '12345' (int2) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'12345' (int2) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'12345' (int2) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
 '12345' (int2) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'12345' (int2) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'12345' (int2) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_CHAR: 1 2 3 4 5
-'1 2 3 4 5' (int2vector) as SQL_C_WCHAR: 1 2 3 4 5
-'1 2 3 4 5' (int2vector) as SQL_C_SSHORT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_USHORT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_SLONG: 1
-'1 2 3 4 5' (int2vector) as SQL_C_ULONG: 1
-'1 2 3 4 5' (int2vector) as SQL_C_FLOAT: 1.000000
-'1 2 3 4 5' (int2vector) as SQL_C_DOUBLE: 1.000000
-'1 2 3 4 5' (int2vector) as SQL_C_BIT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_STINYINT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_UTINYINT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_SBIGINT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_UBIGINT: 1
-'1 2 3 4 5' (int2vector) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3 4 5' (int2vector) as SQL_C_BOOKMARK: 1
-'1 2 3 4 5' (int2vector) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3 4 5' (int2vector) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1 2 3 4 5' (int2vector) as SQL_C_NUMERIC: precision: 1 scale: 0 sign: 0 val: 01000000000000000000000000000000
-'1 2 3 4 5' (int2vector) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3 4 5' (int2vector) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'12345' (int2) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
 '1234567' (int4) as SQL_C_CHAR: 1234567
 '1234567' (int4) as SQL_C_WCHAR: 1234567
-'1234567' (int4) as SQL_C_SSHORT: -10617
-'1234567' (int4) as SQL_C_USHORT: 54919
+'1234567' (int4) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type INT16
+'1234567' (int4) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type UINT16
 '1234567' (int4) as SQL_C_SLONG: 1234567
 '1234567' (int4) as SQL_C_ULONG: 1234567
 '1234567' (int4) as SQL_C_FLOAT: 1234567.000000
 '1234567' (int4) as SQL_C_DOUBLE: 1234567.000000
-'1234567' (int4) as SQL_C_BIT: 135
-'1234567' (int4) as SQL_C_STINYINT: -121
-'1234567' (int4) as SQL_C_UTINYINT: 135
+'1234567' (int4) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type UINT8
+'1234567' (int4) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type INT8
+'1234567' (int4) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type UINT8
 '1234567' (int4) as SQL_C_SBIGINT: 1234567
 '1234567' (int4) as SQL_C_UBIGINT: 1234567
-'1234567' (int4) as SQL_C_BINARY: hex: 87D61200
+'1234567' (int4) as SQL_C_BINARY: hex: 31323334353637
 '1234567' (int4) as SQL_C_BOOKMARK: 1234567
-'1234567' (int4) as SQL_C_VARBOOKMARK: hex: 87D61200
-'1234567' (int4) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1234567' (int4) as SQL_C_NUMERIC: precision: 7 scale: 0 sign: 0 val: 87d61200000000000000000000000000
+'1234567' (int4) as SQL_C_VARBOOKMARK: hex: 31323334353637
+'1234567' (int4) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> DATE)
+'1234567' (int4) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> TIME)
+'1234567' (int4) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> TIMESTAMP)
+'1234567' (int4) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received INTEGER, but expected DECIMAL
 '1234567' (int4) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234567' (int4) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'1234567' (int4) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
 '1234567' (int4) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234567' (int4) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234567' (int4) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_CHAR: int4pl
-'int4pl' (regproc) as SQL_C_WCHAR: int4pl
-'int4pl' (regproc) as SQL_C_SSHORT: 0
-'int4pl' (regproc) as SQL_C_USHORT: 0
-'int4pl' (regproc) as SQL_C_SLONG: 0
-'int4pl' (regproc) as SQL_C_ULONG: 0
-'int4pl' (regproc) as SQL_C_FLOAT: 0.000000
-'int4pl' (regproc) as SQL_C_DOUBLE: 0.000000
-'int4pl' (regproc) as SQL_C_BIT: 0
-'int4pl' (regproc) as SQL_C_STINYINT: 0
-'int4pl' (regproc) as SQL_C_UTINYINT: 0
-'int4pl' (regproc) as SQL_C_SBIGINT: 0
-'int4pl' (regproc) as SQL_C_UBIGINT: 0
-'int4pl' (regproc) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'int4pl' (regproc) as SQL_C_BOOKMARK: 0
-'int4pl' (regproc) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'int4pl' (regproc) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'int4pl' (regproc) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'int4pl' (regproc) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'int4pl' (regproc) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'int4pl' (regproc) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'int4pl' (regproc) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'1234567' (int4) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
 'textdata' (text) as SQL_C_CHAR: textdata
 'textdata' (text) as SQL_C_WCHAR: textdata
-'textdata' (text) as SQL_C_SSHORT: 0
-'textdata' (text) as SQL_C_USHORT: 0
-'textdata' (text) as SQL_C_SLONG: 0
-'textdata' (text) as SQL_C_ULONG: 0
-'textdata' (text) as SQL_C_FLOAT: 0.000000
-'textdata' (text) as SQL_C_DOUBLE: 0.000000
-'textdata' (text) as SQL_C_BIT: 0
-'textdata' (text) as SQL_C_STINYINT: 0
-'textdata' (text) as SQL_C_UTINYINT: 0
-'textdata' (text) as SQL_C_SBIGINT: 0
-'textdata' (text) as SQL_C_UBIGINT: 0
+'textdata' (text) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INT16
+'textdata' (text) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to UINT16
+'textdata' (text) as SQL_C_SLONG: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INT32
+'textdata' (text) as SQL_C_ULONG: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to UINT32
+'textdata' (text) as SQL_C_FLOAT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to FLOAT
+'textdata' (text) as SQL_C_DOUBLE: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to DOUBLE
+'textdata' (text) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to UINT8
+'textdata' (text) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INT8
+'textdata' (text) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to UINT8
+'textdata' (text) as SQL_C_SBIGINT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INT64
+'textdata' (text) as SQL_C_UBIGINT: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to UINT64
 'textdata' (text) as SQL_C_BINARY: hex: 7465787464617461
-'textdata' (text) as SQL_C_BOOKMARK: 0
+'textdata' (text) as SQL_C_BOOKMARK: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to UINT64
 'textdata' (text) as SQL_C_VARBOOKMARK: hex: 7465787464617461
-'textdata' (text) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'textdata' (text) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
+'textdata' (text) as SQL_C_TYPE_DATE: SQLGetData failed
+=Conversion Error: date/time field value out of range: "textdata", expected format is (YYYY-MM-DD)
+'textdata' (text) as SQL_C_TYPE_TIME: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "textdata", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'textdata' (text) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "textdata", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'textdata' (text) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received VARCHAR, but expected DECIMAL
 'textdata' (text) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'textdata' (text) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'textdata' (text) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 'textdata' (text) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'textdata' (text) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'textdata' (text) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_CHAR: (1,2)
-'(1,2)' (tid) as SQL_C_WCHAR: (1,2)
-'(1,2)' (tid) as SQL_C_SSHORT: 0
-'(1,2)' (tid) as SQL_C_USHORT: 0
-'(1,2)' (tid) as SQL_C_SLONG: 0
-'(1,2)' (tid) as SQL_C_ULONG: 0
-'(1,2)' (tid) as SQL_C_FLOAT: 0.000000
-'(1,2)' (tid) as SQL_C_DOUBLE: 0.000000
-'(1,2)' (tid) as SQL_C_BIT: 0
-'(1,2)' (tid) as SQL_C_STINYINT: 0
-'(1,2)' (tid) as SQL_C_UTINYINT: 0
-'(1,2)' (tid) as SQL_C_SBIGINT: 0
-'(1,2)' (tid) as SQL_C_UBIGINT: 0
-'(1,2)' (tid) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'(1,2)' (tid) as SQL_C_BOOKMARK: 0
-'(1,2)' (tid) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'(1,2)' (tid) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'(1,2)' (tid) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'(1,2)' (tid) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'(1,2)' (tid) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'(1,2)' (tid) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'(1,2)' (tid) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_CHAR: 1234
-'1234' (xid) as SQL_C_WCHAR: 1234
-'1234' (xid) as SQL_C_SSHORT: 1234
-'1234' (xid) as SQL_C_USHORT: 1234
-'1234' (xid) as SQL_C_SLONG: 1234
-'1234' (xid) as SQL_C_ULONG: 1234
-'1234' (xid) as SQL_C_FLOAT: 1234.000000
-'1234' (xid) as SQL_C_DOUBLE: 1234.000000
-'1234' (xid) as SQL_C_BIT: 210
-'1234' (xid) as SQL_C_STINYINT: -46
-'1234' (xid) as SQL_C_UTINYINT: 210
-'1234' (xid) as SQL_C_SBIGINT: 1234
-'1234' (xid) as SQL_C_UBIGINT: 1234
-'1234' (xid) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234' (xid) as SQL_C_BOOKMARK: 1234
-'1234' (xid) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234' (xid) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1234' (xid) as SQL_C_NUMERIC: precision: 4 scale: 0 sign: 0 val: d2040000000000000000000000000000
-'1234' (xid) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234' (xid) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234' (xid) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234' (xid) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_CHAR: 4321
-'4321' (cid) as SQL_C_WCHAR: 4321
-'4321' (cid) as SQL_C_SSHORT: 4321
-'4321' (cid) as SQL_C_USHORT: 4321
-'4321' (cid) as SQL_C_SLONG: 4321
-'4321' (cid) as SQL_C_ULONG: 4321
-'4321' (cid) as SQL_C_FLOAT: 4321.000000
-'4321' (cid) as SQL_C_DOUBLE: 4321.000000
-'4321' (cid) as SQL_C_BIT: 225
-'4321' (cid) as SQL_C_STINYINT: -31
-'4321' (cid) as SQL_C_UTINYINT: 225
-'4321' (cid) as SQL_C_SBIGINT: 4321
-'4321' (cid) as SQL_C_UBIGINT: 4321
-'4321' (cid) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'4321' (cid) as SQL_C_BOOKMARK: 4321
-'4321' (cid) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'4321' (cid) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'4321' (cid) as SQL_C_NUMERIC: precision: 4 scale: 0 sign: 0 val: e1100000000000000000000000000000
-'4321' (cid) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'4321' (cid) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'4321' (cid) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'4321' (cid) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_CHAR: 1 2 3
-'1 2 3' (oidvector) as SQL_C_WCHAR: 1 2 3
-'1 2 3' (oidvector) as SQL_C_SSHORT: 1
-'1 2 3' (oidvector) as SQL_C_USHORT: 1
-'1 2 3' (oidvector) as SQL_C_SLONG: 1
-'1 2 3' (oidvector) as SQL_C_ULONG: 1
-'1 2 3' (oidvector) as SQL_C_FLOAT: 1.000000
-'1 2 3' (oidvector) as SQL_C_DOUBLE: 1.000000
-'1 2 3' (oidvector) as SQL_C_BIT: 1
-'1 2 3' (oidvector) as SQL_C_STINYINT: 1
-'1 2 3' (oidvector) as SQL_C_UTINYINT: 1
-'1 2 3' (oidvector) as SQL_C_SBIGINT: 1
-'1 2 3' (oidvector) as SQL_C_UBIGINT: 1
-'1 2 3' (oidvector) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3' (oidvector) as SQL_C_BOOKMARK: 1
-'1 2 3' (oidvector) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3' (oidvector) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1 2 3' (oidvector) as SQL_C_NUMERIC: precision: 1 scale: 0 sign: 0 val: 01000000000000000000000000000000
-'1 2 3' (oidvector) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3' (oidvector) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1 2 3' (oidvector) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1 2 3' (oidvector) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_CHAR: <foo>bar</foo>
-'<foo>bar</foo>' (xml) as SQL_C_WCHAR: <foo>bar</foo>
-'<foo>bar</foo>' (xml) as SQL_C_SSHORT: 0
-'<foo>bar</foo>' (xml) as SQL_C_USHORT: 0
-'<foo>bar</foo>' (xml) as SQL_C_SLONG: 0
-'<foo>bar</foo>' (xml) as SQL_C_ULONG: 0
-'<foo>bar</foo>' (xml) as SQL_C_FLOAT: 0.000000
-'<foo>bar</foo>' (xml) as SQL_C_DOUBLE: 0.000000
-'<foo>bar</foo>' (xml) as SQL_C_BIT: 0
-'<foo>bar</foo>' (xml) as SQL_C_STINYINT: 0
-'<foo>bar</foo>' (xml) as SQL_C_UTINYINT: 0
-'<foo>bar</foo>' (xml) as SQL_C_SBIGINT: 0
-'<foo>bar</foo>' (xml) as SQL_C_UBIGINT: 0
-'<foo>bar</foo>' (xml) as SQL_C_BINARY: hex: 3C666F6F3E6261723C2F666F6F3E
-'<foo>bar</foo>' (xml) as SQL_C_BOOKMARK: 0
-'<foo>bar</foo>' (xml) as SQL_C_VARBOOKMARK: hex: 3C666F6F3E6261723C2F666F6F3E
-'<foo>bar</foo>' (xml) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'<foo>bar</foo>' (xml) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'<foo>bar</foo>' (xml) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'<foo>bar</foo>' (xml) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_CHAR: {<foo>bar</foo>}
-'{<foo>bar</foo>}' (_xml) as SQL_C_WCHAR: {<foo>bar</foo>}
-'{<foo>bar</foo>}' (_xml) as SQL_C_SSHORT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_USHORT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_SLONG: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_ULONG: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_FLOAT: 0.000000
-'{<foo>bar</foo>}' (_xml) as SQL_C_DOUBLE: 0.000000
-'{<foo>bar</foo>}' (_xml) as SQL_C_BIT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_STINYINT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_UTINYINT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_SBIGINT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_UBIGINT: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_BINARY: hex: 7B3C666F6F3E6261723C2F666F6F3E7D
-'{<foo>bar</foo>}' (_xml) as SQL_C_BOOKMARK: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_VARBOOKMARK: hex: 7B3C666F6F3E6261723C2F666F6F3E7D
-'{<foo>bar</foo>}' (_xml) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'{<foo>bar</foo>}' (_xml) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{<foo>bar</foo>}' (_xml) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_CHAR: 10.0.0.1/32
-'10.0.0.1' (cidr) as SQL_C_WCHAR: 10.0.0.1/32
-'10.0.0.1' (cidr) as SQL_C_SSHORT: 10
-'10.0.0.1' (cidr) as SQL_C_USHORT: 10
-'10.0.0.1' (cidr) as SQL_C_SLONG: 10
-'10.0.0.1' (cidr) as SQL_C_ULONG: 10
-'10.0.0.1' (cidr) as SQL_C_FLOAT: 10.000000
-'10.0.0.1' (cidr) as SQL_C_DOUBLE: 10.000000
-'10.0.0.1' (cidr) as SQL_C_BIT: 10
-'10.0.0.1' (cidr) as SQL_C_STINYINT: 10
-'10.0.0.1' (cidr) as SQL_C_UTINYINT: 10
-'10.0.0.1' (cidr) as SQL_C_SBIGINT: 10
-'10.0.0.1' (cidr) as SQL_C_UBIGINT: 10
-'10.0.0.1' (cidr) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (cidr) as SQL_C_BOOKMARK: 10
-'10.0.0.1' (cidr) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (cidr) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'10.0.0.1' (cidr) as SQL_C_NUMERIC: precision: 3 scale: 1 sign: 1 val: 64000000000000000000000000000000
-'10.0.0.1' (cidr) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (cidr) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_CHAR: 1.234
-'1.234' (float4) as SQL_C_WCHAR: 1.234
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'textdata' (text) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'textdata' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'1.234' (float4) as SQL_C_CHAR: 1.234000
+'1.234' (float4) as SQL_C_WCHAR: 1.234000
 '1.234' (float4) as SQL_C_SSHORT: 1
 '1.234' (float4) as SQL_C_USHORT: 1
 '1.234' (float4) as SQL_C_SLONG: 1
@@ -615,700 +451,470 @@ Executed: SET lc_monetary='C'
 '1.234' (float4) as SQL_C_UTINYINT: 1
 '1.234' (float4) as SQL_C_SBIGINT: 1
 '1.234' (float4) as SQL_C_UBIGINT: 1
-'1.234' (float4) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'1.234' (float4) as SQL_C_BINARY: hex: 312E323334303030
 '1.234' (float4) as SQL_C_BOOKMARK: 1
-'1.234' (float4) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.234' (float4) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1.234' (float4) as SQL_C_NUMERIC: precision: 4 scale: 3 sign: 3 val: d2040000000000000000000000000000
+'1.234' (float4) as SQL_C_VARBOOKMARK: hex: 312E323334303030
+'1.234' (float4) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> DATE)
+'1.234' (float4) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> TIME)
+'1.234' (float4) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> TIMESTAMP)
+'1.234' (float4) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received FLOAT, but expected DECIMAL
 '1.234' (float4) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.234' (float4) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'1.234' (float4) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
 '1.234' (float4) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.234' (float4) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.234' (float4) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_CHAR: 1.23456789012
-'1.23456789012' (float8) as SQL_C_WCHAR: 1.23456789012
-'1.23456789012' (float8) as SQL_C_SSHORT: 1
-'1.23456789012' (float8) as SQL_C_USHORT: 1
-'1.23456789012' (float8) as SQL_C_SLONG: 1
-'1.23456789012' (float8) as SQL_C_ULONG: 1
-'1.23456789012' (float8) as SQL_C_FLOAT: 1.234568
-'1.23456789012' (float8) as SQL_C_DOUBLE: 1.234568
-'1.23456789012' (float8) as SQL_C_BIT: 1
-'1.23456789012' (float8) as SQL_C_STINYINT: 1
-'1.23456789012' (float8) as SQL_C_UTINYINT: 1
-'1.23456789012' (float8) as SQL_C_SBIGINT: 1
-'1.23456789012' (float8) as SQL_C_UBIGINT: 1
-'1.23456789012' (float8) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23456789012' (float8) as SQL_C_BOOKMARK: 1
-'1.23456789012' (float8) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23456789012' (float8) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1.23456789012' (float8) as SQL_C_NUMERIC: precision: 12 scale: 11 sign: 11 val: 141a99be1c0000000000000000000000
-'1.23456789012' (float8) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23456789012' (float8) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23456789012' (float8) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.23456789012' (float8) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_CHAR: foo
-'foo' (unknown) as SQL_C_WCHAR: foo
-'foo' (unknown) as SQL_C_SSHORT: 0
-'foo' (unknown) as SQL_C_USHORT: 0
-'foo' (unknown) as SQL_C_SLONG: 0
-'foo' (unknown) as SQL_C_ULONG: 0
-'foo' (unknown) as SQL_C_FLOAT: 0.000000
-'foo' (unknown) as SQL_C_DOUBLE: 0.000000
-'foo' (unknown) as SQL_C_BIT: 0
-'foo' (unknown) as SQL_C_STINYINT: 0
-'foo' (unknown) as SQL_C_UTINYINT: 0
-'foo' (unknown) as SQL_C_SBIGINT: 0
-'foo' (unknown) as SQL_C_UBIGINT: 0
-'foo' (unknown) as SQL_C_BINARY: hex: 666F6F
-'foo' (unknown) as SQL_C_BOOKMARK: 0
-'foo' (unknown) as SQL_C_VARBOOKMARK: hex: 666F6F
-'foo' (unknown) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'foo' (unknown) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'foo' (unknown) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foo' (unknown) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foo' (unknown) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foo' (unknown) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_CHAR: $1.23
-'1.23' (money) as SQL_C_WCHAR: $1.23
-'1.23' (money) as SQL_C_SSHORT: 1
-'1.23' (money) as SQL_C_USHORT: 1
-'1.23' (money) as SQL_C_SLONG: 1
-'1.23' (money) as SQL_C_ULONG: 1
-'1.23' (money) as SQL_C_FLOAT: 1.230000
-'1.23' (money) as SQL_C_DOUBLE: 1.230000
-'1.23' (money) as SQL_C_BIT: 1
-'1.23' (money) as SQL_C_STINYINT: 1
-'1.23' (money) as SQL_C_UTINYINT: 1
-'1.23' (money) as SQL_C_SBIGINT: 1
-'1.23' (money) as SQL_C_UBIGINT: 1
-'1.23' (money) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23' (money) as SQL_C_BOOKMARK: 1
-'1.23' (money) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23' (money) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1.23' (money) as SQL_C_NUMERIC: precision: 3 scale: 2 sign: 2 val: 7b000000000000000000000000000000
-'1.23' (money) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23' (money) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1.23' (money) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1.23' (money) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_CHAR: 08:00:2b:01:02:03
-'08-00-2b-01-02-03' (macaddr) as SQL_C_WCHAR: 08:00:2b:01:02:03
-'08-00-2b-01-02-03' (macaddr) as SQL_C_SSHORT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_USHORT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_SLONG: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_ULONG: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_FLOAT: 8.000000
-'08-00-2b-01-02-03' (macaddr) as SQL_C_DOUBLE: 8.000000
-'08-00-2b-01-02-03' (macaddr) as SQL_C_BIT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_STINYINT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_UTINYINT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_SBIGINT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_UBIGINT: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'08-00-2b-01-02-03' (macaddr) as SQL_C_BOOKMARK: 8
-'08-00-2b-01-02-03' (macaddr) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'08-00-2b-01-02-03' (macaddr) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_NUMERIC: precision: 1 scale: 0 sign: 0 val: 08000000000000000000000000000000
-'08-00-2b-01-02-03' (macaddr) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'08-00-2b-01-02-03' (macaddr) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_CHAR: 10.0.0.1
-'10.0.0.1' (inet) as SQL_C_WCHAR: 10.0.0.1
-'10.0.0.1' (inet) as SQL_C_SSHORT: 10
-'10.0.0.1' (inet) as SQL_C_USHORT: 10
-'10.0.0.1' (inet) as SQL_C_SLONG: 10
-'10.0.0.1' (inet) as SQL_C_ULONG: 10
-'10.0.0.1' (inet) as SQL_C_FLOAT: 10.000000
-'10.0.0.1' (inet) as SQL_C_DOUBLE: 10.000000
-'10.0.0.1' (inet) as SQL_C_BIT: 10
-'10.0.0.1' (inet) as SQL_C_STINYINT: 10
-'10.0.0.1' (inet) as SQL_C_UTINYINT: 10
-'10.0.0.1' (inet) as SQL_C_SBIGINT: 10
-'10.0.0.1' (inet) as SQL_C_UBIGINT: 10
-'10.0.0.1' (inet) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (inet) as SQL_C_BOOKMARK: 10
-'10.0.0.1' (inet) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (inet) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'10.0.0.1' (inet) as SQL_C_NUMERIC: precision: 3 scale: 1 sign: 1 val: 64000000000000000000000000000000
-'10.0.0.1' (inet) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (inet) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10.0.0.1' (inet) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10.0.0.1' (inet) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_CHAR: {foo,bar}
-'{foo, bar}' (_text) as SQL_C_WCHAR: {foo,bar}
-'{foo, bar}' (_text) as SQL_C_SSHORT: 0
-'{foo, bar}' (_text) as SQL_C_USHORT: 0
-'{foo, bar}' (_text) as SQL_C_SLONG: 0
-'{foo, bar}' (_text) as SQL_C_ULONG: 0
-'{foo, bar}' (_text) as SQL_C_FLOAT: 0.000000
-'{foo, bar}' (_text) as SQL_C_DOUBLE: 0.000000
-'{foo, bar}' (_text) as SQL_C_BIT: 0
-'{foo, bar}' (_text) as SQL_C_STINYINT: 0
-'{foo, bar}' (_text) as SQL_C_UTINYINT: 0
-'{foo, bar}' (_text) as SQL_C_SBIGINT: 0
-'{foo, bar}' (_text) as SQL_C_UBIGINT: 0
-'{foo, bar}' (_text) as SQL_C_BINARY: hex: 7B666F6F2C6261727D
-'{foo, bar}' (_text) as SQL_C_BOOKMARK: 0
-'{foo, bar}' (_text) as SQL_C_VARBOOKMARK: hex: 7B666F6F2C6261727D
-'{foo, bar}' (_text) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'{foo, bar}' (_text) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'{foo, bar}' (_text) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{foo, bar}' (_text) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{foo, bar}' (_text) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_text) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_CHAR: {foo,bar}
-'{foo, bar}' (_bpchar) as SQL_C_WCHAR: {foo,bar}
-'{foo, bar}' (_bpchar) as SQL_C_SSHORT: 0
-'{foo, bar}' (_bpchar) as SQL_C_USHORT: 0
-'{foo, bar}' (_bpchar) as SQL_C_SLONG: 0
-'{foo, bar}' (_bpchar) as SQL_C_ULONG: 0
-'{foo, bar}' (_bpchar) as SQL_C_FLOAT: 0.000000
-'{foo, bar}' (_bpchar) as SQL_C_DOUBLE: 0.000000
-'{foo, bar}' (_bpchar) as SQL_C_BIT: 0
-'{foo, bar}' (_bpchar) as SQL_C_STINYINT: 0
-'{foo, bar}' (_bpchar) as SQL_C_UTINYINT: 0
-'{foo, bar}' (_bpchar) as SQL_C_SBIGINT: 0
-'{foo, bar}' (_bpchar) as SQL_C_UBIGINT: 0
-'{foo, bar}' (_bpchar) as SQL_C_BINARY: hex: 7B666F6F2C6261727D
-'{foo, bar}' (_bpchar) as SQL_C_BOOKMARK: 0
-'{foo, bar}' (_bpchar) as SQL_C_VARBOOKMARK: hex: 7B666F6F2C6261727D
-'{foo, bar}' (_bpchar) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'{foo, bar}' (_bpchar) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'{foo, bar}' (_bpchar) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_bpchar) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_CHAR: {foo,bar}
-'{foo, bar}' (_varchar) as SQL_C_WCHAR: {foo,bar}
-'{foo, bar}' (_varchar) as SQL_C_SSHORT: 0
-'{foo, bar}' (_varchar) as SQL_C_USHORT: 0
-'{foo, bar}' (_varchar) as SQL_C_SLONG: 0
-'{foo, bar}' (_varchar) as SQL_C_ULONG: 0
-'{foo, bar}' (_varchar) as SQL_C_FLOAT: 0.000000
-'{foo, bar}' (_varchar) as SQL_C_DOUBLE: 0.000000
-'{foo, bar}' (_varchar) as SQL_C_BIT: 0
-'{foo, bar}' (_varchar) as SQL_C_STINYINT: 0
-'{foo, bar}' (_varchar) as SQL_C_UTINYINT: 0
-'{foo, bar}' (_varchar) as SQL_C_SBIGINT: 0
-'{foo, bar}' (_varchar) as SQL_C_UBIGINT: 0
-'{foo, bar}' (_varchar) as SQL_C_BINARY: hex: 7B666F6F2C6261727D
-'{foo, bar}' (_varchar) as SQL_C_BOOKMARK: 0
-'{foo, bar}' (_varchar) as SQL_C_VARBOOKMARK: hex: 7B666F6F2C6261727D
-'{foo, bar}' (_varchar) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'{foo, bar}' (_varchar) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'{foo, bar}' (_varchar) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'{foo, bar}' (_varchar) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_CHAR: foobar
-'foobar' (bpchar) as SQL_C_WCHAR: foobar
-'foobar' (bpchar) as SQL_C_SSHORT: 0
-'foobar' (bpchar) as SQL_C_USHORT: 0
-'foobar' (bpchar) as SQL_C_SLONG: 0
-'foobar' (bpchar) as SQL_C_ULONG: 0
-'foobar' (bpchar) as SQL_C_FLOAT: 0.000000
-'foobar' (bpchar) as SQL_C_DOUBLE: 0.000000
-'foobar' (bpchar) as SQL_C_BIT: 0
-'foobar' (bpchar) as SQL_C_STINYINT: 0
-'foobar' (bpchar) as SQL_C_UTINYINT: 0
-'foobar' (bpchar) as SQL_C_SBIGINT: 0
-'foobar' (bpchar) as SQL_C_UBIGINT: 0
-'foobar' (bpchar) as SQL_C_BINARY: hex: 666F6F626172
-'foobar' (bpchar) as SQL_C_BOOKMARK: 0
-'foobar' (bpchar) as SQL_C_VARBOOKMARK: hex: 666F6F626172
-'foobar' (bpchar) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'foobar' (bpchar) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'foobar' (bpchar) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foobar' (bpchar) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foobar' (bpchar) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (bpchar) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.234' (float4) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.23456789012' (double) as SQL_C_CHAR: 1.234568
+'1.23456789012' (double) as SQL_C_WCHAR: 1.234568
+'1.23456789012' (double) as SQL_C_SSHORT: 1
+'1.23456789012' (double) as SQL_C_USHORT: 1
+'1.23456789012' (double) as SQL_C_SLONG: 1
+'1.23456789012' (double) as SQL_C_ULONG: 1
+'1.23456789012' (double) as SQL_C_FLOAT: 1.234568
+'1.23456789012' (double) as SQL_C_DOUBLE: 1.234568
+'1.23456789012' (double) as SQL_C_BIT: 1
+'1.23456789012' (double) as SQL_C_STINYINT: 1
+'1.23456789012' (double) as SQL_C_UTINYINT: 1
+'1.23456789012' (double) as SQL_C_SBIGINT: 1
+'1.23456789012' (double) as SQL_C_UBIGINT: 1
+'1.23456789012' (double) as SQL_C_BINARY: hex: 312E323334353638
+'1.23456789012' (double) as SQL_C_BOOKMARK: 1
+'1.23456789012' (double) as SQL_C_VARBOOKMARK: hex: 312E323334353638
+'1.23456789012' (double) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> DATE)
+'1.23456789012' (double) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> TIME)
+'1.23456789012' (double) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> TIMESTAMP)
+'1.23456789012' (double) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received DOUBLE, but expected DECIMAL
+'1.23456789012' (double) as SQL_C_GUID: SQLGetData failed
+=Unsupported type.
+'1.23456789012' (double) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'1.23456789012' (double) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
 'foobar' (varchar) as SQL_C_CHAR: foobar
 'foobar' (varchar) as SQL_C_WCHAR: foobar
-'foobar' (varchar) as SQL_C_SSHORT: 0
-'foobar' (varchar) as SQL_C_USHORT: 0
-'foobar' (varchar) as SQL_C_SLONG: 0
-'foobar' (varchar) as SQL_C_ULONG: 0
-'foobar' (varchar) as SQL_C_FLOAT: 0.000000
-'foobar' (varchar) as SQL_C_DOUBLE: 0.000000
-'foobar' (varchar) as SQL_C_BIT: 0
-'foobar' (varchar) as SQL_C_STINYINT: 0
-'foobar' (varchar) as SQL_C_UTINYINT: 0
-'foobar' (varchar) as SQL_C_SBIGINT: 0
-'foobar' (varchar) as SQL_C_UBIGINT: 0
+'foobar' (varchar) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INT16
+'foobar' (varchar) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to UINT16
+'foobar' (varchar) as SQL_C_SLONG: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INT32
+'foobar' (varchar) as SQL_C_ULONG: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to UINT32
+'foobar' (varchar) as SQL_C_FLOAT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to FLOAT
+'foobar' (varchar) as SQL_C_DOUBLE: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to DOUBLE
+'foobar' (varchar) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to UINT8
+'foobar' (varchar) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INT8
+'foobar' (varchar) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to UINT8
+'foobar' (varchar) as SQL_C_SBIGINT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INT64
+'foobar' (varchar) as SQL_C_UBIGINT: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to UINT64
 'foobar' (varchar) as SQL_C_BINARY: hex: 666F6F626172
-'foobar' (varchar) as SQL_C_BOOKMARK: 0
+'foobar' (varchar) as SQL_C_BOOKMARK: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to UINT64
 'foobar' (varchar) as SQL_C_VARBOOKMARK: hex: 666F6F626172
-'foobar' (varchar) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'foobar' (varchar) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
+'foobar' (varchar) as SQL_C_TYPE_DATE: SQLGetData failed
+=Conversion Error: date/time field value out of range: "foobar", expected format is (YYYY-MM-DD)
+'foobar' (varchar) as SQL_C_TYPE_TIME: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "foobar", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'foobar' (varchar) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "foobar", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'foobar' (varchar) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received VARCHAR, but expected DECIMAL
 'foobar' (varchar) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foobar' (varchar) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'foobar' (varchar) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 'foobar' (varchar) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foobar' (varchar) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foobar' (varchar) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'foobar' (varchar) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Conversion Error: Could not convert string 'foobar' to INTERVAL
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 '2011-02-13' (date) as SQL_C_CHAR: 2011-02-13
 '2011-02-13' (date) as SQL_C_WCHAR: 2011-02-13
-'2011-02-13' (date) as SQL_C_SSHORT: 2011
-'2011-02-13' (date) as SQL_C_USHORT: 2011
-'2011-02-13' (date) as SQL_C_SLONG: 2011
-'2011-02-13' (date) as SQL_C_ULONG: 2011
-'2011-02-13' (date) as SQL_C_FLOAT: 2011.000000
-'2011-02-13' (date) as SQL_C_DOUBLE: 2011.000000
-'2011-02-13' (date) as SQL_C_BIT: 219
-'2011-02-13' (date) as SQL_C_STINYINT: -37
-'2011-02-13' (date) as SQL_C_UTINYINT: 219
-'2011-02-13' (date) as SQL_C_SBIGINT: 2011
-'2011-02-13' (date) as SQL_C_UBIGINT: 2011
-'2011-02-13' (date) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-13' (date) as SQL_C_BOOKMARK: 2011
-'2011-02-13' (date) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-13' (date) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'2011-02-13' (date) as SQL_C_NUMERIC: precision: 4 scale: 0 sign: 0 val: db070000000000000000000000000000
+'2011-02-13' (date) as SQL_C_SSHORT: 15018
+'2011-02-13' (date) as SQL_C_USHORT: 15018
+'2011-02-13' (date) as SQL_C_SLONG: 15018
+'2011-02-13' (date) as SQL_C_ULONG: 15018
+'2011-02-13' (date) as SQL_C_FLOAT: 15018.000000
+'2011-02-13' (date) as SQL_C_DOUBLE: 15018.000000
+'2011-02-13' (date) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type INT32 with value 15018.000000 can't be cast because the value is out of range for the destination type UINT8
+'2011-02-13' (date) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type INT32 with value 15018.000000 can't be cast because the value is out of range for the destination type INT8
+'2011-02-13' (date) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type INT32 with value 15018.000000 can't be cast because the value is out of range for the destination type UINT8
+'2011-02-13' (date) as SQL_C_SBIGINT: 15018
+'2011-02-13' (date) as SQL_C_UBIGINT: 15018
+'2011-02-13' (date) as SQL_C_BINARY: hex: 323031312D30322D3133
+'2011-02-13' (date) as SQL_C_BOOKMARK: 15018
+'2011-02-13' (date) as SQL_C_VARBOOKMARK: hex: 323031312D30322D3133
+'2011-02-13' (date) as SQL_C_TYPE_DATE: y: 2011 m: 2 d: 13
+'2011-02-13' (date) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> TIME)
+'2011-02-13' (date) as SQL_C_TYPE_TIMESTAMP: y: 2011 m: 2 d: 13 h: 0 m: 0 s: 0 f: 0
+'2011-02-13' (date) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received DATE, but expected DECIMAL
 '2011-02-13' (date) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-13' (date) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 year 2011 month: 2
-'2011-02-13' (date) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'2011-02-13' (date) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
 '2011-02-13' (date) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-13' (date) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-13' (date) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'2011-02-13' (date) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
 '13:23:34' (time) as SQL_C_CHAR: 13:23:34
 '13:23:34' (time) as SQL_C_WCHAR: 13:23:34
-'13:23:34' (time) as SQL_C_SSHORT: 13
-'13:23:34' (time) as SQL_C_USHORT: 13
-'13:23:34' (time) as SQL_C_SLONG: 13
-'13:23:34' (time) as SQL_C_ULONG: 13
-'13:23:34' (time) as SQL_C_FLOAT: 13.000000
-'13:23:34' (time) as SQL_C_DOUBLE: 13.000000
-'13:23:34' (time) as SQL_C_BIT: 13
-'13:23:34' (time) as SQL_C_STINYINT: 13
-'13:23:34' (time) as SQL_C_UTINYINT: 13
-'13:23:34' (time) as SQL_C_SBIGINT: 13
-'13:23:34' (time) as SQL_C_UBIGINT: 13
-'13:23:34' (time) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'13:23:34' (time) as SQL_C_BOOKMARK: 13
-'13:23:34' (time) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'13:23:34' (time) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type INT16
+'13:23:34' (time) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT16
+'13:23:34' (time) as SQL_C_SLONG: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type INT32
+'13:23:34' (time) as SQL_C_ULONG: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT32
+'13:23:34' (time) as SQL_C_FLOAT: 48213999616.000000
+'13:23:34' (time) as SQL_C_DOUBLE: 48214000000.000000
+'13:23:34' (time) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT8
+'13:23:34' (time) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type INT8
+'13:23:34' (time) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT8
+'13:23:34' (time) as SQL_C_SBIGINT: 48214000000
+'13:23:34' (time) as SQL_C_UBIGINT: 48214000000
+'13:23:34' (time) as SQL_C_BINARY: hex: 31333A32333A3334
+'13:23:34' (time) as SQL_C_BOOKMARK: 48214000000
+'13:23:34' (time) as SQL_C_VARBOOKMARK: hex: 31333A32333A3334
+'13:23:34' (time) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> DATE)
 '13:23:34' (time) as SQL_C_TYPE_TIME: h: 13 m: 23 s: 34
-'13:23:34' (time) as SQL_C_NUMERIC: precision: 2 scale: 0 sign: 0 val: 0d000000000000000000000000000000
+'13:23:34' (time) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> TIMESTAMP)
+'13:23:34' (time) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received TIME, but expected DECIMAL
 '13:23:34' (time) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'13:23:34' (time) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'13:23:34' (time) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
 '13:23:34' (time) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'13:23:34' (time) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'13:23:34' (time) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'13:23:34' (time) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:18
 '2011-02-15 15:49:18' (timestamp) as SQL_C_WCHAR: 2011-02-15 15:49:18
-'2011-02-15 15:49:18' (timestamp) as SQL_C_SSHORT: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_USHORT: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_SLONG: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_ULONG: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_FLOAT: 2011.000000
-'2011-02-15 15:49:18' (timestamp) as SQL_C_DOUBLE: 2011.000000
-'2011-02-15 15:49:18' (timestamp) as SQL_C_BIT: 219
-'2011-02-15 15:49:18' (timestamp) as SQL_C_STINYINT: -37
-'2011-02-15 15:49:18' (timestamp) as SQL_C_UTINYINT: 219
-'2011-02-15 15:49:18' (timestamp) as SQL_C_SBIGINT: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_UBIGINT: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-15 15:49:18' (timestamp) as SQL_C_BOOKMARK: 2011
-'2011-02-15 15:49:18' (timestamp) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'2011-02-15 15:49:18' (timestamp) as SQL_C_SSHORT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type INT16
+'2011-02-15 15:49:18' (timestamp) as SQL_C_USHORT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT16
+'2011-02-15 15:49:18' (timestamp) as SQL_C_SLONG: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type INT32
+'2011-02-15 15:49:18' (timestamp) as SQL_C_ULONG: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT32
+'2011-02-15 15:49:18' (timestamp) as SQL_C_FLOAT: 1297784900681728.000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_DOUBLE: 1297784958000000.000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT8
+'2011-02-15 15:49:18' (timestamp) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type INT8
+'2011-02-15 15:49:18' (timestamp) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT8
+'2011-02-15 15:49:18' (timestamp) as SQL_C_SBIGINT: 1297784958000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_UBIGINT: 1297784958000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_BINARY: hex: 323031312D30322D31352031353A34393A3138
+'2011-02-15 15:49:18' (timestamp) as SQL_C_BOOKMARK: 1297784958000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_VARBOOKMARK: hex: 323031312D30322D31352031353A34393A3138
+'2011-02-15 15:49:18' (timestamp) as SQL_C_TYPE_DATE: y: 2011 m: 2 d: 15
 '2011-02-15 15:49:18' (timestamp) as SQL_C_TYPE_TIME: h: 15 m: 49 s: 18
-'2011-02-15 15:49:18' (timestamp) as SQL_C_NUMERIC: precision: 4 scale: 0 sign: 0 val: db070000000000000000000000000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_TYPE_TIMESTAMP: y: 2011 m: 2 d: 15 h: 15 m: 49 s: 18 f: 0
+'2011-02-15 15:49:18' (timestamp) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received TIMESTAMP, but expected DECIMAL
 '2011-02-15 15:49:18' (timestamp) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 year 2011 month: 2
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_CHAR: 2011-02-16 06:49:18
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_WCHAR: 2011-02-16 06:49:18
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_SSHORT: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_USHORT: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_SLONG: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_ULONG: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_FLOAT: 2011.000000
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_DOUBLE: 2011.000000
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_BIT: 219
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_STINYINT: -37
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_UTINYINT: 219
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_SBIGINT: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_UBIGINT: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_BOOKMARK: 2011
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_TYPE_TIME: h: 6 m: 49 s: 18
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_NUMERIC: precision: 4 scale: 0 sign: 0 val: db070000000000000000000000000000
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 year 2011 month: 2
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_CHAR: 9 years 1 mon -12 days +13:14:00
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_WCHAR: 9 years 1 mon -12 days +13:14:00
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_SSHORT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_USHORT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_SLONG: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_ULONG: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_FLOAT: 9.000000
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_DOUBLE: 9.000000
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_BIT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_STINYINT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_UTINYINT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_SBIGINT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_UBIGINT: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_BOOKMARK: 9
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_NUMERIC: precision: 1 scale: 0 sign: 0 val: 09000000000000000000000000000000
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_MONTH: interval sign: 0 year: 1
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 year 9 month: 1
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'10 years -11 months -12 days +13:14' (interval) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_CHAR: 1
-'1' (bit) as SQL_C_WCHAR: 1
-'1' (bit) as SQL_C_SSHORT: 1
-'1' (bit) as SQL_C_USHORT: 1
-'1' (bit) as SQL_C_SLONG: 1
-'1' (bit) as SQL_C_ULONG: 1
-'1' (bit) as SQL_C_FLOAT: 1.000000
-'1' (bit) as SQL_C_DOUBLE: 1.000000
-'1' (bit) as SQL_C_BIT: 1
-'1' (bit) as SQL_C_STINYINT: 1
-'1' (bit) as SQL_C_UTINYINT: 1
-'1' (bit) as SQL_C_SBIGINT: 1
-'1' (bit) as SQL_C_UBIGINT: 1
-'1' (bit) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1' (bit) as SQL_C_BOOKMARK: 1
-'1' (bit) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1' (bit) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1' (bit) as SQL_C_NUMERIC: precision: 1 scale: 0 sign: 0 val: 01000000000000000000000000000000
-'1' (bit) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1' (bit) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1' (bit) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1' (bit) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_CHAR: 1234.567890
-'1234.567890' (numeric) as SQL_C_WCHAR: 1234.567890
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_CHAR: 9 years 1 month -12 days 13:14:00
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_WCHAR: 9 years 1 month -12 days 13:14:00
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SSHORT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_USHORT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SLONG: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_ULONG: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_FLOAT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_DOUBLE: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BIT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_STINYINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_UTINYINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_UBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BINARY: hex: 392079656172732031206D6F6E7468202D313220646179732031333A31343A3030
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BOOKMARK: SQLGetData failed
+=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_VARBOOKMARK: hex: 392079656172732031206D6F6E7468202D313220646179732031333A31343A3030
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> DATE)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> TIME)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> TIMESTAMP)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_NUMERIC: SQLGetData failed
+=Type mismatch error: received INTERVAL, but expected DECIMAL
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_GUID: SQLGetData failed
+=Unsupported type.
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_YEAR: interval sign: 0 year: 9
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_MONTH: interval sign: 0 month: 109
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_DAY: interval sign: 0 day: 3258
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_HOUR: interval sign: 0 hour: 78205
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_MINUTE: interval sign: 0 minute: 4692314
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_SECOND: interval sign: 0 second: 281538840
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 year 9 month: 1
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 day: 3258 hour: 13
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_DAY_TO_MINUTE: interval sign: 0 day: 3258 hour: 13 minute: 14
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 day: 3258 hour: 13 minute: 14 second: 0 fraction: 0
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 hour: 78205 minute: 14
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 hour: 78205 minute: 14 second: 0 fraction: 0
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 minute: 4692314 second: 0 fraction: 0
+'1234.567890' (numeric) as SQL_C_CHAR: 1234.567
+'1234.567890' (numeric) as SQL_C_WCHAR: 1234.567
 '1234.567890' (numeric) as SQL_C_SSHORT: 1234
 '1234.567890' (numeric) as SQL_C_USHORT: 1234
 '1234.567890' (numeric) as SQL_C_SLONG: 1234
 '1234.567890' (numeric) as SQL_C_ULONG: 1234
-'1234.567890' (numeric) as SQL_C_FLOAT: 1234.567871
-'1234.567890' (numeric) as SQL_C_DOUBLE: 1234.567890
-'1234.567890' (numeric) as SQL_C_BIT: 210
-'1234.567890' (numeric) as SQL_C_STINYINT: -46
-'1234.567890' (numeric) as SQL_C_UTINYINT: 210
+'1234.567890' (numeric) as SQL_C_FLOAT: 1234.567017
+'1234.567890' (numeric) as SQL_C_DOUBLE: 1234.567000
+'1234.567890' (numeric) as SQL_C_BIT: SQLGetData failed
+=Conversion Error: Type DOUBLE with value 1234.567000 can't be cast because the value is out of range for the destination type UINT8
+'1234.567890' (numeric) as SQL_C_STINYINT: SQLGetData failed
+=Conversion Error: Type DOUBLE with value 1234.567000 can't be cast because the value is out of range for the destination type INT8
+'1234.567890' (numeric) as SQL_C_UTINYINT: SQLGetData failed
+=Conversion Error: Type DOUBLE with value 1234.567000 can't be cast because the value is out of range for the destination type UINT8
 '1234.567890' (numeric) as SQL_C_SBIGINT: 1234
 '1234.567890' (numeric) as SQL_C_UBIGINT: 1234
-'1234.567890' (numeric) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
+'1234.567890' (numeric) as SQL_C_BINARY: hex: 313233342E353637
 '1234.567890' (numeric) as SQL_C_BOOKMARK: 1234
-'1234.567890' (numeric) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234.567890' (numeric) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'1234.567890' (numeric) as SQL_C_NUMERIC: precision: 10 scale: 6 sign: 6 val: d2029649000000000000000000000000
+'1234.567890' (numeric) as SQL_C_VARBOOKMARK: hex: 313233342E353637
+'1234.567890' (numeric) as SQL_C_TYPE_DATE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> DATE)
+'1234.567890' (numeric) as SQL_C_TYPE_TIME: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> TIME)
+'1234.567890' (numeric) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> TIMESTAMP)
+'1234.567890' (numeric) as SQL_C_NUMERIC: precision: 7 scale: 3 sign: 1 val: 87d61200000000000000000000000000
 '1234.567890' (numeric) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234.567890' (numeric) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
+=Unsupported type.
+'1234.567890' (numeric) as SQL_C_INTERVAL_YEAR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_DAY: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_YEAR_TO_MONTH: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_DAY_TO_HOUR: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
 '1234.567890' (numeric) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'1234.567890' (numeric) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'1234.567890' (numeric) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_CHAR: foocur
-'foocur' (refcursor) as SQL_C_WCHAR: foocur
-'foocur' (refcursor) as SQL_C_SSHORT: 0
-'foocur' (refcursor) as SQL_C_USHORT: 0
-'foocur' (refcursor) as SQL_C_SLONG: 0
-'foocur' (refcursor) as SQL_C_ULONG: 0
-'foocur' (refcursor) as SQL_C_FLOAT: 0.000000
-'foocur' (refcursor) as SQL_C_DOUBLE: 0.000000
-'foocur' (refcursor) as SQL_C_BIT: 0
-'foocur' (refcursor) as SQL_C_STINYINT: 0
-'foocur' (refcursor) as SQL_C_UTINYINT: 0
-'foocur' (refcursor) as SQL_C_SBIGINT: 0
-'foocur' (refcursor) as SQL_C_UBIGINT: 0
-'foocur' (refcursor) as SQL_C_BINARY: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foocur' (refcursor) as SQL_C_BOOKMARK: 0
-'foocur' (refcursor) as SQL_C_VARBOOKMARK: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foocur' (refcursor) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'foocur' (refcursor) as SQL_C_NUMERIC: precision: 0 scale: 0 sign: 0 val: 00000000000000000000000000000000
-'foocur' (refcursor) as SQL_C_GUID: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foocur' (refcursor) as SQL_C_INTERVAL_YEAR: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_MONTH: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_DAY: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_HOUR: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_MINUTE: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_SECOND: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_YEAR_TO_MONTH: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_DAY_TO_HOUR: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_DAY_TO_MINUTE: SQLGetData failed
-07006=Received an unsupported type from Postgres.
-'foocur' (refcursor) as SQL_C_INTERVAL_DAY_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 unknown interval type: 0
-'foocur' (refcursor) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
-Executed: SET bytea_output=hex
-'\x464F4F' (bytea) as SQL_C_CHAR: 464f4f
-'\x464F4F' (bytea) as SQL_C_WCHAR: 464f4f
-'543c5e21-435a-440b-943c-64af1ad571f1' (text) as SQL_C_GUID: d1: 543C5E21 d2: 435A d3: 440B d4: 943C64AF1AD571F1
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_DAY_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_HOUR_TO_MINUTE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_HOUR_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+'1234.567890' (numeric) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+---Running pontual tests...
+'\x464F4F' (bytea) as SQL_C_CHAR: F4F4F
+'\x464F4F' (bytea) as SQL_C_WCHAR: F4F4F
+'543c5e21-435a-440b-943c-64af1ad571f1' (text) as SQL_C_GUID: SQLGetData failed
+=Unsupported type.
 '2011-02-13' (date) as SQL_C_DATE: y: 2011 m: 2 d: 13
 '2011-02-13' (date) as SQL_C_TIMESTAMP: y: 2011 m: 2 d: 13 h: 0 m: 0 s: 0 f: 0
 '2011-02-15 15:49:18' (timestamp) as SQL_C_DATE: y: 2011 m: 2 d: 15
 '2011-02-15 15:49:18' (timestamp) as SQL_C_TIMESTAMP: y: 2011 m: 2 d: 15 h: 15 m: 49 s: 18 f: 0
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_DATE: y: 2011 m: 2 d: 16
-'2011-02-16 17:49:18+03' (timestamptz) as SQL_C_TIMESTAMP: y: 2011 m: 2 d: 16 h: 6 m: 49 s: 18 f: 0
-'' (text) as SQL_C_TYPE_DATE: y: 0 m: 0 d: 0
-'' (text) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
-'' (text) as SQL_C_TYPE_TIMESTAMP: y: 0 m: 0 d: 0 h: 0 m: 0 s: 0 f: 0
-'foobar' (text) as SQL_C_CHAR: foob (truncated)
-'foobar' (text) as SQL_C_CHAR: fooba (truncated)
+'' (text) as SQL_C_TYPE_DATE: SQLGetData failed
+=Conversion Error: date/time field value out of range: "", expected format is (YYYY-MM-DD)
+'' (text) as SQL_C_TYPE_TIME: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'' (text) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
+=Conversion Error: timestamp field value out of range: "", expected format is (YYYY-MM-DD HH:MM:SS[.MS])
+'foobar' (text) as SQL_C_CHAR: foob
+'foobar' (text) as SQL_C_CHAR: fooba
 'foobar' (text) as SQL_C_CHAR: foobar
-'foobar' (text) as SQL_C_WCHAR: foob (truncated)
-'foobar' (text) as SQL_C_WCHAR: foob (truncated)
-'foobar' (text) as SQL_C_WCHAR: fooba (truncated)
-'foobar' (text) as SQL_C_WCHAR: fooba (truncated)
+'foobar' (text) as SQL_C_WCHAR: foobar
+'foobar' (text) as SQL_C_WCHAR: foobar
+'foobar' (text) as SQL_C_WCHAR: foobar
+'foobar' (text) as SQL_C_WCHAR: foobar
 'foobar' (text) as SQL_C_WCHAR: foobar
 '' (text) as SQL_C_CHAR: 
-'' (text) as SQL_C_WCHAR: \FF00\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF\FFFF (truncated)
-'2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:1 (truncated)
-'2011-02-15 15:49:18 BC' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:18 (truncated)
-'NaN' (float4) as SQL_C_FLOAT: nan
-'Infinity' (float4) as SQL_C_FLOAT: inf
-'-Infinity' (float4) as SQL_C_FLOAT: -inf
-'NaN' (float8) as SQL_C_FLOAT: nan
-'Infinity' (float8) as SQL_C_FLOAT: inf
-'-Infinity' (float8) as SQL_C_FLOAT: -inf
-'NaN' (float4) as SQL_C_DOUBLE: nan
-'Infinity' (float4) as SQL_C_DOUBLE: inf
-'-Infinity' (float4) as SQL_C_DOUBLE: -inf
-'NaN' (float8) as SQL_C_DOUBLE: nan
-'Infinity' (float8) as SQL_C_DOUBLE: inf
-'-Infinity' (float8) as SQL_C_DOUBLE: -inf
+'' (text) as SQL_C_WCHAR: 
+'2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:1
 disconnecting
