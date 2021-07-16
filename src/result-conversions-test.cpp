@@ -627,12 +627,12 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	 * Use octal escape bytea format in the tests. We will test the conversion
 	 * from the hex format separately later.
 	 */
-	test_printf("---Running pontual tests...\n");
+	test_printf("\n---Running pontual tests...\n");
 	// exec_cmd("SET bytea_output=hex");
 	test_conversion("bytea", "\\x464F4F", SQL_C_CHAR, "SQL_C_CHAR", 100, 0);
 	test_conversion("bytea", "\\x464F4F", SQL_C_WCHAR, "SQL_C_WCHAR", 100, 0);
 
-	// /* Conversion to GUID throws error if the string is not of correct form */
+	/* Conversion to GUID throws error if the string is not of correct form */
 	test_conversion("text", "543c5e21-435a-440b-943c-64af1ad571f1", SQL_C_GUID, "SQL_C_GUID", -1, 0);
 
 	// /* Date/timestamp tests of non-date input depends on current date */
@@ -665,6 +665,24 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 
 	test_conversion("timestamp", "2011-02-15 15:49:18", SQL_C_CHAR, "SQL_C_CHAR", 19, 0);
 
+	test_printf("\nTesting different timestamp subtype conversions to DATE, TIME, and TIMESPAMP.\n");
+	// TIMESTAMP -> DATE
+	test_conversion("timestamp_s", "2021-07-15 12:30:00", SQL_C_TYPE_DATE, "SQL_C_TYPE_DATE", 19, 0);
+	test_conversion("timestamp_ms", "2021-07-15 12:30:00", SQL_C_TYPE_DATE, "SQL_C_TYPE_DATE", 19, 0);
+	test_conversion("timestamp", "2021-07-15 12:30:00", SQL_C_TYPE_DATE, "SQL_C_TYPE_DATE", 19, 0);
+	test_conversion("timestamp_ns", "2021-07-15 12:30:00", SQL_C_TYPE_DATE, "SQL_C_TYPE_DATE", 19, 0);
+
+	// TIMESTAMP -> TIME
+	test_conversion("timestamp_s", "2021-07-15 12:30:00", SQL_C_TYPE_TIME, "SQL_C_TYPE_TIME", 19, 0);
+	test_conversion("timestamp_ms", "2021-07-15 12:30:00", SQL_C_TYPE_TIME, "SQL_C_TYPE_TIME", 19, 0);
+	test_conversion("timestamp", "2021-07-15 12:30:00", SQL_C_TYPE_TIME, "SQL_C_TYPE_TIME", 19, 0);
+	test_conversion("timestamp_ns", "2021-07-15 12:30:00", SQL_C_TYPE_TIME, "SQL_C_TYPE_TIME", 19, 0);
+
+	// TIMESTAMP -> TIMESTAMP
+	test_conversion("timestamp_s", "2021-07-15 12:30:00", SQL_C_TYPE_TIMESTAMP, "SQL_C_TYPE_TIMESTAMP", 19, 0);
+	test_conversion("timestamp_ms", "2021-07-15 12:30:00", SQL_C_TYPE_TIMESTAMP, "SQL_C_TYPE_TIMESTAMP", 19, 0);
+	test_conversion("timestamp", "2021-07-15 12:30:00", SQL_C_TYPE_TIMESTAMP, "SQL_C_TYPE_TIMESTAMP", 19, 0);
+	test_conversion("timestamp_ns", "2021-07-15 12:30:00", SQL_C_TYPE_TIMESTAMP, "SQL_C_TYPE_TIMESTAMP", 19, 0);
 
 	//! The following test don't work for us (i.e., on DuckDB)
 

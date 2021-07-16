@@ -7,7 +7,8 @@ connected
 'true' (boolean) as SQL_C_ULONG: 1
 'true' (boolean) as SQL_C_FLOAT: 1.000000
 'true' (boolean) as SQL_C_DOUBLE: 1.000000
-'true' (boolean) as SQL_C_BIT: 1
+'true' (boolean) as SQL_C_BIT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (BOOLEAN -> CHAR)
 'true' (boolean) as SQL_C_STINYINT: 1
 'true' (boolean) as SQL_C_UTINYINT: 1
 'true' (boolean) as SQL_C_SBIGINT: 1
@@ -54,30 +55,30 @@ connected
 '\x464F4F' (bytea) as SQL_C_CHAR: F4F4F
 '\x464F4F' (bytea) as SQL_C_WCHAR: F4F4F
 '\x464F4F' (bytea) as SQL_C_SSHORT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> SMALLINT)
 '\x464F4F' (bytea) as SQL_C_USHORT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> USMALLINT)
 '\x464F4F' (bytea) as SQL_C_SLONG: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> INTEGER)
 '\x464F4F' (bytea) as SQL_C_ULONG: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> UINTEGER)
 '\x464F4F' (bytea) as SQL_C_FLOAT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> FLOAT)
 '\x464F4F' (bytea) as SQL_C_DOUBLE: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> DOUBLE)
 '\x464F4F' (bytea) as SQL_C_BIT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> CHAR)
 '\x464F4F' (bytea) as SQL_C_STINYINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> TINYINT)
 '\x464F4F' (bytea) as SQL_C_UTINYINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> UTINYINT)
 '\x464F4F' (bytea) as SQL_C_SBIGINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> BIGINT)
 '\x464F4F' (bytea) as SQL_C_UBIGINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> UBIGINT)
 '\x464F4F' (bytea) as SQL_C_BINARY: hex: 4634463446
 '\x464F4F' (bytea) as SQL_C_BOOKMARK: SQLGetData failed
-=Not implemented Error: Unimplemented type "BLOB" for GetValue()
+=Not implemented Error: Unimplemented type for cast (BLOB -> UBIGINT)
 '\x464F4F' (bytea) as SQL_C_VARBOOKMARK: hex: 4634463446
 '\x464F4F' (bytea) as SQL_C_TYPE_DATE: SQLGetData failed
 =Not implemented Error: Unimplemented type for cast (BLOB -> DATE)
@@ -130,7 +131,7 @@ connected
 'x' (char) as SQL_C_DOUBLE: SQLGetData failed
 =Conversion Error: Could not convert string 'x' to DOUBLE
 'x' (char) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Could not convert string 'x' to UINT8
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> CHAR)
 'x' (char) as SQL_C_STINYINT: SQLGetData failed
 =Conversion Error: Could not convert string 'x' to INT8
 'x' (char) as SQL_C_UTINYINT: SQLGetData failed
@@ -203,7 +204,7 @@ connected
 '1234567890' (int8) as SQL_C_FLOAT: 1234567936.000000
 '1234567890' (int8) as SQL_C_DOUBLE: 1234567890.000000
 '1234567890' (int8) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (BIGINT -> CHAR)
 '1234567890' (int8) as SQL_C_STINYINT: SQLGetData failed
 =Conversion Error: Type INT64 with value 1234567890.000000 can't be cast because the value is out of range for the destination type INT8
 '1234567890' (int8) as SQL_C_UTINYINT: SQLGetData failed
@@ -258,7 +259,7 @@ connected
 '12345' (int2) as SQL_C_FLOAT: 12345.000000
 '12345' (int2) as SQL_C_DOUBLE: 12345.000000
 '12345' (int2) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type INT16 with value 12345.000000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (SMALLINT -> CHAR)
 '12345' (int2) as SQL_C_STINYINT: SQLGetData failed
 =Conversion Error: Type INT16 with value 12345.000000 can't be cast because the value is out of range for the destination type INT8
 '12345' (int2) as SQL_C_UTINYINT: SQLGetData failed
@@ -315,7 +316,7 @@ connected
 '1234567' (int4) as SQL_C_FLOAT: 1234567.000000
 '1234567' (int4) as SQL_C_DOUBLE: 1234567.000000
 '1234567' (int4) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (INTEGER -> CHAR)
 '1234567' (int4) as SQL_C_STINYINT: SQLGetData failed
 =Conversion Error: Type INT32 with value 1234567.000000 can't be cast because the value is out of range for the destination type INT8
 '1234567' (int4) as SQL_C_UTINYINT: SQLGetData failed
@@ -376,7 +377,7 @@ connected
 'textdata' (text) as SQL_C_DOUBLE: SQLGetData failed
 =Conversion Error: Could not convert string 'textdata' to DOUBLE
 'textdata' (text) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Could not convert string 'textdata' to UINT8
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> CHAR)
 'textdata' (text) as SQL_C_STINYINT: SQLGetData failed
 =Conversion Error: Could not convert string 'textdata' to INT8
 'textdata' (text) as SQL_C_UTINYINT: SQLGetData failed
@@ -446,7 +447,8 @@ connected
 '1.234' (float4) as SQL_C_ULONG: 1
 '1.234' (float4) as SQL_C_FLOAT: 1.234000
 '1.234' (float4) as SQL_C_DOUBLE: 1.234000
-'1.234' (float4) as SQL_C_BIT: 1
+'1.234' (float4) as SQL_C_BIT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (FLOAT -> CHAR)
 '1.234' (float4) as SQL_C_STINYINT: 1
 '1.234' (float4) as SQL_C_UTINYINT: 1
 '1.234' (float4) as SQL_C_SBIGINT: 1
@@ -498,7 +500,8 @@ connected
 '1.23456789012' (double) as SQL_C_ULONG: 1
 '1.23456789012' (double) as SQL_C_FLOAT: 1.234568
 '1.23456789012' (double) as SQL_C_DOUBLE: 1.234568
-'1.23456789012' (double) as SQL_C_BIT: 1
+'1.23456789012' (double) as SQL_C_BIT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DOUBLE -> CHAR)
 '1.23456789012' (double) as SQL_C_STINYINT: 1
 '1.23456789012' (double) as SQL_C_UTINYINT: 1
 '1.23456789012' (double) as SQL_C_SBIGINT: 1
@@ -557,7 +560,7 @@ connected
 'foobar' (varchar) as SQL_C_DOUBLE: SQLGetData failed
 =Conversion Error: Could not convert string 'foobar' to DOUBLE
 'foobar' (varchar) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Could not convert string 'foobar' to UINT8
+=Not implemented Error: Unimplemented type for cast (VARCHAR -> CHAR)
 'foobar' (varchar) as SQL_C_STINYINT: SQLGetData failed
 =Conversion Error: Could not convert string 'foobar' to INT8
 'foobar' (varchar) as SQL_C_UTINYINT: SQLGetData failed
@@ -621,22 +624,31 @@ connected
 =Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 '2011-02-13' (date) as SQL_C_CHAR: 2011-02-13
 '2011-02-13' (date) as SQL_C_WCHAR: 2011-02-13
-'2011-02-13' (date) as SQL_C_SSHORT: 15018
-'2011-02-13' (date) as SQL_C_USHORT: 15018
-'2011-02-13' (date) as SQL_C_SLONG: 15018
-'2011-02-13' (date) as SQL_C_ULONG: 15018
-'2011-02-13' (date) as SQL_C_FLOAT: 15018.000000
-'2011-02-13' (date) as SQL_C_DOUBLE: 15018.000000
+'2011-02-13' (date) as SQL_C_SSHORT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> SMALLINT)
+'2011-02-13' (date) as SQL_C_USHORT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> USMALLINT)
+'2011-02-13' (date) as SQL_C_SLONG: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> INTEGER)
+'2011-02-13' (date) as SQL_C_ULONG: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> UINTEGER)
+'2011-02-13' (date) as SQL_C_FLOAT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> FLOAT)
+'2011-02-13' (date) as SQL_C_DOUBLE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> DOUBLE)
 '2011-02-13' (date) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type INT32 with value 15018.000000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (DATE -> CHAR)
 '2011-02-13' (date) as SQL_C_STINYINT: SQLGetData failed
-=Conversion Error: Type INT32 with value 15018.000000 can't be cast because the value is out of range for the destination type INT8
+=Not implemented Error: Unimplemented type for cast (DATE -> TINYINT)
 '2011-02-13' (date) as SQL_C_UTINYINT: SQLGetData failed
-=Conversion Error: Type INT32 with value 15018.000000 can't be cast because the value is out of range for the destination type UINT8
-'2011-02-13' (date) as SQL_C_SBIGINT: 15018
-'2011-02-13' (date) as SQL_C_UBIGINT: 15018
+=Not implemented Error: Unimplemented type for cast (DATE -> UTINYINT)
+'2011-02-13' (date) as SQL_C_SBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> BIGINT)
+'2011-02-13' (date) as SQL_C_UBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> UBIGINT)
 '2011-02-13' (date) as SQL_C_BINARY: hex: 323031312D30322D3133
-'2011-02-13' (date) as SQL_C_BOOKMARK: 15018
+'2011-02-13' (date) as SQL_C_BOOKMARK: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (DATE -> UBIGINT)
 '2011-02-13' (date) as SQL_C_VARBOOKMARK: hex: 323031312D30322D3133
 '2011-02-13' (date) as SQL_C_TYPE_DATE: y: 2011 m: 2 d: 13
 '2011-02-13' (date) as SQL_C_TYPE_TIME: SQLGetData failed
@@ -675,25 +687,30 @@ connected
 '13:23:34' (time) as SQL_C_CHAR: 13:23:34
 '13:23:34' (time) as SQL_C_WCHAR: 13:23:34
 '13:23:34' (time) as SQL_C_SSHORT: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type INT16
+=Not implemented Error: Unimplemented type for cast (TIME -> SMALLINT)
 '13:23:34' (time) as SQL_C_USHORT: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT16
+=Not implemented Error: Unimplemented type for cast (TIME -> USMALLINT)
 '13:23:34' (time) as SQL_C_SLONG: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type INT32
+=Not implemented Error: Unimplemented type for cast (TIME -> INTEGER)
 '13:23:34' (time) as SQL_C_ULONG: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT32
-'13:23:34' (time) as SQL_C_FLOAT: 48213999616.000000
-'13:23:34' (time) as SQL_C_DOUBLE: 48214000000.000000
+=Not implemented Error: Unimplemented type for cast (TIME -> UINTEGER)
+'13:23:34' (time) as SQL_C_FLOAT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> FLOAT)
+'13:23:34' (time) as SQL_C_DOUBLE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> DOUBLE)
 '13:23:34' (time) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (TIME -> CHAR)
 '13:23:34' (time) as SQL_C_STINYINT: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type INT8
+=Not implemented Error: Unimplemented type for cast (TIME -> TINYINT)
 '13:23:34' (time) as SQL_C_UTINYINT: SQLGetData failed
-=Conversion Error: Type INT64 with value 48214000000.000000 can't be cast because the value is out of range for the destination type UINT8
-'13:23:34' (time) as SQL_C_SBIGINT: 48214000000
-'13:23:34' (time) as SQL_C_UBIGINT: 48214000000
+=Not implemented Error: Unimplemented type for cast (TIME -> UTINYINT)
+'13:23:34' (time) as SQL_C_SBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> BIGINT)
+'13:23:34' (time) as SQL_C_UBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> UBIGINT)
 '13:23:34' (time) as SQL_C_BINARY: hex: 31333A32333A3334
-'13:23:34' (time) as SQL_C_BOOKMARK: 48214000000
+'13:23:34' (time) as SQL_C_BOOKMARK: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIME -> UBIGINT)
 '13:23:34' (time) as SQL_C_VARBOOKMARK: hex: 31333A32333A3334
 '13:23:34' (time) as SQL_C_TYPE_DATE: SQLGetData failed
 =Not implemented Error: Unimplemented type for cast (TIME -> DATE)
@@ -733,25 +750,30 @@ connected
 '2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:18
 '2011-02-15 15:49:18' (timestamp) as SQL_C_WCHAR: 2011-02-15 15:49:18
 '2011-02-15 15:49:18' (timestamp) as SQL_C_SSHORT: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type INT16
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> SMALLINT)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_USHORT: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT16
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> USMALLINT)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_SLONG: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type INT32
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTEGER)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_ULONG: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT32
-'2011-02-15 15:49:18' (timestamp) as SQL_C_FLOAT: 1297784900681728.000000
-'2011-02-15 15:49:18' (timestamp) as SQL_C_DOUBLE: 1297784958000000.000000
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> UINTEGER)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_FLOAT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> FLOAT)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_DOUBLE: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> DOUBLE)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> CHAR)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_STINYINT: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type INT8
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> TINYINT)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_UTINYINT: SQLGetData failed
-=Conversion Error: Type INT64 with value 1297784958000000.000000 can't be cast because the value is out of range for the destination type UINT8
-'2011-02-15 15:49:18' (timestamp) as SQL_C_SBIGINT: 1297784958000000
-'2011-02-15 15:49:18' (timestamp) as SQL_C_UBIGINT: 1297784958000000
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> UTINYINT)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_SBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> BIGINT)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_UBIGINT: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> UBIGINT)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_BINARY: hex: 323031312D30322D31352031353A34393A3138
-'2011-02-15 15:49:18' (timestamp) as SQL_C_BOOKMARK: 1297784958000000
+'2011-02-15 15:49:18' (timestamp) as SQL_C_BOOKMARK: SQLGetData failed
+=Not implemented Error: Unimplemented type for cast (TIMESTAMP -> UBIGINT)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_VARBOOKMARK: hex: 323031312D30322D31352031353A34393A3138
 '2011-02-15 15:49:18' (timestamp) as SQL_C_TYPE_DATE: y: 2011 m: 2 d: 15
 '2011-02-15 15:49:18' (timestamp) as SQL_C_TYPE_TIME: h: 15 m: 49 s: 18
@@ -789,30 +811,30 @@ connected
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_CHAR: 9 years 1 month -12 days 13:14:00
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_WCHAR: 9 years 1 month -12 days 13:14:00
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SSHORT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> SMALLINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_USHORT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> USMALLINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SLONG: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> INTEGER)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_ULONG: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> UINTEGER)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_FLOAT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> FLOAT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_DOUBLE: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> DOUBLE)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BIT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> CHAR)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_STINYINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> TINYINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_UTINYINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> UTINYINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SBIGINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> BIGINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_UBIGINT: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> UBIGINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BINARY: hex: 392079656172732031206D6F6E7468202D313220646179732031333A31343A3030
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BOOKMARK: SQLGetData failed
-=Not implemented Error: Unimplemented type "INTERVAL" for GetValue()
+=Not implemented Error: Unimplemented type for cast (INTERVAL -> UBIGINT)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_VARBOOKMARK: hex: 392079656172732031206D6F6E7468202D313220646179732031333A31343A3030
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_TYPE_DATE: SQLGetData failed
 =Not implemented Error: Unimplemented type for cast (INTERVAL -> DATE)
@@ -846,11 +868,11 @@ connected
 '1234.567890' (numeric) as SQL_C_FLOAT: 1234.567017
 '1234.567890' (numeric) as SQL_C_DOUBLE: 1234.567000
 '1234.567890' (numeric) as SQL_C_BIT: SQLGetData failed
-=Conversion Error: Type DOUBLE with value 1234.567000 can't be cast because the value is out of range for the destination type UINT8
+=Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> CHAR)
 '1234.567890' (numeric) as SQL_C_STINYINT: SQLGetData failed
-=Conversion Error: Type DOUBLE with value 1234.567000 can't be cast because the value is out of range for the destination type INT8
+=Conversion Error: Type INT64 with value 1234.000000 can't be cast because the value is out of range for the destination type INT8
 '1234.567890' (numeric) as SQL_C_UTINYINT: SQLGetData failed
-=Conversion Error: Type DOUBLE with value 1234.567000 can't be cast because the value is out of range for the destination type UINT8
+=Conversion Error: Type INT64 with value 1234.000000 can't be cast because the value is out of range for the destination type UINT8
 '1234.567890' (numeric) as SQL_C_SBIGINT: 1234
 '1234.567890' (numeric) as SQL_C_UBIGINT: 1234
 '1234.567890' (numeric) as SQL_C_BINARY: hex: 313233342E353637
@@ -891,6 +913,7 @@ connected
 =Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
 '1234.567890' (numeric) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 =Not implemented Error: Unimplemented type for cast (DECIMAL(18,3) -> INTERVAL)
+
 ---Running pontual tests...
 '\x464F4F' (bytea) as SQL_C_CHAR: F4F4F
 '\x464F4F' (bytea) as SQL_C_WCHAR: F4F4F
@@ -917,4 +940,18 @@ connected
 '' (text) as SQL_C_CHAR: 
 '' (text) as SQL_C_WCHAR: 
 '2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:1
+
+Testing different timestamp subtype conversions to DATE, TIME, and TIMESPAMP.
+'2021-07-15 12:30:00' (timestamp_s) as SQL_C_TYPE_DATE: y: 2021 m: 7 d: 15
+'2021-07-15 12:30:00' (timestamp_ms) as SQL_C_TYPE_DATE: y: 2021 m: 7 d: 15
+'2021-07-15 12:30:00' (timestamp) as SQL_C_TYPE_DATE: y: 2021 m: 7 d: 15
+'2021-07-15 12:30:00' (timestamp_ns) as SQL_C_TYPE_DATE: y: 2021 m: 7 d: 15
+'2021-07-15 12:30:00' (timestamp_s) as SQL_C_TYPE_TIME: h: 12 m: 30 s: 0
+'2021-07-15 12:30:00' (timestamp_ms) as SQL_C_TYPE_TIME: h: 12 m: 30 s: 0
+'2021-07-15 12:30:00' (timestamp) as SQL_C_TYPE_TIME: h: 12 m: 30 s: 0
+'2021-07-15 12:30:00' (timestamp_ns) as SQL_C_TYPE_TIME: h: 12 m: 30 s: 0
+'2021-07-15 12:30:00' (timestamp_s) as SQL_C_TYPE_TIMESTAMP: y: 2021 m: 7 d: 15 h: 12 m: 30 s: 0 f: 0
+'2021-07-15 12:30:00' (timestamp_ms) as SQL_C_TYPE_TIMESTAMP: y: 2021 m: 7 d: 15 h: 12 m: 30 s: 0 f: 0
+'2021-07-15 12:30:00' (timestamp) as SQL_C_TYPE_TIMESTAMP: y: 2021 m: 7 d: 15 h: 12 m: 30 s: 0 f: 0
+'2021-07-15 12:30:00' (timestamp_ns) as SQL_C_TYPE_TIMESTAMP: y: 2021 m: 7 d: 15 h: 12 m: 30 s: 0 f: 0
 disconnecting
