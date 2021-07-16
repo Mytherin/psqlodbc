@@ -5,6 +5,8 @@
 #include "common.h"
 
 TEST_CASE("bindcol-test", "[odbc]") {
+	test_printf_reset();
+
 	int			rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
 	/*
@@ -30,7 +32,7 @@ TEST_CASE("bindcol-test", "[odbc]") {
 		REQUIRE(1==0);
 	}
 
-	rc = SQLBindCol(hstmt, 1, SQL_C_LONG, &longvalue, 0, &indLongvalue);
+	rc = SQLBindCol(hstmt, 1, SQL_C_LONG, &longvalue, sizeof(SQLINTEGER), &indLongvalue);
 	CHECK_STMT_RESULT(rc, "SQLBindCol failed", hstmt);
 
 	rc = SQLBindCol(hstmt, 2, SQL_C_CHAR, &charvalue, sizeof(charvalue), &indCharvalue);
@@ -40,7 +42,7 @@ TEST_CASE("bindcol-test", "[odbc]") {
 					   "SELECT id, 'foo' || id FROM generate_series(1, 10) id(id)", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
-	printf("Result set:\n");
+	test_printf("Result set:\n");
 	rowno = 0;
 	while(1)
 	{
@@ -49,7 +51,7 @@ TEST_CASE("bindcol-test", "[odbc]") {
 			break;
 		if (rc == SQL_SUCCESS)
 		{
-			printf("%ld %s\n", (long) longvalue, charvalue);
+			test_printf("%ld %s\n", (long) longvalue, charvalue);
 		}
 		else
 		{
@@ -83,8 +85,13 @@ TEST_CASE("bindcol-test", "[odbc]") {
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("bindcol");
 
 	return;
 }
