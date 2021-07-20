@@ -16,7 +16,7 @@ runtest(const char *extra_conn_options)
 	SQLUSMALLINT i;
 	SQLSMALLINT numcols;
 
-	printf("Running tests with %s...\n", extra_conn_options);
+	// printf("Running tests with %s...\n", extra_conn_options);
 
 	/* The behavior of these tests depend on the UnknownSizes parameter */
 	test_connect_ext(extra_conn_options);
@@ -31,7 +31,7 @@ runtest(const char *extra_conn_options)
 	/*
 	 * Get column attributes of a simple query.
 	 */
-	printf("Testing SQLColAttribute...\n");
+	test_printf("Testing SQLColAttribute...\n");
 	rc = SQLExecDirect(hstmt,
 			(SQLCHAR *) "SELECT '1'::int AS intcol, 'foobar'::text AS textcol, 'varchar string'::varchar as varcharcol, ''::varchar as empty_varchar_col, 'varchar-5-col'::varchar(5) as varchar5col, '5 days'::interval day to second",
 			SQL_NTS);
@@ -47,32 +47,41 @@ runtest(const char *extra_conn_options)
 
 		rc = SQLColAttribute(hstmt, i, SQL_DESC_LABEL, buffer, sizeof(buffer), NULL, NULL);
 		CHECK_STMT_RESULT(rc, "SQLColAttribute failed", hstmt);
-		printf("\n-- Column %d: %s --\n", i, buffer);
+		test_printf("\n-- Column %d: %s --\n", i, buffer);
 
 		rc = SQLColAttribute(hstmt, i, SQL_DESC_OCTET_LENGTH, NULL, SQL_IS_INTEGER, NULL, &number);
 		CHECK_STMT_RESULT(rc, "SQLColAttribute failed", hstmt);
-		printf("SQL_DESC_OCTET_LENGTH: %d\n", (int) number);
+		test_printf("SQL_DESC_OCTET_LENGTH: %d\n", (int) number);
 
 		rc = SQLColAttribute(hstmt, i, SQL_DESC_TYPE_NAME, buffer, sizeof(buffer), NULL, NULL);
 		CHECK_STMT_RESULT(rc, "SQLColAttribute failed", hstmt);
-		printf("SQL_DESC_TYPE_NAME: %s\n", buffer);
+		test_printf("SQL_DESC_TYPE_NAME: %s\n", buffer);
 	}
+
+	// clean up statement
+	release_statement(hstmt);
 
 	/* Clean up */
 	test_disconnect();
 }
 
 TEST_CASE("colattribute-test", "[odbc]") {
+	test_printf_reset();
 
 	/*
 	 * The output of these tests depend on the UnknownSizes and
 	 * MaxVarcharSize parameters
 	 */
 	// runtest("UnknownSizes=-1;MaxVarcharSize=100"); meaningless
+
+	//! UnknownSizes and MaxVarcharSize are POSTGRES parameters, no matter for DuckDB
 	runtest("UnknownSizes=0;MaxVarcharSize=100");
-	runtest("UnknownSizes=1;MaxVarcharSize=100");
-	runtest("UnknownSizes=2;MaxVarcharSize=100");
+
+	// runtest("UnknownSizes=1;MaxVarcharSize=100");
+	// runtest("UnknownSizes=2;MaxVarcharSize=100");
 	// runtest("UnknownSizes=100;MaxVarcharSize=100"); meaningless
+
+	test_check_result("colattribute");
 
 	return;
 }
