@@ -3,39 +3,41 @@
 //* This test was based on the Microsoft ODBC guide in the following link:
 //! https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/row-wise-binding?view=sql-server-ver15
 
-const int ROW_ARRAY_SIZE = 10;
-// #define ROW_ARRAY_SIZE 10
+SQLULEN ROW_ARRAY_SIZE = 10;
+
 // Define the ORDERINFO struct and allocate an array of 10 structs.  
+// LenOrInd structure members should by 8-byte aligned, i.e, SQLULEN,
+// because of sanitizer might detect missaligng address in row-wise fetching
 typedef struct {  
-   SQLUINTEGER   OrderID;
-   SQLINTEGER    OrderIDInd;
-   SQLCHAR       SalesPerson[13];
-   SQLINTEGER    SalesPersonLenOrInd;
-   SQLCHAR       Status[8];
-   SQLINTEGER    StatusLenOrInd;
+   SQLUINTEGER  OrderID;
+   SQLULEN      OrderIDInd;
+   SQLCHAR      SalesPerson[13];
+   SQLULEN      SalesPersonLenOrInd;
+   SQLCHAR      Status[8];
+   SQLULEN      StatusLenOrInd;
 } ORDERINFO;
 
 typedef struct {  
    SQLCHAR              Bool[2]; // 2 chars because of \0
-   SQLINTEGER           BoolInd;
+   SQLULEN              BoolInd;
    SQLUINTEGER          UInt;
-   SQLINTEGER           UIntInd;
+   SQLULEN              UIntInd;
    SQLINTEGER           Int;
-   SQLINTEGER           IntInd;
+   SQLULEN              IntInd;
    SQLDOUBLE            Double;
-   SQLINTEGER           DoubleInd;
+   SQLULEN              DoubleInd;
    SQL_NUMERIC_STRUCT   Numeric;
-   SQLINTEGER           NumericInd;
+   SQLULEN              NumericInd;
    SQLCHAR              Varchar[16];
-   SQLINTEGER           VarcharLenOrInd;
+   SQLULEN              VarcharLenOrInd;
    SQLDATE              Date[10]; //10 chars
-   SQLINTEGER           DateLenOrInd;
+   SQLULEN              DateLenOrInd;
 } MANY_SQL_TYPES;
 
-void print_order_addresses(ORDERINFO *OrderInfoArray) {
+void print_order_addresses(ORDERINFO *OrderInfoArray, uint32_t array_size) {
     printf("Index\tOrderID\t\tOrderIDInd\tSalesPerson\tSalesPersonLen\tStatus\t\tStatusLenOrInd\n");
     printf("--------------------------------------------------------------------------------------------------------\n");
-    for(int i=0; i < ROW_ARRAY_SIZE; ++i) {
+    for(int i=0; i < array_size; ++i) {
         printf("%d\t%p\t%p\t%p\t%p\t%p\t%p |\n", i, &OrderInfoArray[i].OrderID, &OrderInfoArray[i].OrderIDInd, &OrderInfoArray[i].SalesPerson,
                                             &OrderInfoArray[i].SalesPersonLenOrInd, &OrderInfoArray[i].Status, &OrderInfoArray[i].StatusLenOrInd);
     }
@@ -62,10 +64,10 @@ void test_microsoft_example() {
     // attribute to point to the row status array. Set the
     // SQL_ATTR_ROWS_FETCHED_PTR statement attribute to point to
     // NumRowsFetched.
-    uint32_t order_info_size = sizeof(ORDERINFO);
+    SQLULEN order_info_size = sizeof(ORDERINFO);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_BIND_TYPE, &order_info_size, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
-    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, (void *) &ROW_ARRAY_SIZE, 0);
+    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, &ROW_ARRAY_SIZE, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_STATUS_PTR, RowStatusArray, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
@@ -135,7 +137,7 @@ void test_many_sql_types() {
     uint64_t row_size = sizeof(MANY_SQL_TYPES);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_BIND_TYPE, &row_size, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
-    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, (void *) &ROW_ARRAY_SIZE, 0);
+    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, &ROW_ARRAY_SIZE, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_STATUS_PTR, RowStatusArray, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
