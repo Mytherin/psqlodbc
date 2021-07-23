@@ -44,6 +44,7 @@ add_library(
       prepare-test.cpp
       quotes-test.cpp
       result-conversions-test.cpp
+      row-wise-fetching-test.cpp
       select-test.cpp
       stmthandles-test.cpp
       update-test.cpp
