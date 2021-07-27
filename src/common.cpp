@@ -1,5 +1,16 @@
 #include "common.h"
 
+#include <string>
+#include <fstream>
+#include <algorithm>
+#include <cctype>
+#include <iomanip>
+#include <memory>
+#include <sstream>
+#include <stdarg.h>
+#include <string.h>
+#include <cstdarg>
+
 SQLHENV env;
 SQLHDBC conn;
 
@@ -423,9 +434,6 @@ void test_printf_reset() {
     test_printf_output  ="";
 }
 
-#include <cstdarg>
-
-
  void test_printf(const char* fmt, ...)
 {
 	char buff[1024];
@@ -436,10 +444,15 @@ void test_printf_reset() {
     test_printf_output += std::string(buff);
 }
 
-
-#include <string>
-#include <fstream>
-
+std::vector<std::string> SplitLines(const std::string &str) {
+	std::stringstream ss(str);
+	std::vector<std::string> lines;
+	std::string temp;
+	while (getline(ss, temp, '\n')) {
+		lines.push_back(temp);
+	}
+	return (lines);
+}
 
 void test_check_result(std::string name) {
 	auto expect_filename = "expected/" + name + ".out";
@@ -447,7 +460,38 @@ void test_check_result(std::string name) {
 	std::string str((std::istreambuf_iterator<char>(in)),
                         std::istreambuf_iterator<char>());
 
-	REQUIRE(test_printf_output == str);
+	if (test_printf_output == str) {
+		REQUIRE(1==1);
+	} else {
+		auto test_lines = SplitLines(test_printf_output);
+		auto expected_lines = SplitLines(str);
+		auto check_count = 0;
+		if (test_lines.size() != expected_lines.size()) {
+			fprintf(stderr, "Expected %d lines but got %d lines\n", int(expected_lines.size()), int(test_lines.size()));
+			check_count = test_lines.size() > expected_lines.size() ? expected_lines.size() : test_lines.size();
+		} else {
+			check_count = test_lines.size();
+		}
+		for(auto line_nr = 0; line_nr < check_count; line_nr++) {
+			if (expected_lines[line_nr] != test_lines[line_nr]) {
+				fprintf(stderr, "-------------------------------\n");
+				fprintf(stderr, "Difference in line %d\n", int(line_nr + 1));
+				fprintf(stderr, "-----------Expected------------\n");
+				fprintf(stderr, "%s\n", expected_lines[line_nr].c_str());
+				fprintf(stderr, "------------Actual-------------\n");
+				fprintf(stderr, "%s\n", test_lines[line_nr].c_str());
+				break;
+			}
+		}
+		fprintf(stderr, "-------------------------------\n");
+		fprintf(stderr, "-------------------------------\n");
+		fprintf(stderr, "-------------------------------\n");
+		fprintf(stderr, "-------FULL ERROR LOG----------\n");
+		fprintf(stderr, "-------------------------------\n");
+		fprintf(stderr, "-------------------------------\n");
+		fprintf(stderr, "-------------------------------\n");
+		REQUIRE(test_printf_output == str);
+	}
 }
 
 void release_statement(HSTMT &hstmt) {
