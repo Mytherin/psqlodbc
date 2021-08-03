@@ -67,7 +67,7 @@ void test_microsoft_example() {
     SQLULEN order_info_size = sizeof(ORDERINFO);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_BIND_TYPE, &order_info_size, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
-    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, &ROW_ARRAY_SIZE, 0);
+    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, (SQLPOINTER) ROW_ARRAY_SIZE, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_STATUS_PTR, RowStatusArray, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
@@ -137,7 +137,7 @@ void test_many_sql_types() {
     uint64_t row_size = sizeof(MANY_SQL_TYPES);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_BIND_TYPE, &row_size, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
-    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, &ROW_ARRAY_SIZE, 0);
+    rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, (SQLPOINTER) ROW_ARRAY_SIZE, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
     rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_STATUS_PTR, RowStatusArray, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr failed", hstmt);
