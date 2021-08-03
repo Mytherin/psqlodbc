@@ -13,6 +13,8 @@
 #define	BLOCK	84
 
 TEST_CASE("declare-fetch-block-test", "[odbc]") {
+	test_printf_reset();
+
 	int			rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
 	int		i;
@@ -22,8 +24,8 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 	int		fetchIdx = 0;
 	SQLLEN		rowArraySize = BLOCK;
 	SQLULEN		rowsFetched;
-	SQLINTEGER	id[BLOCK];
-	SQLLEN		cbLen[BLOCK];
+	SQLINTEGER	id[TOTAL];
+	SQLLEN		cbLen[TOTAL];
 
 	/****
      * Run this test with UseDeclareFetch = 1 and Fetch=100(default).
@@ -57,15 +59,18 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr ROW_ARRAY_SIZE failed", hstmt);
 	rc = SQLSetStmtAttr(hstmt, SQL_ATTR_ROWS_FETCHED_PTR, (SQLPOINTER) &rowsFetched, 0);
 	CHECK_STMT_RESULT(rc, "SQLSetStmtAttr ROWS_FETCHED_PTR failed", hstmt);
+
+	auto cb_len_addr = &cbLen;
 	rc = SQLBindCol(hstmt, 1, SQL_C_SLONG, &id, 0, cbLen);
 	CHECK_STMT_RESULT(rc, "SQLBindCol failed", hstmt);
+
 	rc = SQLExecDirect(hstmt, (SQLCHAR *) "select * from tmptable", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "select failed", hstmt);
 	while (rc = SQLFetch(hstmt), SQL_SUCCEEDED(rc))
 	{
 		fetchIdx++;
 		totalRows += (int) rowsFetched;
-		printf("fetchIdx=%d, fetched rows=%d, total rows=%d\n", fetchIdx, (int) rowsFetched, totalRows);
+		test_printf("fetchIdx=%d, fetched rows=%d, total rows=%d\n", fetchIdx, (int) rowsFetched, totalRows);
 	}
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
@@ -87,13 +92,13 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 			totalRows += (int) rowsFetched;
 		if (SQL_NO_DATA != rc)
 			CHECK_STMT_RESULT(rc, "fetch failed", hstmt);
-		printf("next  total rows=%d\n", totalRows);
+		test_printf("next  total rows=%d\n", totalRows);
 		totalRows = 0;
 		while (rc = SQLFetchScroll(hstmt, SQL_FETCH_PRIOR, 0), SQL_SUCCEEDED(rc))
 			totalRows += (int) rowsFetched;
 		if (SQL_NO_DATA != rc)
 			CHECK_STMT_RESULT(rc, "fetch failed", hstmt);
-		printf("prior total rows=%d\n", totalRows);
+		test_printf("prior total rows=%d\n", totalRows);
 	}
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
@@ -104,7 +109,7 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "select failed", hstmt);
 	if (rc = SQLFetchScroll(hstmt, SQL_FETCH_ABSOLUTE, count + 1), !SQL_SUCCEEDED(rc))
 	{
-		printf("FetchScroll beyond the end failed %d\n", rc);
+		test_printf("FetchScroll beyond the end failed %d\n", rc);
 	}
 	rc = SQLFetchScroll(hstmt, SQL_FETCH_ABSOLUTE, 1);
 	CHECK_STMT_RESULT(rc, "FetchScroll the 1st row failed", hstmt);
@@ -113,13 +118,18 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 		if (!SQL_SUCCEEDED(rc = SQLFetchScroll(hstmt, SQL_FETCH_NEXT, 0)))
 				break;
 	}
-	printf("encountered EOF at %d\n", i);
+	test_printf("encountered EOF at %d\n", i);
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("declare-fetch-block");
 
 	return;
 }
