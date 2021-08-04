@@ -7,4 +7,18 @@ next  total rows=120
 prior total rows=120
 FetchScroll beyond the end failed 100
 encountered EOF at 120
+
+---Total rows: 4096 and rowset size: 512
+fetchIdx=1, fetched rows=512, total rows=512
+fetchIdx=2, fetched rows=512, total rows=1024
+fetchIdx=3, fetched rows=512, total rows=1536
+fetchIdx=4, fetched rows=512, total rows=2048
+fetchIdx=5, fetched rows=512, total rows=2560
+fetchIdx=6, fetched rows=512, total rows=3072
+fetchIdx=7, fetched rows=512, total rows=3584
+fetchIdx=8, fetched rows=512, total rows=4096
+next  total rows=4096
+prior total rows=4096
+next  total rows=4096
+prior total rows=4096
 disconnecting
