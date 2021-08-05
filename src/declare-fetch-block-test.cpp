@@ -182,7 +182,7 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 	/* Clean up */
 	test_disconnect();
 
-	// test_check_result("declare-fetch-block");
+    test_check_result("declare-fetch-block");
 
 	return;
 }
