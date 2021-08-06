@@ -13,6 +13,8 @@
 #include "common.h"
 
 TEST_CASE("cursor-commit-test", "[odbc]") {
+	test_printf_reset();
+
 	int			rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
 	SQLCHAR		charval[100];
@@ -56,7 +58,7 @@ TEST_CASE("cursor-commit-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLFetchScroll(FIRST) failed", hstmt);
 
 	if (rc == SQL_SUCCESS || rc == SQL_SUCCESS_WITH_INFO)
-		printf("first row: %s\n", charval);
+		test_printf("first row: %s\n", charval);
 
 	row = 1;
 	while (1)
@@ -68,7 +70,7 @@ TEST_CASE("cursor-commit-test", "[odbc]") {
 		row++;
 
 		if (rc == SQL_SUCCESS || rc == SQL_SUCCESS_WITH_INFO)
-			printf("row %d: %s\n", row, charval);
+			test_printf("row %d: %s\n", row, charval);
 		else
 		{
 			print_diag("SQLFetchScroll failed", SQL_HANDLE_STMT, hstmt);
@@ -79,8 +81,13 @@ TEST_CASE("cursor-commit-test", "[odbc]") {
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("cursor-commit");
 
 	return;
 }
