@@ -51,6 +51,8 @@ runTest(HSTMT hstmt)
 }
 
 TEST_CASE("cte-test", "[odbc]") {
+	test_printf_reset();
+
 	int			rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
 
@@ -69,6 +71,9 @@ TEST_CASE("cte-test", "[odbc]") {
 	}
 	runTest(hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
 
@@ -83,8 +88,13 @@ TEST_CASE("cte-test", "[odbc]") {
 	}
 	runTest(hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("cte");
 
 	return;
 }
