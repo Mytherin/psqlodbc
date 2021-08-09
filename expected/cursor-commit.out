@@ -2,4 +2,9 @@ connected
 first row: 1
 row 2: 2
 row 3: 3
+
+Testing statement handles and SQLEndTran(commit)
+row 1: 1
+row 2: 2
+row 3: 3
 disconnecting
