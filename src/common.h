@@ -24,6 +24,7 @@ extern std::string test_printf_get();
 extern void test_printf_reset();
 
 extern void test_check_result(std::string name);
+extern void fix_result(std::string name);
 
 extern void release_statement(HSTMT &hstmt);
 

@@ -454,6 +454,14 @@ std::vector<std::string> SplitLines(const std::string &str) {
 	return (lines);
 }
 
+void fix_result(std::string name) {
+	auto expect_filename = "expected/" + name + ".out";
+	std::ofstream of(expect_filename);
+	of.write(test_printf_output.c_str(), test_printf_output.size());
+	of.close();
+}
+
+
 void test_check_result(std::string name) {
 	auto expect_filename = "expected/" + name + ".out";
 	std::ifstream in(expect_filename);
