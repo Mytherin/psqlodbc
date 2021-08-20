@@ -5,6 +5,8 @@
 #include "common.h"
 
 TEST_CASE("dataatexecution-test", "[odbc]") {
+	test_printf_reset();
+
 	SQLRETURN rc;
 	HSTMT hstmt = SQL_NULL_HSTMT;
 	char *param1;
@@ -152,7 +154,7 @@ TEST_CASE("dataatexecution-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLParamData failed", hstmt);
 
 	/* Fetch results */
-	printf("Parameter	Status\n");
+	test_printf("Parameter	Status\n");
 	for (i = 0; i < nprocessed; i++)
 	{
 		switch (status_array[i])
@@ -175,11 +177,11 @@ TEST_CASE("dataatexecution-test", "[odbc]") {
 		}
 	}
 
-	printf ("Fetching result sets for array bound (%u results expected)\n",
+	test_printf("Fetching result sets for array bound (%u results expected)\n",
 			(unsigned int) nprocessed);
 	for (i = 1; rc == SQL_SUCCESS || rc == SQL_SUCCESS_WITH_INFO; i++)
 	{
-		printf("%d: ", i);
+		test_printf("%d: ", i);
 		print_result(hstmt);
 
 		rc = SQLMoreResults(hstmt);
@@ -190,8 +192,13 @@ TEST_CASE("dataatexecution-test", "[odbc]") {
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
+	// clean up statement
+	release_statement(hstmt);
+
 	/* Clean up */
 	test_disconnect();
+
+	test_check_result("dataatexecution");
 
 	return;
 }
