@@ -7,6 +7,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <time.h>
+#include <iostream>
 
 #ifdef WIN32
 #include <float.h>
@@ -134,9 +135,9 @@ printwchar(SQLWCHAR *wstr)
 	while(*wstr && i < MAXLEN)
 	{
 		if ((*wstr & 0xFFFFFF00) == 0 && isprint(*wstr))
-			printf("%c", *wstr);
+			test_printf("%c", *wstr);
 		else
-			printf("\\%4X", *wstr);
+			test_printf("\\%4X", *wstr);
 		wstr++;
 		i++;
 	}
@@ -179,8 +180,8 @@ print_sql_type(int sql_c_type, void *buf, SQLLEN strlen_or_ind, int use_time)
 			test_printf("%s", (char *) buf);
 			break;
 		case SQL_C_WCHAR:
-			// printwchar((SQLWCHAR *) buf);
-			test_printf("%ls", (SQLWCHAR *) buf);
+			printwchar((SQLWCHAR *) buf);
+			// test_printf("%ls", (SQLWCHAR *) buf);
 			break;
 		case SQL_C_SSHORT:
 			test_printf("%hd", *((short *) buf));
@@ -463,11 +464,13 @@ get_sql_type_size(int sql_c_type)
 	}
 }
 
-static char *resultbuf = NULL;
+// static char *resultbuf = NULL;
 
 void
 test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char *sqltypestr, int buflen, int use_time)
 {
+	static char *resultbuf = NULL;
+
 	char		sql[500];
 	SQLRETURN	rc;
 	SQLLEN		len_or_ind;
@@ -527,7 +530,8 @@ test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char
 				else if (SQL_NO_DATA == rc && IsAnsi()) /* maybe */
 					test_printf(" (truncated)");
 				else
-					print_diag("SQLGetData success with info", SQL_HANDLE_STMT, hstmt);
+					test_printf("\t(SQLGetData success with info)");
+					// print_diag("SQLGetData success with info", SQL_HANDLE_STMT, hstmt);
 			}
 		}
 		/* just in order to fix ansi driver test on Windows */
@@ -648,9 +652,9 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	test_conversion("text", "", SQL_C_TYPE_TIME, "SQL_C_TYPE_TIME", -1, 0);
 	test_conversion("text", "", SQL_C_TYPE_TIMESTAMP, "SQL_C_TYPE_TIMESTAMP", -1, 1);
 
-	// /*
-	//  * Test for truncations.
-	//  */
+	/*
+	 * Test for truncations.
+	 */
 	test_conversion("text", "foobar", SQL_C_CHAR, "SQL_C_CHAR", 5, 0);
 	test_conversion("text", "foobar", SQL_C_CHAR, "SQL_C_CHAR", 6, 0);
 	test_conversion("text", "foobar", SQL_C_CHAR, "SQL_C_CHAR", 7, 0);
@@ -686,11 +690,11 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 
 	//! The following test don't work for us (i.e., on DuckDB)
 
-	// /*
-	//  * Test for a specific bug, where the driver used to overrun the output
-	//  * buffer because it assumed that a timestamp value is always max 20 bytes
-	//  * long (not true for BC values, or with years > 10000)
-	//  */
+	/*
+	 * Test for a specific bug, where the driver used to overrun the output
+	 * buffer because it assumed that a timestamp value is always max 20 bytes
+	 * long (not true for BC values, or with years > 10000)
+	 */
 	// test_conversion("timestamp", "2011-02-15 15:49:18 BC", SQL_C_CHAR, "SQL_C_CHAR", 20, 0);
 
 	// /* Test special float values */
