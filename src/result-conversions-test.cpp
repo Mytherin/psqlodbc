@@ -665,7 +665,10 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	test_conversion("text", "foobar", SQL_C_WCHAR, "SQL_C_WCHAR", 14, 0);
 
 	test_conversion("text", "", SQL_C_CHAR, "SQL_C_CHAR", 1, 0);
-	test_conversion("text", "", SQL_C_WCHAR, "SQL_C_WCHAR", 1, 0);
+	#ifndef _WIN32
+		//TODO Windows converts SQL_C_WCHAR to SQL_C_CHAR, because we are a ASCII driver, for now
+		test_conversion("text", "", SQL_C_WCHAR, "SQL_C_WCHAR", 1, 0);
+	#endif
 
 	test_conversion("timestamp", "2011-02-15 15:49:18", SQL_C_CHAR, "SQL_C_CHAR", 19, 0);
 
@@ -717,7 +720,11 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	/* Clean up */
 	test_disconnect();
 
-	test_check_result("result-conversions");
+	#ifdef _WIN32
+		test_check_result("result-conversions-windows");
+	#else
+		test_check_result("result-conversions");
+	#endif
 
 	return;
 }
