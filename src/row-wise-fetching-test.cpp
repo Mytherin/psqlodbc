@@ -3,7 +3,7 @@
 //* This test was based on the Microsoft ODBC guide in the following link:
 //! https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/row-wise-binding?view=sql-server-ver15
 
-SQLULEN ROW_ARRAY_SIZE = 10;
+const SQLULEN ROW_ARRAY_SIZE = 10;
 
 // Define the ORDERINFO struct and allocate an array of 10 structs.  
 // LenOrInd structure members should by 8-byte aligned, i.e, SQLULEN,
