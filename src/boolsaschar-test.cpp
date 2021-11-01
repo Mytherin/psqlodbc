@@ -13,7 +13,8 @@ TEST_CASE("boolsaschar-test", "[odbc]") {
 	SQLSMALLINT colid;
 
 	/* BoolsAsChar is the default, but just in case.. */
-	test_connect_ext("Database=contrib_regression;BoolsAsChar=1");
+//	test_connect_ext("Database=contrib_regression;BoolsAsChar=1");
+	test_connect();
 
 	rc = SQLAllocHandle(SQL_HANDLE_STMT, conn, &hstmt);
 	if (!SQL_SUCCEEDED(rc))
@@ -21,6 +22,9 @@ TEST_CASE("boolsaschar-test", "[odbc]") {
 		print_diag("failed to allocate stmt handle", SQL_HANDLE_DBC, conn);
 		REQUIRE(1==0);
 	}
+
+    //! Init database
+    initdb(hstmt);
 
 	/**** A simple query with one text param ****/
 
