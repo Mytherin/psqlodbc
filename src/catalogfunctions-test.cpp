@@ -21,6 +21,8 @@
 #include "common.h"
 
 TEST_CASE("catalogfunctions-test", "[odbc]") {
+	test_printf_reset();
+
 	int			rc;
 	HSTMT		hstmt = SQL_NULL_HSTMT;
 	/* Cases where output is limited to relevant information only */
@@ -45,7 +47,7 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 
 	SQLExecDirect(hstmt, (SQLCHAR *) "drop table if exists testtab2", SQL_NTS);
 	/* Check for SQLGetTypeInfo */
-	printf("Check for SQLTypeInfo\n");
+	test_printf("Check for SQLTypeInfo\n");
 	rc = SQLGetTypeInfo(hstmt, SQL_VARCHAR);
 	CHECK_STMT_RESULT(rc, "SQLGetTypeInfo failed", hstmt);
 	print_result_meta(hstmt);
@@ -54,9 +56,9 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLTables */
-	printf("Check for SQLTables\n");
+	test_printf("Check for SQLTables\n");
 	rc = SQLTables(hstmt, NULL, 0,
-				   (SQLCHAR *) "public", SQL_NTS,
+				   (SQLCHAR *) "main", SQL_NTS,
 				   (SQLCHAR *) "%", SQL_NTS,
 				   (SQLCHAR *) "TABLE", SQL_NTS);
 	CHECK_STMT_RESULT(rc, "SQLTables failed", hstmt);
@@ -66,10 +68,10 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLColumns */
-	printf("Check for SQLColumns\n");
+	test_printf("Check for SQLColumns\n");
 	rc = SQLColumns(hstmt,
 					NULL, 0,
-					(SQLCHAR *) "public", SQL_NTS,
+					(SQLCHAR *) "main", SQL_NTS,
 					(SQLCHAR *) "%", SQL_NTS,
 					NULL, 0);
 	CHECK_STMT_RESULT(rc, "SQLColumns failed", hstmt);
@@ -97,166 +99,166 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 	//CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLSpecialColumns */
-	printf("Check for SQLSpecialColumns\n");
-	rc = SQLSpecialColumns(hstmt, SQL_ROWVER,
-						   NULL, 0,
-						   (SQLCHAR *) "public", SQL_NTS,
-						   (SQLCHAR *) "testtab1", SQL_NTS,
-						   SQL_SCOPE_SESSION,
-						   SQL_NO_NULLS);
-	CHECK_STMT_RESULT(rc, "SQLSpecialColumns failed", hstmt);
-	print_result_meta(hstmt);
-	print_result(hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// printf("Check for SQLSpecialColumns\n");
+	// rc = SQLSpecialColumns(hstmt, SQL_ROWVER,
+	// 					   NULL, 0,
+	// 					   (SQLCHAR *) "public", SQL_NTS,
+	// 					   (SQLCHAR *) "testtab1", SQL_NTS,
+	// 					   SQL_SCOPE_SESSION,
+	// 					   SQL_NO_NULLS);
+	// CHECK_STMT_RESULT(rc, "SQLSpecialColumns failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result(hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/*
 	 * Check for SQLStatistics. It is important to note that this function
 	 * returns statistics like the number of pages used and the number of
 	 * index scans.
 	 */
-	printf("Check for SQLStatistics\n");
-	rc = SQLStatistics(hstmt,
-					   NULL, 0,
-					   (SQLCHAR *) "public", SQL_NTS,
-					   (SQLCHAR *) "testtab1", SQL_NTS,
-					   0, 0);
-	CHECK_STMT_RESULT(rc, "SQLStatistics failed", hstmt);
-	print_result_meta(hstmt);
-	print_result(hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// printf("Check for SQLStatistics\n");
+	// rc = SQLStatistics(hstmt,
+	// 				   NULL, 0,
+	// 				   (SQLCHAR *) "public", SQL_NTS,
+	// 				   (SQLCHAR *) "testtab1", SQL_NTS,
+	// 				   0, 0);
+	// CHECK_STMT_RESULT(rc, "SQLStatistics failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result(hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLPrimaryKeys */
-	printf("Check for SQLPrimaryKeys\n");
-	rc = SQLPrimaryKeys(hstmt,
-						NULL, 0,
-						(SQLCHAR *) "public", SQL_NTS,
-						(SQLCHAR *) "testtab1", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLPrimaryKeys failed", hstmt);
-	print_result_meta(hstmt);
-	print_result(hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// printf("Check for SQLPrimaryKeys\n");
+	// rc = SQLPrimaryKeys(hstmt,
+	// 					NULL, 0,
+	// 					(SQLCHAR *) "public", SQL_NTS,
+	// 					(SQLCHAR *) "testtab1", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLPrimaryKeys failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result(hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLForeignKeys */
-	printf("Check for SQLForeignKeys\n");
-	rc = SQLForeignKeys(hstmt,
-						NULL, 0,
-						(SQLCHAR *) "public", SQL_NTS,
-						(SQLCHAR *) "testtab1", SQL_NTS,
-						NULL, 0,
-						(SQLCHAR *) "public", SQL_NTS,
-						(SQLCHAR *) "testtab_fk", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLForeignKeys failed", hstmt);
-	print_result_meta(hstmt);
-	print_result(hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// printf("Check for SQLForeignKeys\n");
+	// rc = SQLForeignKeys(hstmt,
+	// 					NULL, 0,
+	// 					(SQLCHAR *) "public", SQL_NTS,
+	// 					(SQLCHAR *) "testtab1", SQL_NTS,
+	// 					NULL, 0,
+	// 					(SQLCHAR *) "public", SQL_NTS,
+	// 					(SQLCHAR *) "testtab_fk", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLForeignKeys failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result(hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLProcedures */
-	printf("Check for SQLProcedures\n");
-	rc = SQLProcedures(hstmt,
-					   NULL, 0,
-					   (SQLCHAR *) "public", SQL_NTS,
-					   (SQLCHAR *) "simple_add", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLProcedures failed", hstmt);
-	print_result_meta(hstmt);
-	print_result(hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// printf("Check for SQLProcedures\n");
+	// rc = SQLProcedures(hstmt,
+	// 				   NULL, 0,
+	// 				   (SQLCHAR *) "public", SQL_NTS,
+	// 				   (SQLCHAR *) "simple_add", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLProcedures failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result(hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
-	/* Check for SQLProcedureColumns */
-	printf("Check for SQLProcedureColumns\n");
-	rc = SQLProcedureColumns(hstmt,
-							 NULL, 0,
-							 (SQLCHAR *) "public", SQL_NTS,
-							 (SQLCHAR *) "simple_add", SQL_NTS,
-							 NULL, 0);
-	CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
-	print_result_meta(hstmt);
-	print_result(hstmt);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// /* Check for SQLProcedureColumns */
+	// printf("Check for SQLProcedureColumns\n");
+	// rc = SQLProcedureColumns(hstmt,
+	// 						 NULL, 0,
+	// 						 (SQLCHAR *) "public", SQL_NTS,
+	// 						 (SQLCHAR *) "simple_add", SQL_NTS,
+	// 						 NULL, 0);
+	// CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result(hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 	/*
 	 * Check for SQLProcedureColumns for a function
 	 * 	returning normal type
 	 */
-	rc = SQLProcedureColumns(hstmt, NULL, 0,
-				 NULL, 0,
-				 (SQLCHAR *) "set_byte", SQL_NTS,
-				 NULL, 0);
-	CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
-	print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLProcedureColumns(hstmt, NULL, 0,
+	// 			 NULL, 0,
+	// 			 (SQLCHAR *) "set_byte", SQL_NTS,
+	// 			 NULL, 0);
+	// CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
+	// print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 	/*
 	 * Check for SQLProcedureColumns for a function
 	 * 	returning composite type
 	 */
-	rc = SQLProcedureColumns(hstmt, NULL, 0,
-				 (SQLCHAR *) "public", SQL_NTS,
-				 (SQLCHAR *) "getfoo", SQL_NTS,
-				 NULL, 0);
-	CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
-	print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLProcedureColumns(hstmt, NULL, 0,
+	// 			 (SQLCHAR *) "public", SQL_NTS,
+	// 			 (SQLCHAR *) "getfoo", SQL_NTS,
+	// 			 NULL, 0);
+	// CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
+	// print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 	/*
 	 * Check for SQLProcedureColumns for a function
 	 * 	returning setof composite type
 	 */
-	rc = SQLProcedureColumns(hstmt, NULL, 0,
-				 (SQLCHAR *) "public", SQL_NTS,
-				 (SQLCHAR *) "getboo", SQL_NTS,
-				 NULL, 0);
-	CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
-	print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLProcedureColumns(hstmt, NULL, 0,
+	// 			 (SQLCHAR *) "public", SQL_NTS,
+	// 			 (SQLCHAR *) "getboo", SQL_NTS,
+	// 			 NULL, 0);
+	// CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
+	// print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 	/*
 	 * Check for SQLProcedureColumns for a function
 	 * 	returning table
 	 */
-	rc = SQLProcedureColumns(hstmt, NULL, 0,
-				 (SQLCHAR *) "public", SQL_NTS,
-				 (SQLCHAR *) "tbl_arg", SQL_NTS,
-				 NULL, 0);
-	CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
-	print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLProcedureColumns(hstmt, NULL, 0,
+	// 			 (SQLCHAR *) "public", SQL_NTS,
+	// 			 (SQLCHAR *) "tbl_arg", SQL_NTS,
+	// 			 NULL, 0);
+	// CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
+	// print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 	/*
 	 * Check for SQLProcedureColumns for a function with OUT
 	 * 	parameters returning setof
 	 *	This is equivalent to tbl_arg.
 	 */
-	rc = SQLProcedureColumns(hstmt, NULL, 0,
-				 (SQLCHAR *) "public", SQL_NTS,
-				 (SQLCHAR *) "set_of", SQL_NTS,
-				 NULL, 0);
-	CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
-	print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLProcedureColumns(hstmt, NULL, 0,
+	// 			 (SQLCHAR *) "public", SQL_NTS,
+	// 			 (SQLCHAR *) "set_of", SQL_NTS,
+	// 			 NULL, 0);
+	// CHECK_STMT_RESULT(rc, "SQLProcedureColumns failed", hstmt);
+	// print_result_series(hstmt, sql_pro_column_ids, sizeof(sql_pro_column_ids) / sizeof(sql_pro_column_ids[0]), -1);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Check for SQLTablePrivileges */
-	printf("Check for SQLTablePrivileges\n");
-	rc = SQLTablePrivileges(hstmt,
-							NULL, 0,
-							(SQLCHAR *) "public", 0,
-							(SQLCHAR *) "testtab1", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLTablePrivileges failed", hstmt);
-	print_result_meta(hstmt);
-	print_result_series(hstmt, sql_tab_privileges_ids, 6, 5);
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// printf("Check for SQLTablePrivileges\n");
+	// rc = SQLTablePrivileges(hstmt,
+	// 						NULL, 0,
+	// 						(SQLCHAR *) "public", 0,
+	// 						(SQLCHAR *) "testtab1", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLTablePrivileges failed", hstmt);
+	// print_result_meta(hstmt);
+	// print_result_series(hstmt, sql_tab_privileges_ids, 6, 5);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Test SQLGetInfo */
-	printf("Check for SQLGetInfo\n");
+	test_printf("Check for SQLGetInfo\n");
 	rc = SQLGetInfo(conn, SQL_TABLE_TERM, buf, sizeof(buf), &len);
 	CHECK_STMT_RESULT(rc, "SQLGetInfo failed", hstmt);
-	printf("Term for \"table\": %s\n", buf);
+	test_printf("Term for \"table\": %s\n", buf);
 
 	/****
 	 * Misc extra tests.
@@ -267,9 +269,9 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 	 * longer than 32 entries. Check for that.
 	 */
 	rc = SQLTables(hstmt, (SQLCHAR *) "", SQL_NTS,
-				   (SQLCHAR *) "public", SQL_NTS,
+				   (SQLCHAR *) "main", SQL_NTS,
 				   (SQLCHAR *) "testtab%", SQL_NTS,
-				   (SQLCHAR *) "1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5, TABLES", SQL_NTS);
+				   (SQLCHAR *) "1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5, 'TABLE'", SQL_NTS);
 
 	CHECK_STMT_RESULT(rc, "SQLTables failed", hstmt);
 	print_result(hstmt);
@@ -282,11 +284,11 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 	 * patterns with lots of escapes, with standard_conforming_strings=off.
 	 * Check for that.
 	 */
-	for (i = 0; i < sizeof(buf) - 1; i++)
+/*	for (i = 0; i < sizeof(buf) - 1; i++)
 		buf[i] = '\\';
 	buf[i] = '\0';
 	rc = SQLTables(hstmt, (SQLCHAR *) "", SQL_NTS,
-				   (SQLCHAR *) "public", SQL_NTS,
+				   (SQLCHAR *) "main", SQL_NTS,
 				   (SQLCHAR *) buf, SQL_NTS,
 				   (SQLCHAR *) "TABLES", SQL_NTS);
 
@@ -295,7 +297,7 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
-
+*/
 	/*
 	 * Check that things work with an invalid search_path. current_schema()
 	 * returns NULL in that case, which used to cause a segfault.
@@ -303,30 +305,36 @@ TEST_CASE("catalogfunctions-test", "[odbc]") {
 	 * Perform these tests in a fresh connection, so that we don't use a
 	 * cached current_schema value.
 	 */
+
+	// clean up statement
+	release_statement(hstmt);
+
 	test_disconnect();
-	test_connect();
-	rc = SQLAllocHandle(SQL_HANDLE_STMT, conn, &hstmt);
-	CHECK_CONN_RESULT(rc, "failed to allocate stmt handle", conn);
+	// test_connect();
+	// rc = SQLAllocHandle(SQL_HANDLE_STMT, conn, &hstmt);
+	// CHECK_CONN_RESULT(rc, "failed to allocate stmt handle", conn);
 
-	rc = SQLExecDirect(hstmt, (SQLCHAR *) "set search_path='bogus_schema'", SQL_NTS);
-	CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
+	// rc = SQLExecDirect(hstmt, (SQLCHAR *) "set search_path='bogus_schema'", SQL_NTS);
+	// CHECK_STMT_RESULT(rc, "SQLExecDirect failed", hstmt);
 
-	rc = SQLGetInfo(conn, SQL_USER_NAME, username, sizeof(username), &len);
-	CHECK_STMT_RESULT(rc, "SQLGetInfo failed", hstmt);
+	// rc = SQLGetInfo(conn, SQL_USER_NAME, username, sizeof(username), &len);
+	// CHECK_STMT_RESULT(rc, "SQLGetInfo failed", hstmt);
 
-	rc = SQLTables(hstmt, (SQLCHAR *) "", SQL_NTS,
-				   (SQLCHAR *) username, SQL_NTS,
-				   (SQLCHAR *) "testtab%", SQL_NTS,
-				   (SQLCHAR *) "", SQL_NTS);
+	// rc = SQLTables(hstmt, (SQLCHAR *) "", SQL_NTS,
+	// 			   (SQLCHAR *) username, SQL_NTS,
+	// 			   (SQLCHAR *) "testtab%", SQL_NTS,
+	// 			   (SQLCHAR *) "", SQL_NTS);
 
-	CHECK_STMT_RESULT(rc, "SQLTables failed", hstmt);
-	print_result(hstmt);
+	// CHECK_STMT_RESULT(rc, "SQLTables failed", hstmt);
+	// print_result(hstmt);
 
-	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
-	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	// rc = SQLFreeStmt(hstmt, SQL_CLOSE);
+	// CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 
 	/* Clean up */
-	test_disconnect();
+	// test_disconnect();
+
+	test_check_result("catalogfunctions");
 
 	return;
 }
