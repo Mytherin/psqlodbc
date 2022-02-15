@@ -46,6 +46,7 @@ extern SQLHDBC conn;
 		REQUIRE(0==1);									\
     }
 
+extern void test_fix_results();
 extern void print_diag(const char *msg, SQLSMALLINT htype, SQLHANDLE handle);
 extern const char *get_test_dsn(void);
 extern int  IsAnsi(void);
@@ -53,12 +54,12 @@ extern void test_connect_ext(const char *extraparams);
 extern void test_connect(void);
 extern void test_disconnect(void);
 extern void print_result_meta_series(HSTMT hstmt,
-									 SQLSMALLINT *colids,
-									 SQLSMALLINT numcols);
+                                     SQLSMALLINT *colids,
+                                     SQLSMALLINT numcols);
 extern void print_result_series(HSTMT hstmt,
-								SQLSMALLINT *colids,
-								SQLSMALLINT numcols,
-								SQLINTEGER rowcount);
+                                SQLSMALLINT *colids,
+                                SQLSMALLINT numcols,
+                                SQLINTEGER rowcount);
 extern void print_result_meta(HSTMT hstmt);
 extern void print_result(HSTMT hstmt);
 extern const char *datatype_str(SQLSMALLINT datatype);

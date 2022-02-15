@@ -1,2 +1,4 @@
 build/
 .DS_Store
+contrib_regression
+contrib_regression.wal
