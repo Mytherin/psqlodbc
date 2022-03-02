@@ -36,7 +36,7 @@ print_diag(const char *msg, SQLSMALLINT htype, SQLHANDLE handle)
 			test_printf("Invalid handle\n");
 		else if (SQL_SUCCEEDED(ret))
 			test_printf("%s=%s\n", sqlstate, message);
-	} while (ret == SQL_SUCCESS);
+	} while (SQL_SUCCEEDED(ret));
 
 	if (ret == SQL_NO_DATA && recno == 1)
 		test_printf("No error information\n");
