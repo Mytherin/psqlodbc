@@ -1,0 +1,22 @@
+connected
+SQLExecDirect
+42000=ODBC_DuckDB->DuckDB->PrepareStmt
+Parser Error: syntax error at or near "broken"
+LINE 1: broken query
+        ^
+get same message again
+42000=ODBC_DuckDB->DuckDB->PrepareStmt
+Parser Error: syntax error at or near "broken"
+LINE 1: broken query
+        ^
+SQLExecDirect
+42000=ODBC_DuckDB->DuckDB->PrepareStmt
+Parser Error: syntax error at or near "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+LINE 1: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...
+        ^
+SQL_DIAG_SQLSTATE=42000
+SQLEndTran
+No error information
+get same message again
+No error information
+disconnecting

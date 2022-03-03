@@ -86,7 +86,12 @@ TEST_CASE("diagnostic-test", "[odbc]") {
 
 	/* Clean up */
 	test_disconnect();
-	test_check_result("diagnostic");
+
+	#ifdef _WIN32
+		test_check_result("diagnostic-Windows");
+	#else
+		test_check_result("diagnostic");
+	#endif
 
 	return;
 }
