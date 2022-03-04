@@ -1,4 +1,12 @@
 connected
+'true' (boolean) as SQL_C_CHAR: True
+'true' (boolean) as SQL_C_WCHAR: True
+'true' (boolean) as SQL_C_SSHORT: 1
+'true' (boolean) as SQL_C_USHORT: 1
+'true' (boolean) as SQL_C_SLONG: 1
+'true' (boolean) as SQL_C_ULONG: 1
+'true' (boolean) as SQL_C_FLOAT: 1.000000
+'true' (boolean) as SQL_C_DOUBLE: 1.000000
 'true' (boolean) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (BOOLEAN -> CHAR)
@@ -62,6 +70,26 @@ Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
 'true' (boolean) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (BOOLEAN -> INTERVAL)
+'\x464F4F' (bytea) as SQL_C_CHAR: F4F4F
+'\x464F4F' (bytea) as SQL_C_WCHAR: F4F4F
+'\x464F4F' (bytea) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> SMALLINT)
+'\x464F4F' (bytea) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> USMALLINT)
+'\x464F4F' (bytea) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> INTEGER)
+'\x464F4F' (bytea) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> UINTEGER)
+'\x464F4F' (bytea) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> FLOAT)
+'\x464F4F' (bytea) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> DOUBLE)
 '\x464F4F' (bytea) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (BLOB -> CHAR)
@@ -135,6 +163,26 @@ Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
 '\x464F4F' (bytea) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (BLOB -> INTERVAL)
+'x' (char) as SQL_C_CHAR: x
+'x' (char) as SQL_C_WCHAR: x
+'x' (char) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'x' to INT16
+'x' (char) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'x' to UINT16
+'x' (char) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'x' to INT32
+'x' (char) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'x' to UINT32
+'x' (char) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'x' to FLOAT
+'x' (char) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'x' to DOUBLE
 'x' (char) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (VARCHAR -> CHAR)
@@ -234,6 +282,18 @@ Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 Could not convert string 'x' to INTERVAL
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'1234567890' (int8) as SQL_C_CHAR: 1234567890
+'1234567890' (int8) as SQL_C_WCHAR: 1234567890
+'1234567890' (int8) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Type INT64 with value 1234567890 can't be cast because the value is out of range for the destination type INT16
+'1234567890' (int8) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Type INT64 with value 1234567890 can't be cast because the value is out of range for the destination type UINT16
+'1234567890' (int8) as SQL_C_SLONG: 1234567890
+'1234567890' (int8) as SQL_C_ULONG: 1234567890
+'1234567890' (int8) as SQL_C_FLOAT: 1234567936.000000
+'1234567890' (int8) as SQL_C_DOUBLE: 1234567890.000000
 '1234567890' (int8) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (BIGINT -> CHAR)
@@ -301,6 +361,14 @@ Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
 '1234567890' (int8) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (BIGINT -> INTERVAL)
+'12345' (int2) as SQL_C_CHAR: 12345
+'12345' (int2) as SQL_C_WCHAR: 12345
+'12345' (int2) as SQL_C_SSHORT: 12345
+'12345' (int2) as SQL_C_USHORT: 12345
+'12345' (int2) as SQL_C_SLONG: 12345
+'12345' (int2) as SQL_C_ULONG: 12345
+'12345' (int2) as SQL_C_FLOAT: 12345.000000
+'12345' (int2) as SQL_C_DOUBLE: 12345.000000
 '12345' (int2) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (SMALLINT -> CHAR)
@@ -368,6 +436,18 @@ Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
 '12345' (int2) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (SMALLINT -> INTERVAL)
+'1234567' (int4) as SQL_C_CHAR: 1234567
+'1234567' (int4) as SQL_C_WCHAR: 1234567
+'1234567' (int4) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Type INT32 with value 1234567 can't be cast because the value is out of range for the destination type INT16
+'1234567' (int4) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Type INT32 with value 1234567 can't be cast because the value is out of range for the destination type UINT16
+'1234567' (int4) as SQL_C_SLONG: 1234567
+'1234567' (int4) as SQL_C_ULONG: 1234567
+'1234567' (int4) as SQL_C_FLOAT: 1234567.000000
+'1234567' (int4) as SQL_C_DOUBLE: 1234567.000000
 '1234567' (int4) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTEGER -> CHAR)
@@ -435,6 +515,26 @@ Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
 '1234567' (int4) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (INTEGER -> INTERVAL)
+'textdata' (text) as SQL_C_CHAR: textdata
+'textdata' (text) as SQL_C_WCHAR: textdata
+'textdata' (text) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'textdata' to INT16
+'textdata' (text) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'textdata' to UINT16
+'textdata' (text) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'textdata' to INT32
+'textdata' (text) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'textdata' to UINT32
+'textdata' (text) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'textdata' to FLOAT
+'textdata' (text) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'textdata' to DOUBLE
 'textdata' (text) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (VARCHAR -> CHAR)
@@ -534,6 +634,14 @@ Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 Could not convert string 'textdata' to INTERVAL
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'1.234' (float4) as SQL_C_CHAR: 1.234000
+'1.234' (float4) as SQL_C_WCHAR: 1.234000
+'1.234' (float4) as SQL_C_SSHORT: 1
+'1.234' (float4) as SQL_C_USHORT: 1
+'1.234' (float4) as SQL_C_SLONG: 1
+'1.234' (float4) as SQL_C_ULONG: 1
+'1.234' (float4) as SQL_C_FLOAT: 1.234000
+'1.234' (float4) as SQL_C_DOUBLE: 1.234000
 '1.234' (float4) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (FLOAT -> CHAR)
@@ -597,6 +705,14 @@ Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
 '1.234' (float4) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (FLOAT -> INTERVAL)
+'1.23456789012' (double) as SQL_C_CHAR: 1.234568
+'1.23456789012' (double) as SQL_C_WCHAR: 1.234568
+'1.23456789012' (double) as SQL_C_SSHORT: 1
+'1.23456789012' (double) as SQL_C_USHORT: 1
+'1.23456789012' (double) as SQL_C_SLONG: 1
+'1.23456789012' (double) as SQL_C_ULONG: 1
+'1.23456789012' (double) as SQL_C_FLOAT: 1.234568
+'1.23456789012' (double) as SQL_C_DOUBLE: 1.234568
 '1.23456789012' (double) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (DOUBLE -> CHAR)
@@ -660,6 +776,26 @@ Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
 '1.23456789012' (double) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (DOUBLE -> INTERVAL)
+'foobar' (varchar) as SQL_C_CHAR: foobar
+'foobar' (varchar) as SQL_C_WCHAR: foobar
+'foobar' (varchar) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to INT16
+'foobar' (varchar) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to UINT16
+'foobar' (varchar) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to INT32
+'foobar' (varchar) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to UINT32
+'foobar' (varchar) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to FLOAT
+'foobar' (varchar) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to DOUBLE
 'foobar' (varchar) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (VARCHAR -> CHAR)
@@ -759,6 +895,26 @@ Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
 Could not convert string 'foobar' to INTERVAL
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (VARCHAR -> INTERVAL)
+'2011-02-13' (date) as SQL_C_CHAR: 2011-02-13
+'2011-02-13' (date) as SQL_C_WCHAR: 2011-02-13
+'2011-02-13' (date) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> SMALLINT)
+'2011-02-13' (date) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> USMALLINT)
+'2011-02-13' (date) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> INTEGER)
+'2011-02-13' (date) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> UINTEGER)
+'2011-02-13' (date) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> FLOAT)
+'2011-02-13' (date) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> DOUBLE)
 '2011-02-13' (date) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (DATE -> CHAR)
@@ -828,6 +984,26 @@ Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
 '2011-02-13' (date) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (DATE -> INTERVAL)
+'13:23:34' (time) as SQL_C_CHAR: 13:23:34
+'13:23:34' (time) as SQL_C_WCHAR: 13:23:34
+'13:23:34' (time) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> SMALLINT)
+'13:23:34' (time) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> USMALLINT)
+'13:23:34' (time) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> INTEGER)
+'13:23:34' (time) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> UINTEGER)
+'13:23:34' (time) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> FLOAT)
+'13:23:34' (time) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> DOUBLE)
 '13:23:34' (time) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIME -> CHAR)
@@ -899,6 +1075,26 @@ Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
 '13:23:34' (time) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (TIME -> INTERVAL)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:18
+'2011-02-15 15:49:18' (timestamp) as SQL_C_WCHAR: 2011-02-15 15:49:18
+'2011-02-15 15:49:18' (timestamp) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> SMALLINT)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> USMALLINT)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> INTEGER)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> UINTEGER)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> FLOAT)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> DOUBLE)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (TIMESTAMP -> CHAR)
@@ -966,6 +1162,26 @@ Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
 '2011-02-15 15:49:18' (timestamp) as SQL_C_INTERVAL_MINUTE_TO_SECOND: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
 Not implemented Error: Unimplemented type for cast (TIMESTAMP -> INTERVAL)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_CHAR: 9 years 1 month -12 days 13:14:00
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_WCHAR: 9 years 1 month -12 days 13:14:00
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SSHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> SMALLINT)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_USHORT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> USMALLINT)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_SLONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> INTEGER)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_ULONG: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> UINTEGER)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_FLOAT: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> FLOAT)
+'10 years -11 months -12 days 13:14:00' (interval) as SQL_C_DOUBLE: SQLGetData failed
+07006=ODBC_DuckDB->DuckDB->GetInternalValue
+Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> DOUBLE)
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (INTERVAL -> CHAR)
@@ -1013,6 +1229,14 @@ HYC00=[Microsoft][ODBC Driver Manager] Driver does not support this parameter
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_HOUR_TO_MINUTE: interval sign: 0 hour: 78205 minute: 14
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_HOUR_TO_SECOND: interval sign: 0 hour: 78205 minute: 14 second: 0 fraction: 0
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 minute: 4692314 second: 0 fraction: 0
+'1234.567890' (numeric) as SQL_C_CHAR: 1234.567
+'1234.567890' (numeric) as SQL_C_WCHAR: 1234.567
+'1234.567890' (numeric) as SQL_C_SSHORT: 1234
+'1234.567890' (numeric) as SQL_C_USHORT: 1234
+'1234.567890' (numeric) as SQL_C_SLONG: 1234
+'1234.567890' (numeric) as SQL_C_ULONG: 1234
+'1234.567890' (numeric) as SQL_C_FLOAT: 1234.567017
+'1234.567890' (numeric) as SQL_C_DOUBLE: 1234.567000
 '1234.567890' (numeric) as SQL_C_BIT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (DECIMAL(18,3) -> CHAR)
