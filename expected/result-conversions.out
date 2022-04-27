@@ -1245,10 +1245,10 @@ Unsupported type
 '10 years -11 months -12 days 13:14:00' (interval) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 minute: 4692314 second: 0 fraction: 0
 '1234.567890' (numeric) as SQL_C_CHAR: 1234.567
 '1234.567890' (numeric) as SQL_C_WCHAR: 1234.567
-'1234.567890' (numeric) as SQL_C_SSHORT: 1234
-'1234.567890' (numeric) as SQL_C_USHORT: 1234
-'1234.567890' (numeric) as SQL_C_SLONG: 1234
-'1234.567890' (numeric) as SQL_C_ULONG: 1234
+'1234.567890' (numeric) as SQL_C_SSHORT: 1235
+'1234.567890' (numeric) as SQL_C_USHORT: 1235
+'1234.567890' (numeric) as SQL_C_SLONG: 1235
+'1234.567890' (numeric) as SQL_C_ULONG: 1235
 '1234.567890' (numeric) as SQL_C_FLOAT: 1234.567017
 '1234.567890' (numeric) as SQL_C_DOUBLE: 1234.567000
 '1234.567890' (numeric) as SQL_C_BIT: SQLGetData failed
@@ -1256,14 +1256,14 @@ Unsupported type
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (DECIMAL(18,3) -> CHAR)
 '1234.567890' (numeric) as SQL_C_STINYINT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
-Invalid Input Error: Failed to cast value: Failed to cast decimal value 1234 to type INT8
+Invalid Input Error: Failed to cast value: Failed to cast decimal value 1235 to type INT8
 '1234.567890' (numeric) as SQL_C_UTINYINT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
-Invalid Input Error: Failed to cast value: Failed to cast decimal value 1234 to type UINT8
-'1234.567890' (numeric) as SQL_C_SBIGINT: 1234
-'1234.567890' (numeric) as SQL_C_UBIGINT: 1234
+Invalid Input Error: Failed to cast value: Failed to cast decimal value 1235 to type UINT8
+'1234.567890' (numeric) as SQL_C_SBIGINT: 1235
+'1234.567890' (numeric) as SQL_C_UBIGINT: 1235
 '1234.567890' (numeric) as SQL_C_BINARY: hex: 313233342E353637
-'1234.567890' (numeric) as SQL_C_BOOKMARK: 1234
+'1234.567890' (numeric) as SQL_C_BOOKMARK: 1235
 '1234.567890' (numeric) as SQL_C_VARBOOKMARK: hex: 313233342E353637
 '1234.567890' (numeric) as SQL_C_TYPE_DATE: SQLGetData failed
 22007=ODBC_DuckDB->DuckDB->GetDataStmtResult
