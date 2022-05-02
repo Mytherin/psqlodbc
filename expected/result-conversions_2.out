@@ -1204,20 +1204,20 @@ Executed: SET lc_monetary='C'
 '1' (bit) as SQL_C_INTERVAL_MINUTE_TO_SECOND: interval sign: 0 unknown interval type: 0
 '1234.567890' (numeric) as SQL_C_CHAR: 1234.567890
 '1234.567890' (numeric) as SQL_C_WCHAR: 1234.567890
-'1234.567890' (numeric) as SQL_C_SSHORT: 1234
-'1234.567890' (numeric) as SQL_C_USHORT: 1234
-'1234.567890' (numeric) as SQL_C_SLONG: 1234
-'1234.567890' (numeric) as SQL_C_ULONG: 1234
+'1234.567890' (numeric) as SQL_C_SSHORT: 1235
+'1234.567890' (numeric) as SQL_C_USHORT: 1235
+'1234.567890' (numeric) as SQL_C_SLONG: 1235
+'1234.567890' (numeric) as SQL_C_ULONG: 1235
 '1234.567890' (numeric) as SQL_C_FLOAT: 1234.567871
 '1234.567890' (numeric) as SQL_C_DOUBLE: 1234.567890
 '1234.567890' (numeric) as SQL_C_BIT: 210
 '1234.567890' (numeric) as SQL_C_STINYINT: -46
 '1234.567890' (numeric) as SQL_C_UTINYINT: 210
-'1234.567890' (numeric) as SQL_C_SBIGINT: 1234
-'1234.567890' (numeric) as SQL_C_UBIGINT: 1234
+'1234.567890' (numeric) as SQL_C_SBIGINT: 1235
+'1234.567890' (numeric) as SQL_C_UBIGINT: 1235
 '1234.567890' (numeric) as SQL_C_BINARY: SQLGetData failed
 07006=Received an unsupported type from Postgres.
-'1234.567890' (numeric) as SQL_C_BOOKMARK: 1234
+'1234.567890' (numeric) as SQL_C_BOOKMARK: 1235
 '1234.567890' (numeric) as SQL_C_VARBOOKMARK: SQLGetData failed
 07006=Received an unsupported type from Postgres.
 '1234.567890' (numeric) as SQL_C_TYPE_TIME: h: 0 m: 0 s: 0
