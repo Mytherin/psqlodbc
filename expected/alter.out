@@ -1,6 +1,6 @@
 connected
 Result set metadata:
-t: VARCHAR(256) digits: 0, nullable_unknown
+t: VARCHAR(4294967292) digits: 0, nullable_unknown
 Result set metadata:
-t: VARCHAR(256) digits: 0, nullable_unknown
+t: VARCHAR(4294967292) digits: 0, nullable_unknown
 disconnecting
