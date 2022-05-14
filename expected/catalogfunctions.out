@@ -1,19 +1,19 @@
 connected
 Check for SQLTypeInfo
 Result set metadata:
-TYPE_NAME: VARCHAR(4294967292) digits: 0, nullable_unknown
+TYPE_NAME: VARCHAR(256) digits: 0, nullable_unknown
 DATA_TYPE: SMALLINT(5) digits: 0, nullable_unknown
 COLUMN_SIZE: INTEGER(11) digits: 0, nullable_unknown
-LITERAL_PREFIX: VARCHAR(4294967292) digits: 0, nullable_unknown
-LITERAL_SUFFIX: VARCHAR(4294967292) digits: 0, nullable_unknown
-CREATE_PARAMS: VARCHAR(4294967292) digits: 0, nullable_unknown
+LITERAL_PREFIX: VARCHAR(256) digits: 0, nullable_unknown
+LITERAL_SUFFIX: VARCHAR(256) digits: 0, nullable_unknown
+CREATE_PARAMS: VARCHAR(256) digits: 0, nullable_unknown
 NULLABLE: SMALLINT(5) digits: 0, nullable_unknown
 CASE_SENSITIVE: SMALLINT(5) digits: 0, nullable_unknown
 SEARCHABLE: SMALLINT(5) digits: 0, nullable_unknown
 UNSIGNED_ATTRIBUTE: SMALLINT(5) digits: 0, nullable_unknown
 FIXED_PREC_SCALE: SMALLINT(5) digits: 0, nullable_unknown
 AUTO_UNIQUE_VALUE: SMALLINT(5) digits: 0, nullable_unknown
-LOCAL_TYPE_NAME: VARCHAR(4294967292) digits: 0, nullable_unknown
+LOCAL_TYPE_NAME: VARCHAR(256) digits: 0, nullable_unknown
 MINIMUM_SCALE: SMALLINT(5) digits: 0, nullable_unknown
 MAXIMUM_SCALE: SMALLINT(5) digits: 0, nullable_unknown
 SQL_DATA_TYPE: SMALLINT(5) digits: 0, nullable_unknown
@@ -24,11 +24,11 @@ Result set:
 VARCHAR	12	-1	'	'	length	1	1	3	-1	0	-1	NULL	-1	-1	12	-1	-1	-1
 Check for SQLTables
 Result set metadata:
-TABLE_CAT: VARCHAR(4294967292) digits: 0, nullable_unknown
-TABLE_SCHEM: VARCHAR(4294967292) digits: 0, nullable_unknown
-TABLE_NAME: VARCHAR(4294967292) digits: 0, nullable_unknown
-TABLE_TYPE: VARCHAR(4294967292) digits: 0, nullable_unknown
-REMARKS: VARCHAR(4294967292) digits: 0, nullable_unknown
+TABLE_CAT: VARCHAR(256) digits: 0, nullable_unknown
+TABLE_SCHEM: VARCHAR(256) digits: 0, nullable_unknown
+TABLE_NAME: VARCHAR(256) digits: 0, nullable_unknown
+TABLE_TYPE: VARCHAR(256) digits: 0, nullable_unknown
+REMARKS: VARCHAR(256) digits: 0, nullable_unknown
 Result set:
 NULL	main	booltab	TABLE	
 NULL	main	byteatab	TABLE	
@@ -38,23 +38,23 @@ NULL	main	testtab1	TABLE
 Check for SQLColumns
 Result set metadata:
 TABLE_CAT: INTEGER(11) digits: 0, nullable_unknown
-TABLE_SCHEM: VARCHAR(4294967292) digits: 0, nullable_unknown
-TABLE_NAME: VARCHAR(4294967292) digits: 0, nullable_unknown
-COLUMN_NAME: VARCHAR(4294967292) digits: 0, nullable_unknown
+TABLE_SCHEM: VARCHAR(256) digits: 0, nullable_unknown
+TABLE_NAME: VARCHAR(256) digits: 0, nullable_unknown
+COLUMN_NAME: VARCHAR(256) digits: 0, nullable_unknown
 DATA_TYPE: BIGINT(20) digits: 0, nullable_unknown
-TYPE_NAME: VARCHAR(4294967292) digits: 0, nullable_unknown
+TYPE_NAME: VARCHAR(256) digits: 0, nullable_unknown
 COLUMN_SIZE: INTEGER(11) digits: 0, nullable_unknown
 BUFFER_LENGTH: INTEGER(11) digits: 0, nullable_unknown
 DECIMAL_DIGITS: INTEGER(11) digits: 0, nullable_unknown
 NUM_PREC_RADIX: INTEGER(11) digits: 0, nullable_unknown
 NULLABLE: INTEGER(11) digits: 0, nullable_unknown
 REMARKS: INTEGER(11) digits: 0, nullable_unknown
-COLUMN_DEF: VARCHAR(4294967292) digits: 0, nullable_unknown
+COLUMN_DEF: VARCHAR(256) digits: 0, nullable_unknown
 SQL_DATA_TYPE: BIGINT(20) digits: 0, nullable_unknown
 SQL_DATETIME_SUB: BIGINT(20) digits: 0, nullable_unknown
 CHAR_OCTET_LENGTH: INTEGER(11) digits: 0, nullable_unknown
 ORDINAL_POSITION: INTEGER(11) digits: 0, nullable_unknown
-IS_NULLABLE: VARCHAR(4294967292) digits: 0, nullable_unknown
+IS_NULLABLE: VARCHAR(256) digits: 0, nullable_unknown
 Result set:
 NULL	main	booltab	id	13	INTEGER
 NULL	main	booltab	t	25	VARCHAR
