@@ -102,6 +102,8 @@ TEST_CASE("declare-fetch-block-test", "[odbc]") {
 	}
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
 	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
+	rc = SQLFreeStmt(hstmt, SQL_UNBIND);
+	CHECK_STMT_RESULT(rc, "SQLFreeStmt failed", hstmt);
 	/*
 	 * When fetching a row "behind" the rowset by "fetch absolute" only the first ones of the result set can be fetched?
 	 */
