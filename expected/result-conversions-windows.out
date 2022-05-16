@@ -1242,10 +1242,10 @@ HYC00=[Microsoft][ODBC Driver Manager] Driver does not support this parameter
 Invalid Input Error: Failed to cast value: Unimplemented type for cast (DECIMAL(18,3) -> CHAR)
 '1234.567890' (numeric) as SQL_C_STINYINT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
-Invalid Input Error: Failed to cast value: Failed to cast decimal value 1234 to type INT8
+Invalid Input Error: Failed to cast value: Failed to cast decimal value 1235 to type INT8
 '1234.567890' (numeric) as SQL_C_UTINYINT: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetInternalValue
-Invalid Input Error: Failed to cast value: Failed to cast decimal value 1234 to type UINT8
+Invalid Input Error: Failed to cast value: Failed to cast decimal value 1235 to type UINT8
 '1234.567890' (numeric) as SQL_C_SBIGINT: 1235
 '1234.567890' (numeric) as SQL_C_UBIGINT: 1235
 '1234.567890' (numeric) as SQL_C_BINARY: hex: 313233342E353637
