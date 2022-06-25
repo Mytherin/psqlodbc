@@ -7,7 +7,7 @@ else ()
 endif ()
 
 if(NOT WIN32)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+    set(CXX_EXTRA_DEBUG "${CMAKE_CXX_FLAGS} -fsanitize=address")
 endif()
 
 find_package(ODBC REQUIRED)
