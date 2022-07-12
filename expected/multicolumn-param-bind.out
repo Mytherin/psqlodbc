@@ -1,0 +1,12 @@
+connected
+Doing multicolumn
+Parameter Set  Status
+-------------  -------------
+            0  Success
+Parameter Set  Status
+-------------  -------------
+            1  Success
+Result set:
+Jon Doe	Jane Doe
+John	Jane
+disconnecting

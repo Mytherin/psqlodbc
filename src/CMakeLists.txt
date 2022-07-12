@@ -31,6 +31,7 @@ add_library(
       large-object-data-at-exec-test.cpp
       large-object-test.cpp
       lfconversion-test.cpp
+      multicolumn-param-bind-test.cpp
       multistmt-test.cpp
       notice-test.cpp
       numeric-test.cpp
