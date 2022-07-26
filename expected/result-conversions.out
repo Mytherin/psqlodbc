@@ -207,13 +207,13 @@ Invalid Input Error: Failed to cast value: Could not convert string 'x' to UINT6
 'x' (char) as SQL_C_VARBOOKMARK: hex: 78
 'x' (char) as SQL_C_TYPE_DATE: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'x' to DATE32
+Could not convert string 'x' to INT32
 'x' (char) as SQL_C_TYPE_TIME: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'x' to TIME32
+Could not convert string 'x' to INT64
 'x' (char) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'x' to TIMESTAMP
+Could not convert string 'x' to INT64
 'x' (char) as SQL_C_NUMERIC: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->ValidateType
 Type mismatch error: received VARCHAR, but expected DECIMAL
@@ -563,13 +563,13 @@ Invalid Input Error: Failed to cast value: Could not convert string 'textdata' t
 'textdata' (text) as SQL_C_VARBOOKMARK: hex: 7465787464617461
 'textdata' (text) as SQL_C_TYPE_DATE: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'textdata' to DATE32
+Could not convert string 'textdata' to INT32
 'textdata' (text) as SQL_C_TYPE_TIME: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'textdata' to TIME32
+Could not convert string 'textdata' to INT64
 'textdata' (text) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'textdata' to TIMESTAMP
+Could not convert string 'textdata' to INT64
 'textdata' (text) as SQL_C_NUMERIC: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->ValidateType
 Type mismatch error: received VARCHAR, but expected DECIMAL
@@ -827,13 +827,13 @@ Invalid Input Error: Failed to cast value: Could not convert string 'foobar' to 
 'foobar' (varchar) as SQL_C_VARBOOKMARK: hex: 666F6F626172
 'foobar' (varchar) as SQL_C_TYPE_DATE: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'foobar' to DATE32
+Could not convert string 'foobar' to INT32
 'foobar' (varchar) as SQL_C_TYPE_TIME: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'foobar' to TIME32
+Could not convert string 'foobar' to INT64
 'foobar' (varchar) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string 'foobar' to TIMESTAMP
+Could not convert string 'foobar' to INT64
 'foobar' (varchar) as SQL_C_NUMERIC: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->ValidateType
 Type mismatch error: received VARCHAR, but expected DECIMAL
@@ -1330,13 +1330,13 @@ Unsupported type
 '2011-02-15 15:49:18' (timestamp) as SQL_C_TIMESTAMP: y: 2011 m: 2 d: 15 h: 15 m: 49 s: 18 f: 0
 '' (text) as SQL_C_TYPE_DATE: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string '' to DATE32
+Could not convert string '' to INT32
 '' (text) as SQL_C_TYPE_TIME: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string '' to TIME32
+Could not convert string '' to INT64
 '' (text) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
 07006=ODBC_DuckDB->DuckDB->GetDataStmtResult
-Could not convert string '' to TIMESTAMP
+Could not convert string '' to INT64
 'foobar' (text) as SQL_C_CHAR: foob	(SQLGetData success with info)
 'foobar' (text) as SQL_C_CHAR: fooba	(SQLGetData success with info)
 'foobar' (text) as SQL_C_CHAR: foobar
