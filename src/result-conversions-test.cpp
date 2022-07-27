@@ -522,7 +522,7 @@ test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char
 
 			rc = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*)sqlstate, NULL, NULL, 0, NULL);
 			if (!SQL_SUCCEEDED(rc) && SQL_NO_DATA != rc)
-				print_diag(" SQLGetDiagRec failed", SQL_HANDLE_STMT, hstmt);
+				test_printf(" SQLGetDiagRec failed\n");
 			else
 			{
 				if (memcmp(sqlstate, "01004", 5) == 0)
@@ -550,7 +550,7 @@ test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char
 	else
 	{
 		/* some of the conversions throw an error; that's OK */
-		print_diag("SQLGetData failed", SQL_HANDLE_STMT, hstmt);
+		test_printf("SQLGetData failed\n");
 	}
 
 	rc = SQLFreeStmt(hstmt, SQL_CLOSE);
@@ -720,11 +720,7 @@ TEST_CASE("result-conversions-test", "[odbc]") {
 	/* Clean up */
 	test_disconnect();
 
-	#ifdef _WIN32
-		test_check_result("result-conversions-windows");
-	#else
-		test_check_result("result-conversions");
-	#endif
+	test_check_result("result-conversions");
 
 	return;
 }
