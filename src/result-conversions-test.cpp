@@ -523,25 +523,7 @@ test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char
 			rc = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*)sqlstate, NULL, NULL, 0, NULL);
 			if (!SQL_SUCCEEDED(rc) && SQL_NO_DATA != rc)
 				test_printf(" SQLGetDiagRec failed\n");
-			else
-			{
-				if (memcmp(sqlstate, "01004", 5) == 0)
-					test_printf(" (truncated)");
-				else if (SQL_NO_DATA == rc && IsAnsi()) /* maybe */
-					test_printf(" (truncated)");
-				else
-					test_printf("\t(SQLGetData success with info)");
-					// print_diag("SQLGetData success with info", SQL_HANDLE_STMT, hstmt);
-			}
 		}
-		/* just in order to fix ansi driver test on Windows */
-		else if (1 <=  buflen &&
-			 SQL_C_WCHAR == sqltype &&
-			 0 == len_or_ind &&
-			 0 == strcmp(pgtype, "text") &&
-			 IsAnsi())
-			test_printf(" (truncated)");
-
 		test_printf("\n");
 		/* Check that the driver didn't write past the buffer */
 		if ((unsigned char) resultbuf[buflen] != 0xFF && len_or_ind > buflen)
