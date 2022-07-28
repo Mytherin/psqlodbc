@@ -521,17 +521,17 @@ connected
 '' (text) as SQL_C_TYPE_DATE: SQLGetData failed
 '' (text) as SQL_C_TYPE_TIME: SQLGetData failed
 '' (text) as SQL_C_TYPE_TIMESTAMP: SQLGetData failed
-'foobar' (text) as SQL_C_CHAR: foob	(SQLGetData success with info)
-'foobar' (text) as SQL_C_CHAR: fooba	(SQLGetData success with info)
+'foobar' (text) as SQL_C_CHAR: foob
+'foobar' (text) as SQL_C_CHAR: fooba
 'foobar' (text) as SQL_C_CHAR: foobar
-'foobar' (text) as SQL_C_WCHAR: foob	(SQLGetData success with info)
-'foobar' (text) as SQL_C_WCHAR: foob	(SQLGetData success with info)
-'foobar' (text) as SQL_C_WCHAR: fooba	(SQLGetData success with info)
-'foobar' (text) as SQL_C_WCHAR: fooba	(SQLGetData success with info)
+'foobar' (text) as SQL_C_WCHAR: foob
+'foobar' (text) as SQL_C_WCHAR: foob
+'foobar' (text) as SQL_C_WCHAR: fooba
+'foobar' (text) as SQL_C_WCHAR: fooba
 'foobar' (text) as SQL_C_WCHAR: foobar
 '' (text) as SQL_C_CHAR: 
 '' (text) as SQL_C_WCHAR: 
-'2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:1	(SQLGetData success with info)
+'2011-02-15 15:49:18' (timestamp) as SQL_C_CHAR: 2011-02-15 15:49:1
 
 Testing different timestamp subtype conversions to DATE, TIME, and TIMESPAMP.
 '2021-07-15 12:30:00' (timestamp_s) as SQL_C_TYPE_DATE: y: 2021 m: 7 d: 15
