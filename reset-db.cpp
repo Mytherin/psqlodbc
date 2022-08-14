@@ -40,7 +40,7 @@ static void connect_to_db(char *dsn)
 	{
 		printf("connection to %s failed\n", dsn);
 
-		ret = SQLGetDiagRec(SQL_HANDLE_DBC, conn, 1, (SQLCHAR *) sqlstate, NULL,
+		ret = SQLGetDiagRec(SQL_HANDLE_DBC, conn, 1, (SQLCHAR *) sqlstate, sizeof(sqlstate)-1, NULL,
 							(SQLCHAR *) errmsg, sizeof(errmsg), &textlen);
 		if (ret == SQL_INVALID_HANDLE)
 			printf("Invalid handle\n");
@@ -88,7 +88,7 @@ static void run_statement(char *statement)
 	if (!SQL_SUCCEEDED(ret))
 	{
 		printf("Statement failed: %s\n", statement);
-		ret = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR *) sqlstate, NULL,
+		ret = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR *) sqlstate, sizeof(sqlstate)-1, NULL,
 							(SQLCHAR *) errmsg, sizeof(errmsg), &textlen);
 		if (ret == SQL_INVALID_HANDLE)
 			printf("Invalid handle\n");

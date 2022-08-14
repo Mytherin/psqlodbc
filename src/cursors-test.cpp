@@ -73,7 +73,7 @@ testLargeResult(HSTMT hstmt, int betweenstmts)
 			SQLINTEGER nativeerror;
 			SQLSMALLINT textlen;
 
-			SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*) sqlstate, &nativeerror,
+			SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*) sqlstate, strlen(sqlstate), &nativeerror,
 						  NULL, 0, &textlen);
 			if (strcmp(sqlstate, "HY010") == 0)
 			{
