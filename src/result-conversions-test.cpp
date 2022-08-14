@@ -520,7 +520,7 @@ test_conversion(const char *pgtype, const char *pgvalue, int sqltype, const char
 		{
 			char sqlstate[10];
 
-			rc = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*)sqlstate, NULL, NULL, 0, NULL);
+			rc = SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*)sqlstate, sizeof(sqlstate)-1, NULL, NULL, 0, NULL);
 			if (!SQL_SUCCEEDED(rc) && SQL_NO_DATA != rc)
 				test_printf(" SQLGetDiagRec failed\n");
 		}

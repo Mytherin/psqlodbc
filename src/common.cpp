@@ -30,7 +30,7 @@ print_diag(const char *msg, SQLSMALLINT htype, SQLHANDLE handle)
 	do
 	{
 		recno++;
-		ret = SQLGetDiagRec(htype, handle, recno, (SQLCHAR *) sqlstate, &nativeerror,
+		ret = SQLGetDiagRec(htype, handle, recno, (SQLCHAR *) sqlstate, sizeof(sqlstate)-1, &nativeerror,
 		                    (SQLCHAR *) message, sizeof(message) - 1, &textlen);
 		if (ret == SQL_INVALID_HANDLE)
 			test_printf("Invalid handle\n");
