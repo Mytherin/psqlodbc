@@ -69,11 +69,11 @@ testLargeResult(HSTMT hstmt, int betweenstmts)
 			break;
 		if (rc != SQL_SUCCESS)
 		{
-			char sqlstate[32] = "";
+			char sqlstate[32];
 			SQLINTEGER nativeerror;
 			SQLSMALLINT textlen;
 
-			SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*) sqlstate, strlen(sqlstate), &nativeerror,
+			SQLGetDiagRec(SQL_HANDLE_STMT, hstmt, 1, (SQLCHAR*) sqlstate, &nativeerror,
 						  NULL, 0, &textlen);
 			if (strcmp(sqlstate, "HY010") == 0)
 			{
