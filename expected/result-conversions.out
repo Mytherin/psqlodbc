@@ -1,6 +1,6 @@
 connected
-'true' (boolean) as SQL_C_CHAR: True
-'true' (boolean) as SQL_C_WCHAR: True
+'true' (boolean) as SQL_C_CHAR: true
+'true' (boolean) as SQL_C_WCHAR: true
 'true' (boolean) as SQL_C_SSHORT: 1
 'true' (boolean) as SQL_C_USHORT: 1
 'true' (boolean) as SQL_C_SLONG: 1
