@@ -2,11 +2,11 @@ connected
 Result set metadata:
 b: CHAR(0) digits: 0, nullable_unknown
 Result set:
-2	yes	True
+2	yes	true
 Result set metadata:
 b: CHAR(0) digits: 0, nullable_unknown
 Result set:
-1	yeah	True
-2	yes	True
-3	true	True
+1	yeah	true
+2	yes	true
+3	true	true
 disconnecting

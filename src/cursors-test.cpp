@@ -69,7 +69,7 @@ testLargeResult(HSTMT hstmt, int betweenstmts)
 			break;
 		if (rc != SQL_SUCCESS)
 		{
-			char sqlstate[32];
+			char sqlstate[32] = "";
 			SQLINTEGER nativeerror;
 			SQLSMALLINT textlen;
 
