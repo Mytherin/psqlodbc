@@ -30,11 +30,11 @@ TABLE_NAME: VARCHAR(256) digits: 0, nullable_unknown
 TABLE_TYPE: VARCHAR(256) digits: 0, nullable_unknown
 REMARKS: VARCHAR(256) digits: 0, nullable_unknown
 Result set:
-NULL	main	booltab	TABLE	
-NULL	main	byteatab	TABLE	
-NULL	main	intervaltable	TABLE	
-NULL	main	lo_test_tab	TABLE	
-NULL	main	testtab1	TABLE	
+memory	main	booltab	TABLE	
+memory	main	byteatab	TABLE	
+memory	main	intervaltable	TABLE	
+memory	main	lo_test_tab	TABLE	
+memory	main	testtab1	TABLE	
 Check for SQLColumns
 Result set metadata:
 TABLE_CAT: INTEGER(11) digits: 0, nullable_unknown
@@ -73,5 +73,5 @@ NULL	main	testview	t	25	VARCHAR
 Check for SQLGetInfo
 Term for "table": table
 Result set:
-NULL	main	testtab1	TABLE	
+memory	main	testtab1	TABLE	
 disconnecting
